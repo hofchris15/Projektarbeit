@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="80" 
+	height="80" 
+	id="svg_loading_circle" >
+	
+	<title>Loading circle for FH</title>
+	<desc>Eine Ladeanimation für das RIA Project</desc>
+	
+	<defs>
+		<g id="svg_single_circle" >
+			<desc>Nur ein Punkt des Kreises</desc>
+			<circle cx="0" cy="0" r="6" />
+		</g>
+		<g id="svg_full_circle"  >
+			<desc>Der Volle Kreis</desc>
+			<use href="#svg_single_circle" x="18" y="0" fill="red" strock="red">
+				<animate id="a1" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" />
+			</use>
+			<use href="#svg_single_circle" x="12.7" y="12.7">
+				<animate id="a2" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a1.begin+0.3" />
+			</use>
+			<use href="#svg_single_circle" x="0" y="18" >
+				<animate id="a3" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a2.begin+0.3" />
+			</use>
+			<use href="#svg_single_circle" x="-12.7" y="12.7" >
+				<animate id="a4" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a3.begin+0.3" />
+			</use>
+			<use href="#svg_single_circle" x="-18" y="0" >
+				<animate id="a5" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a4.begin+0.3" />
+			</use>
+			<use href="#svg_single_circle" x="-12.7" y="-12.7" >
+				<animate id="a6" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a5.begin+0.3" />
+			</use>
+			<use href="#svg_single_circle" x="0" y="-18" >
+				<animate id="a7" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a6.begin+0.3" />
+			</use>
+			<use href="#svg_single_circle" x="12.7" y="-12.7" >
+				<animate id="a8" attributeName="fill" type="xml"
+					from="#c4c4c4" to="black" 
+					repeatCount="indefinite" dur="2.4" begin="a7.begin+0.3" />
+			</use>
+		</g>
+	</defs>
+	<use href="#svg_full_circle" x="40" y="40" />
+</svg>

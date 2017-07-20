@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+	xmlns:svg="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="136" 
+	height="136" 
+	id="svg_star" >
+	
+	<title>Small FH Star</title>
+	<desc>Ein Sternchen für Noten im RIA Project</desc>
+	
+	<g id="svg_star" >
+		<path id="movement" 
+			d="M 67,68 
+				C 67,69 69,69 69,68
+				M 69,68
+				C 69,67 67,67 67,68
+				M 67,68" 
+			fill="none" 
+			stroke="none" 
+			stroke-width="3" />
+		<path id="svg_star_path" class="svg_star_path" 
+			d="M 18 -13
+				L 60 0
+				L 18 13
+				L 19 57
+				L -7 21
+				L -48 39
+				L -22 0
+				L -48 -35
+				L -7 -21
+				L 19 -57
+				L 18 -13
+				L 60 0" 
+			stroke="#000538"
+			stroke-width="4" 
+			fill="#fded3e" 
+			transform="scale(0.6)" >
+			<animateMotion dur="13s" repeatCount="indefinite" rotate="auto" >
+				<mpath xlink:href="#movement"/>
+			</animateMotion>
+		</path>
+	</g>
+	
+	<g font-size="1.2em" font-family="sans-serif" 
+		fill="#000538" stroke="#000538" text-anchor="middle">
+		<text id="svg_note" class="svg_note" x="68" y="68" dy="0.34em" >5</text>
+	</g>
+</svg>
