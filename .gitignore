@@ -1,6 +1,10 @@
 .build/
 /.idea
 /cmake-build-debug
+/CMakeLists.txt
+/LICENSE
+/log.log
 log.log
 Packages/
 libmongoc-1.0
+

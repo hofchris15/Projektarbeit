@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, inital-scale=1, maximum-scale=1"/>
+    <title>mobileExtend</title>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
+
+</head>
+<body>
+
+
+<header>
+    <canvas id="canvasLogo">
+        Your user agent does not support the HTML5 Canvas element.
+    </canvas>
+    <img src="/images/headerPic.jpg" alt="Code-Image"/>
+</header>
+<nav id="navigation">
+    <span class="username">{{ user }}</span>
+    <div class="dropdown">
+        <p id="navi">Navigation</p>
+        <div class="dropdown-content">
+            <a href="/">Home</a>
+            <a href="#schedular" onclick="return loadSchedular();">Stundenplan</a>
+            <a href="/grades">Noten</a><br/>
+            <a href="/map">Map</a><br/>
+            <a href="/chat">Chat</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</nav>
+<h1>Noten</h1>
+<p>Hier kannst du die Noten deiner bisher abgelegten Prüfungen ansehen.</p>
+<div id="grades">
+    <p>Bitte gib hier die Anmeldedaten für die FH-Domäne ein.</p>
+    <noscript>JavaScript wird für die Darstellung dieser Seite benötigt!</noscript>
+    <div class="form-style-8"><h1>Login</h1>
+        <form name="login" id="login">
+            <p><input type="text" name="username" Placeholder="Benutzername" id="fhusername" maxlength="40"
+                      autofocus/></p>
+            <p><input type="password" name="password" Placeholder="Passwort" id="fhpassword" maxlength="40"/></p>
+            <p><input id="wbutton" onclick="startWorker()" type="submit" value="Login"/></p>
+        </form>
+    </div>
+</div>
+<table id="table" style="visibility:hidden">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Note</th>
+    </tr>
+    </thead>
+</table>
+<script src="/grade_worker.js"></script>
+<script>document.getElementById("wbutton").removeAttribute("disabled");</script>
+<footer>
+    <p> Project by Stefan Moder and Christian Hofer </p>
+</footer>
+<script src="/scripts.js"></script>
+<script>var clock = new Clock("clock");
+clock.startClock();</script>
+<script>if ("vibrate" in navigator && document.getElementById("username") != null && document.getElementById("password") != null) {
+    document.getElementById("username").addEventListener("click", vibrate);
+    document.getElementById("password").addEventListener("click", vibrate);
+    function vibrate() {
+        navigator.vibrate(500);
+    }
+}</script>
+
+<script type='text/javascript'>
+
+</script>
+
+</body>
+</html>

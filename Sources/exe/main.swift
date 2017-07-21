@@ -5,6 +5,13 @@ import PerfectLogger
 import PerfectSession
 import PerfectRequestLogger
 
+// Save guard against ios or windows usage
+#if !os(Linux)
+import Glibc
+print("We are sorry this is only meant to be run on Linux")
+exit(1)
+#endif
+
 let server = HTTPServer()
 LogFile.debug("init HTTPServer()")
 
