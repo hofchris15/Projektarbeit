@@ -5,58 +5,59 @@
 import Foundation
 import PerfectLib
 import PerfectLogger
-import Glibc
 
-func getFile(file: String) -> String {      //todo: possible change to optional
-
-    var workingDir = Dir("./Sources/exe/view/public")
-    //if workingDir.exists { //fixme on second call never exists => workingDir + ./Source....
-        do {
-            try workingDir.setAsWorkingDir()
-            LogFile.debug("Working directory set to \(workingDir.name)")
-        } catch {
-            LogFile.debug("error in getFile() setting WorkingDir: \(error)")
-        }
-    /*} else {
-        LogFile.error("\(file): Directory \(workingDir.path) does not exist. Main executable not started from root of MVC cannot find resources?")
-        exit(2)
-    }*/
-
-    let thisFile = File(file)
-    LogFile.debug("file set to \(thisFile.path)")
-    do {
-        try thisFile.open(.readWrite)
-    } catch {
-        LogFile.error("Could not open file, error: \(error)") //Error
+/// pre read layout
+var layout: String! = nil
+func setupLayout() -> Void {
+    if (layout == nil) {
+        layout = getFileView(file: "layout.html") ?? "Layout failed {{ main }}!!"
     }
-    defer {
-        thisFile.close()
-    }
-    do {
-        let content = try thisFile.readString()
-        let workingDir = Dir("./")
-        try workingDir.setAsWorkingDir()
-        return content
-    } catch {
-        LogFile.error("not able to read File: \(error)") // Error
-        let content = "" //todo: Change this part to optional?
-        return content
-    }
-
 }
 
-func renderHomeView(user: String) -> String {
-    var view = getFile(file: "home.html")
-    view = view.replacingOccurrences(of: "{{ user }}", with: user)
+
+func renderLoginView() -> String? { //returns String or nil
+    LogFile.debug("Rendering Login")
+    setupLayout()
+    var view = getFileView(file: "login.html")
+    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
     return view
 }
 
-func renderGradesView(user: String) -> String {
-    var view = getFile(file: "grades.html")
-    view = view.replacingOccurrences(of: "{{ user }}", with: user)
+func renderHomeView(user: String) -> String? {
+    LogFile.debug("Rendering Home")
+    setupLayout()
+    var view = getFileView(file: "home.html")
+    view = view?.replacingOccurrences(of: "{{ user }}", with: user)
+    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
+    return view
+}
+
+func renderGradesView(user: String) -> String? {
+    LogFile.debug("Rendering Grades")
+    setupLayout()
+    var view = getFileView(file: "grades.html")
+    view = view?.replacingOccurrences(of: "{{ user }}", with: user)
+    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
+    return view
+}
+
+func renderRegistrationView() -> String? {
+    LogFile.debug("Rendering New")
+    setupLayout()
+    var view = getFileView(file: "registration.html")
+    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
+    return view
+}
+
+func renderSuccessView() -> String? {
+    LogFile.debug("Rendering Success")
+    setupLayout()
+    var view = getFileView(file: "success.html")
+    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
     return view
 }
 
 func renderSchedularView() -> String {
+    LogFile.debug("Rendering iframe Schedular")
     return "<h1>Stundenplan</h1>\n<iframe src=\"http://almaty.fh-joanneum.at/stundenplan/\">\n</iframe>"
 }

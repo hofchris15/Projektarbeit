@@ -1,72 +1,20 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-    <meta name="viewport" charset="UTF-8" content="width=device-width, inital-scale=1, maximum-scale=1"/>
-    <title>mobileExtend</title>
-    <link rel="stylesheet" href="/style.css"/>
-    <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
+        <main>
+            <section id="change">
+                <h1>Willkommen zurück <span class="username">{{ user }}!</span></h1>
+                <p>Diese Seite bietet dir alles was du benötigst um dein Studentenleben zu organisieren...</p>
+                <h2>Stundenplan</h2>
+                <p>Wo und wann findet die nächste spannende Vorlesung statt? Wirf einen kurzen Blick in
+                    den <a href="#schedular" onclick="return loadSchedular();">Stundenplan</a> und du bist wieder auf dem Laufenden!</p>
+                <h2>Notenübersicht</h2>
+                <p>Geht sich das Leistungsstipendium dieses Semester aus? überprüf es in deiner <a href="/grades">Notenübersicht</a>!
+                </p>
 
-</head>
-<body>
+                <h2>Map</h2>
+                <p>Du verbringst das Wochenende in Kapfenberg und fragst dich, was es außer der FH
+                    sonst noch so gibt? Dann schau doch in die <a href="/grades">Map</a>!</p>
 
-<header>
-    <canvas id="canvasLogo">
-        Your user agent does not support the HTML5 Canvas element.
-    </canvas>
-    <img src="/images/headerPic.jpg" alt="Code-Image"/>
-</header>
-<nav id="navigation">
-    <span class="username">{{ user }}</span>
-    <div class="dropdown">
-        <p id="navi">Navigation</p>
-        <div class="dropdown-content">
-            <a href="/">Home</a>
-            <a href="#schedular" onclick="return loadSchedular();">Stundenplan</a>
-            <a href="/grades">Noten</a><br/>
-            <a href="/map">Map</a><br/>
-            <a href="/chat">Chat</a>
-            <a href="/logout">Logout</a>
-        </div>
-    </div>
-</nav>
-
-<main>
-    <section id="change">
-        <h1>Willkommen zurück <span class="username">{{ user }}!</span></h1>
-        <p>Diese Seite bietet dir alles was du benötigst um dein Studentenleben zu organisieren...</p>
-        <h2>Stundenplan</h2>
-        <p>Wo und wann findet die nächste spannende Vorlesung statt? Wirf einen kurzen Blick in
-            den <a href="#schedular" onclick="return loadSchedular();">Stundenplan</a> und du bist wieder auf dem Laufenden!</p>
-        <h2>Notenübersicht</h2>
-        <p>Geht sich das Leistungsstipendium dieses Semester aus? überprüf es in deiner <a href="/grades">Notenübersicht</a>!
-        </p>
-
-        <h2>Map</h2>
-        <p>Du verbringst das Wochenende in Kapfenberg und fragst dich, was es außer der FH
-            sonst noch so gibt? Dann schau doch in die <a href="/grades">Map</a>!</p>
-
-        <h2>Chat</h2>
-        <p>Lerne deine Studienkollegen besser kennen, tauscht wertvolle Tipps
-            und Tricks aus und verabredet euch auf ein Bier nach der VO, das alles geht im <a href="/grades">Chat</a>!</p>
-    </section>
-</main>
-<footer>
-    <p> Project from Stefan Moder and Christian Hofer </p>
-</footer>
-<script src="/scripts.js"></script>
-<script>
-    var clock = new Clock("clock");
-    clock.startClock();
-</script>
-<script type='text/javascript'>
-    if ("vibrate" in navigator && document.getElementById("username") != null && document.getElementById("password") != null) {
-        document.getElementById("username").addEventListener("click", vibrate);
-        document.getElementById("password").addEventListener("click", vibrate);
-        function vibrate() {
-            navigator.vibrate(500);
-        }
-    }
-</script>
-
-</body>
-</html>
+                <h2>Chat</h2>
+                <p>Lerne deine Studienkollegen besser kennen, tauscht wertvolle Tipps
+                    und Tricks aus und verabredet euch auf ein Bier nach der VO, das alles geht im <a href="/grades">Chat</a>!</p>
+            </section>
+        </main>

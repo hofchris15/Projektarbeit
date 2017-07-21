@@ -1,60 +1,22 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-    <meta name="viewport" charset="UTF-8" content="width=device-width, inital-scale=1, maximum-scale=1"/>
-    <title>mobileExtend</title>
-    <link rel="stylesheet" href="/style.css"/>
-    <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
-
-</head>
-<body>
-
-<header>
-    <canvas id="canvasLogo">
-        Your user agent does not support the HTML5 Canvas element.
-    </canvas>
-    <img src="/images/headerPic.jpg" alt="Code-Image"/>
-</header>
-
-<main>
-    <section id="change">
-        <div class="register-form-style"><h1>Registrierung</h1>
-            <form action="/new" method="post">
-                <p><input type="text" name="username" id="username" placeholder="Benutzername*" required="required"
-                          pattern="[A-Za-z0-9]{1,}"></p>
-                <p><input type="password" name="password" id="password" placeholder="Passwort*" required="required"></p>
-                <p><input type="text" name="firstname" placeholder="Vorname"/></p>
-                <p><input type="text" name="lastname" placeholder="Nachname"/></p>
-                <p><input type="email" name="email" placeholder="E-Mail*" required="required"
-                          pattern="[a-z0-9.%+-]+@[a-z0-9]+\.[a-z]{2,3}"/></p>
-                <p><input type="submit" value="Register" class="button"/></p>
-            </form>
-            <p>Die mit Stern gekennzeichneten Felder müssen ausgefüllt sein!</p>
-            <p><a href="/login">Hier</a> gehts zurück zum Login!</p>
-            <svg id="clock" class="clock" width="300" height="300"></svg>
-        </div>
-        {{#if message}}<p id="message">{{ message }}</p>{{/if}}
-        <script src="/snap.svg-min.js"></script>
-        <script src="/clock.js"></script>
-    </section>
-</main>
-<footer>
-    <p> Project from Stefan Moder and Christian Hofer </p>
-</footer>
-<script src="/scripts.js"></script>
-<script>
-    var clock = new Clock("clock");
-    clock.startClock();
-</script>
-<script type='text/javascript'>
-    if ("vibrate" in navigator && document.getElementById("username") != null && document.getElementById("password") != null) {
-        document.getElementById("username").addEventListener("click", vibrate);
-        document.getElementById("password").addEventListener("click", vibrate);
-        function vibrate() {
-            navigator.vibrate(500);
-        }
-    }
-</script>
-
-</body>
-</html>
+        <main>
+            <section id="change">
+                <div class="register-form-style"><h1>Registrierung</h1>
+                    <form action="/new" method="post">
+                        <p><input type="text" name="username" id="username" placeholder="Benutzername*" required="required"
+                                  pattern="[A-Za-z0-9]{1,}"></p>
+                        <p><input type="password" name="password" id="password" placeholder="Passwort*" required="required"></p>
+                        <p><input type="text" name="firstname" placeholder="Vorname"/></p>
+                        <p><input type="text" name="lastname" placeholder="Nachname"/></p>
+                        <p><input type="email" name="email" placeholder="E-Mail*" required="required"
+                                  pattern="[a-z0-9.%+-]+@[a-z0-9]+\.[a-z]{2,3}"/></p>
+                        <p><input type="submit" value="Register" class="button"/></p>
+                    </form>
+                    <p>Die mit Stern gekennzeichneten Felder müssen ausgefüllt sein!</p>
+                    <p><a href="/login">Hier</a> gehts zurück zum Login!</p>
+                    <svg id="clock" class="clock" width="300" height="300"></svg>
+                </div>
+                {{#if message}}<p id="message">{{ message }}</p>{{/if}}
+                <script src="/snap.svg-min.js"></script>
+                <script src="/clock.js"></script>
+            </section>
+        </main>

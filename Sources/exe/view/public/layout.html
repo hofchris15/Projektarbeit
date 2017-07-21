@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta name="viewport" charset="UTF-8" content="width=device-width, inital-scale=1, maximum-scale=1"/>
+        <title>mobileExtend</title>
+        <link rel="stylesheet" href="/style.css"/>
+        <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
+    </head>
+    <body>
+        <header>
+            <canvas id="canvasLogo">
+                Your user agent does not support the HTML5 Canvas element.
+            </canvas>
+            <img src="/images/headerPic.jpg" alt="Code-Image"/>
+        </header>
+        <nav id="navigation">
+            <div class="dropdown">
+                <p id="navi">Navigation</p>
+                <div class="dropdown-content">
+                    <a href="/">Home</a>
+                    <a href="#schedular" onclick="return loadSchedular();">Stundenplan</a>
+                    <a href="/grades">Noten</a><br/>
+                    <a href="/map">Map</a><br/>
+                    <a href="/chat">Chat</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+        {{ main }}
+        <footer>
+            <p> Project from Stefan Moder and Christian Hofer </p>
+        </footer>
+        <script src="/javascript/scripts.js"></script>
+        <script>
+            var clock = new Clock("clock");
+            clock.startClock();
+        </script>
+        <script type='text/javascript'>
+            if ("vibrate" in navigator && document.getElementById("username") != null && document.getElementById("password") != null) {
+                document.getElementById("username").addEventListener("click", vibrate);
+                document.getElementById("password").addEventListener("click", vibrate);
+                function vibrate() {
+                    navigator.vibrate(500);
+                }
+            }
+        </script>
+    </body>
+</html>

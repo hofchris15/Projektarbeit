@@ -22,13 +22,16 @@ func makeRoutes() -> Routes {
     routes.add(method: .get, uri: "/grades", handler: getGradesHandler)
 
     //public files
-    routes.add(method: .get, uri: "/style.css", handler: sendStyle)
+    let files = [   PublicFile(route: "/style.css"),
+                    PublicFile(route: "/javascript/snap.svg-min.js"),
+                    PublicFile(route: "/javascript/clock.js"),
+                    PublicFile(route: "/javascript/scripts.js"),
+                    PublicFile(route: "/javascript/grade_worker.js"),
+                    PublicFile(route: "/images/favicon.ico") ]
+    for file in files {
+        routes.add(method: .get, uri: file.route, handler: file.sendFile)
+    }
     routes.add(method: .get, uri: "/images/headerPic.jpg", handler: sendHeaderPic)
-    routes.add(method: .get, uri: "/snap.svg-min.js", handler: sendSnapSVG)
-    routes.add(method: .get, uri: "/clock.js", handler: sendClock)
-    routes.add(method: .get, uri: "/scripts.js", handler: sendScripts)
-    routes.add(method: .get, uri: "/grade_worker.js", handler: sendWorker)
-    routes.add(method: .get, uri: "/images/favicon.ico", handler: sendFavicon)
 
     return routes
 }
@@ -39,14 +42,12 @@ func makeRoutes() -> Routes {
 
 func loginGetHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("loginGetHandler()")
-    let view = getFile(file: "login.html")
-    if view.characters.count <= 0 { //todo: instead view == nil ? see renderViews
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
+    if let view = renderLoginView() { // renderLoginView gives either String or nil -> renderLoginView
+        response.appendBody(string: view) // String
         response.completed()
+    } else { // if nil
+            sendFileNotFound(response)
     }
-    response.appendBody(string: view)
-    response.completed()
 }
 
 func loginPostHandler(request: HTTPRequest, _ response: HTTPResponse){
@@ -61,14 +62,12 @@ func loginPostHandler(request: HTTPRequest, _ response: HTTPResponse){
 
 func newGetHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("newGetHandler()")
-    let new = getFile(file: "registration.html")
-    if new.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
+    if let view = renderRegistrationView() {
+        response.appendBody(string: view)
         response.completed()
+    } else {
+        sendFileNotFound(response)
     }
-    response.appendBody(string: new)
-    response.completed()
 }
 
 func newPostHandler(request: HTTPRequest, _ response: HTTPResponse){
@@ -85,14 +84,11 @@ func getHomeHandler(request: HTTPRequest, _ response: HTTPResponse){
     LogFile.debug("getHomeHandler()")
     //request.session?.data["user"] = "Testuser" //fixme testing only remove later
     let user: String = request.session?.data["user"] as? String ?? "No user?"
-    let view = renderHomeView(user: user)
-    if view.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
-    } else {
+    if let view = renderHomeView(user: user) {
         response.appendBody(string: view)
         response.completed()
+    } else {
+        sendFileNotFound(response)
     }
 }
 
@@ -105,60 +101,31 @@ func getSchedularHandler(request: HTTPRequest, _ response: HTTPResponse) {
 func getGradesHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("getGradesHandler()")
     let user: String = request.session?.data["user"] as? String ?? "No user?"
-    let view = renderGradesView(user: user)
-    if view.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
-    } else {
+    if let view = renderGradesView(user: user) {
         response.appendBody(string: view)
         response.completed()
+    } else {
+        sendFileNotFound(response)
     }
 }
 
 func successHandler(request: HTTPRequest, _ response: HTTPResponse){
     LogFile.debug("successHandler()")
-    let new = getFile(file: "success.html")
-    if new.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
+    if let view = renderSuccessView() {
+        response.appendBody(string: view)
         response.completed()
+    } else {
+        sendFileNotFound(response)
     }
-    response.appendBody(string: new)
-    response.completed()
 }
 
 
 //#######Public Files
 
-func sendStyle(request: HTTPRequest, _ response: HTTPResponse) {
-    LogFile.debug("sendStyle()")
-    let css = getFile(file: "style.css")
-    if css.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
-    }
-    response.appendBody(string: css)
-    response.completed()
-}
-
-func sendSnapSVG(request: HTTPRequest, _ response: HTTPResponse) {
-    LogFile.debug("sendSnapSVG")
-    let snapsvg = getFile(file: "./javascript/snap.svg-min.js")
-    if snapsvg.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
-    }
-    response.appendBody(string: snapsvg)
-    response.completed()
-}
-
 func sendHeaderPic(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("sendHeaderPic()")
     do {
-        let headerPic = File("./images/headerPic.jpg")
+        let headerPic = File("./view/public/images/headerPic.jpg")
         if headerPic.exists {
             let imageSize = headerPic.size
             let imageBytes = try headerPic.readSomeBytes(count: imageSize)
@@ -174,50 +141,45 @@ func sendHeaderPic(request: HTTPRequest, _ response: HTTPResponse) {
     response.completed()
 }
 
-func sendClock(request: HTTPRequest, _ response: HTTPResponse) {
-    LogFile.debug("sendClock()")
-    let clock = getFile(file: "./javascript/clock.js")
-    if clock.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
-    }
-    response.appendBody(string: clock)
+
+/*
+ * Helper functions
+ */
+
+/**
+ * File not found response
+ */
+func sendFileNotFound(_ response: HTTPResponse) -> Void {
+    response.status = .notFound
+    response.setBody(string: "404 File not Found")
     response.completed()
 }
 
-func sendScripts(request: HTTPRequest, _ response: HTTPResponse) {
-    LogFile.debug("sendScripts()")
-    let scripts = getFile(file: "./javascript/scripts.js")
-    if scripts.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
+/**
+ * Sends back a file as response, to be used for static elements
+ * -Parameters:
+ *      -response: the http response object
+ *      -file: to send as response
+ */
+func simpleSend(_ response: HTTPResponse, _ file: String) {
+    if let view = getFileView(file: file) {
+        response.appendBody(string: view)
         response.completed()
+    } else {
+        sendFileNotFound(response)
     }
-    response.appendBody(string: scripts)
-    response.completed()
 }
 
-func sendWorker(request: HTTPRequest, _ response: HTTPResponse) {
-    LogFile.debug("sendWorker()")
-    let scripts = getFile(file: "./javascript/grade_worker.js")
-    if scripts.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
+/**
+ * Small class to simplify sending static public files
+ */
+class PublicFile {
+    public let route: String
+    public init(route: String) {
+        self.route = route
     }
-    response.appendBody(string: scripts)
-    response.completed()
-}
-
-func sendFavicon(request: HTTPRequest, _ response: HTTPResponse) {
-    LogFile.debug("sendFavicon()")
-    let scripts = getFile(file: "./images/favicon.ico")
-    if scripts.characters.count <= 0 {
-        response.status = .notFound
-        response.setBody(string: "404 File not Found")
-        response.completed()
+    public func sendFile(request: HTTPRequest, _ response: HTTPResponse) {
+        LogFile.debug("sendPublicFile(\(route))")
+        simpleSend(response, "./" + route)
     }
-    response.appendBody(string: scripts)
-    response.completed()
 }
