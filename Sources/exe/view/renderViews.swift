@@ -39,33 +39,3 @@ func getFile(file: String) -> String {
         return content
     }
 }
-
-func renderHome() -> String {
-    LogFile.debug("renderHome()")
-    let content = getFile(file: "login.html")
-    return content
-}
-
-func readStyle() -> String {
-    LogFile.debug("readStyle()")
-    let content = getFile(file: "style.css")
-    return content
-}
-
-func readSnapSVG() -> String {
-    LogFile.debug("readSnapSVG()")
-    let content = getFile(file: "./javascript/snap.svg-min.js")
-    return content
-}
-
-func readClock() -> String {
-    LogFile.debug("readClock()")
-    let content = getFile(file: "./javascript/clock.js")
-    return content
-}
-
-func readScripts() -> String {
-    LogFile.debug("readScripts()")
-    let content = getFile(file: "./javascript/scripts.js")
-    return content
-}

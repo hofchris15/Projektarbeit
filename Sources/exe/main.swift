@@ -13,7 +13,7 @@ SessionConfig.idle = 86400  // idle time set to one day
 
 // Optional
 SessionConfig.cookieDomain = "localhost"
-SessionConfig.IPAddressLock = true //Session is bind to the IP adresse where the first request come from
+SessionConfig.IPAddressLock = true //Session is bind to the IP address of the first request
 SessionConfig.userAgentLock = true //Session is bind to the user
 
 let sessionDriver = SessionMemoryDriver()
