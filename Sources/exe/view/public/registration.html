@@ -1,22 +1,22 @@
-        <main>
-            <section id="change">
-                <div class="register-form-style"><h1>Registrierung</h1>
-                    <form action="/new" method="post">
-                        <p><input type="text" name="username" id="username" placeholder="Benutzername*" required="required"
-                                  pattern="[A-Za-z0-9]{1,}"></p>
-                        <p><input type="password" name="password" id="password" placeholder="Passwort*" required="required"></p>
-                        <p><input type="text" name="firstname" placeholder="Vorname"/></p>
-                        <p><input type="text" name="lastname" placeholder="Nachname"/></p>
-                        <p><input type="email" name="email" placeholder="E-Mail*" required="required"
-                                  pattern="[a-z0-9.%+-]+@[a-z0-9]+\.[a-z]{2,3}"/></p>
-                        <p><input type="submit" value="Register" class="button"/></p>
-                    </form>
-                    <p>Die mit Stern gekennzeichneten Felder müssen ausgefüllt sein!</p>
-                    <p><a href="/login">Hier</a> gehts zurück zum Login!</p>
-                    <svg id="clock" class="clock" width="300" height="300"></svg>
-                </div>
-                {{#if message}}<p id="message">{{ message }}</p>{{/if}}
-                <script src="/snap.svg-min.js"></script>
-                <script src="/clock.js"></script>
-            </section>
-        </main>
+<main>
+    <section id="change">
+        <div class="register-form-style"><h1>Registrierung</h1>
+            <form action="/new" method="post">
+                <p><input type="text" name="username" id="username" placeholder="Benutzername*" required="required"
+                          pattern="[A-Za-z0-9]{1,}"></p>
+                <p><input type="password" name="password" id="password" placeholder="Passwort*" required="required"></p>
+                <p><input type="text" name="firstname" placeholder="Vorname"/></p>
+                <p><input type="text" name="lastname" placeholder="Nachname"/></p>
+                <p><input type="email" name="email" placeholder="E-Mail*" required="required"
+                          pattern="[a-z0-9.%+-]+@[a-z0-9]+\.[a-z]{2,3}"/></p>
+                <p><input type="submit" value="Register" class="button"/></p>
+            </form>
+            <p>Die mit Stern gekennzeichneten Felder müssen ausgefüllt sein!</p>
+            <p><a href="/login">Hier</a> gehts zurück zum Login!</p>
+            <svg id="clock" class="clock" width="300" height="300"></svg>
+        </div>
+        <p id="message">{{ message }}</p>
+        <script src="/snap.svg-min.js"></script>
+        <script src="/clock.js"></script>
+    </section>
+</main>

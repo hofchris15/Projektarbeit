@@ -7,6 +7,7 @@ let package = Package(
 		.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2),
 		.Package(url: "https://github.com/PerfectlySoft/Perfect-Logger.git", majorVersion:1),
         .Package(url:"https://github.com/PerfectlySoft/Perfect-Session.git", majorVersion: 1),
-        .Package(url: "https://github.com/PerfectlySoft/Perfect-RequestLogger.git", majorVersion: 1)
+        .Package(url: "https://github.com/PerfectlySoft/Perfect-RequestLogger.git", majorVersion: 1),
+		.Package(url: "https://github.com/SwiftyBeaver/AES256CBC.git", majorVersion: 1)
     ]
 )

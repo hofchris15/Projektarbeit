@@ -29,7 +29,7 @@ server.setRequestFilters([sessionDriver.requestFilter])
 server.setResponseFilters([sessionDriver.responseFilter])
 
 let myLogger = RequestLogger()
-// Add the filters
+
 // Request filter at high priority to be executed first
 server.setRequestFilters([(myLogger, .high)])
 // Response filter at low priority to be executed last
@@ -39,6 +39,8 @@ server.addRoutes(makeRoutes())
 server.serverPort = 3000
 server.documentRoot = "./Sources"
 LogFile.info("set config")
+
+JSONDecoding.registerJSONDecodable(name: Profile.registerName, creator: {return Profile()})
 
 do {
     try server.start()

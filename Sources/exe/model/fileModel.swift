@@ -10,7 +10,7 @@ import Foundation
 import PerfectLib
 import PerfectLogger
 import Glibc
-
+import PerfectCrypto
 
 /*
  * change working directory into exe
@@ -43,11 +43,11 @@ func getFileView(file: String) -> String? {
 /**
  * gets content of the specified file and returns it as String
  */
-func getFile(file: String) -> String? {      //todo: possible change to optional
+func getFile(file: String) -> String? {
     LogFile.debug("Trying to access \(file)")
 
     if (!issetup) {
-        LogFile.debug("Seting up Working Directory")
+        LogFile.debug("Setting up Working Directory")
         setupDir()
     }
 
@@ -59,6 +59,7 @@ func getFile(file: String) -> String? {      //todo: possible change to optional
         LogFile.error("Could not open file, error: \(error)") //Error
     }
     var content: String? = nil
+
     defer {
         thisFile.close()
     }
