@@ -31,8 +31,8 @@ func makeRoutes() -> Routes {
             return ChatHandler()
         }).handleRequest(request: request, response: response)
         LogFile.debug("Starting Socket connection")
-        chatHandler(request: request, response: response)
     })
+
     routes.add(method: .get, uri: "/chat", handler: chatHandler)
 
     routes.add(method: .get, uri: "/home", handler: getHomeHandler)
@@ -46,6 +46,7 @@ func makeRoutes() -> Routes {
                  PublicFile(route: "/javascript/scripts.js"),
                  PublicFile(route: "/javascript/grade_worker.js"),
                  PublicFile(route: "/javascript/chatFunctions.js"),
+                 PublicFile(route: "/javascript/socket.io.js"),
                  PublicFile(route: "/images/favicon.ico")]
     for file in files {
         routes.add(method: .get, uri: file.route, handler: file.sendFile)
@@ -174,11 +175,15 @@ func successHandler(request: HTTPRequest, _ response: HTTPResponse) {
 
 func chatHandler(request: HTTPRequest, response: HTTPResponse) {
     LogFile.debug("chatHandler()")
-    if let view = renderChatView(user: (request.session?.data["user"] as? String) ?? "") {
-        response.appendBody(string: view)
-        response.completed()
+    if let user = request.session?.data["user"] as? String {
+        if let view = renderChatView(user: user) {
+            response.appendBody(string: view)
+            response.completed()
+        } else {
+            sendFileNotFound(response)
+        }
     } else {
-        sendFileNotFound(response)
+        loginGetHandler(request, response)
     }
 }
 
@@ -271,24 +276,4 @@ class PublicFile {
     }
 }
 
-/**
- * Handler for chat
- */
-class ChatHandler: WebSocketSessionHandler {
-    // Protocol
-    let socketProtocol: String? = "chat"
 
-    func handleSession(request: HTTPRequest, socket: WebSocket) {
-        socket.readStringMessage {
-            string, op, fin in
-            guard let string = string else {
-                socket.close()
-                return
-            }
-            LogFile.debug("Socket:: read:\(string) op:\(op) fin:\(fin)")
-            socket.sendStringMessage(string: string, final: true) {
-                self.handleSession(request: request, socket: socket)
-            }
-        }
-    }
-}

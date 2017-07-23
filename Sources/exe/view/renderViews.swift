@@ -26,6 +26,8 @@ func buildView(_ view: String?, _ user: String) -> String? {
     var result = layout?.replacingOccurrences(of: "{{ main }}", with: view ?? "Partial not found!!")
     result = result?.replacingOccurrences(of: "{{ navbar }}", with: navbar ?? "<a href=\"/\"No navigation</a>")
     result = result?.replacingOccurrences(of: "{{ user }}", with: user)
+    result = result?.replacingOccurrences(of: "{{ host }}", with: Config.host)
+    result = result?.replacingOccurrences(of: "{{ port }}", with: "\(Config.port)")
     //todo message
     return result
 }

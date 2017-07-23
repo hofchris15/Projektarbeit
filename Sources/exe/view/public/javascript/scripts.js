@@ -18,7 +18,7 @@ function login() {
 function loadSchedular() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("change").innerHTML = this.responseText;
+            document.getElementById("main").innerHTML = this.responseText;
         } else if (this.readyState == 4 && (this.status == 403 || this.status == 404) ) {
 			alert("We are sorry! There seems to be a problem with the almaty server");
 		}

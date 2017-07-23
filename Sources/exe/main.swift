@@ -36,7 +36,7 @@ server.setRequestFilters([(myLogger, .high)])
 server.setResponseFilters([(myLogger, .low)])
 
 server.addRoutes(makeRoutes())
-server.serverPort = 3000
+server.serverPort = Config.port
 server.documentRoot = "./Sources"
 LogFile.info("set config")
 
