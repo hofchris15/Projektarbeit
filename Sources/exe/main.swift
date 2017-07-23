@@ -19,7 +19,7 @@ SessionConfig.name = "mobileExtendSession" //Session name which is set as cookie
 SessionConfig.idle = 86400  // idle time set to one day
 
 // Optional
-SessionConfig.cookieDomain = "localhost"
+//SessionConfig.cookieDomain = "localhost"
 SessionConfig.IPAddressLock = true //Session is bind to the IP address of the first request
 SessionConfig.userAgentLock = true //Session is bind to the user
 
