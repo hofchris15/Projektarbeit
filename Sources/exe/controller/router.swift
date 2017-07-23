@@ -61,8 +61,7 @@ func makeRoutes() -> Routes {
 
 func loginGetHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("loginGetHandler()")
-    if let view = renderLoginView() { // renderLoginView gives either String or nil -> renderLoginView
-        request.session?.data["user"] = ""
+    if let view = renderLoginView("") { // renderLoginView gives either String or nil -> renderLoginView
         response.appendBody(string: view) // String
         response.completed()
     } else { // if nil
@@ -72,15 +71,25 @@ func loginGetHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
 
 func loginPostHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("loginPostHandler()")
-    let valid = validate(username: request.params(named: "username")[0], password: request.params(named: "password")[0])
-    if valid == true {
-        request.session?.data["user"] = request.params(named: "username")[0]
-        response.status = .seeOther
-        response.setHeader(.location, value: "/home")
-        response.completed()
+    var msg: String
+    msg = fileExist(username: request.params(named: "username")[0])
+    if msg == Message.nouser {
+        let view = renderLoginView(msg)
+        response.status = .forbidden
+        response.appendBody(string: view!)
     } else {
-        sendFileNotFound(response)
+        msg = validate(username: request.params(named: "username")[0], password: request.params(named: "password")[0])
+        if msg == Message.fail{
+            let view = renderLoginView(msg)
+            response.status = .forbidden
+            response.appendBody(string: view!)
+        } else {
+            request.session?.data["user"] = request.params(named: "username")[0]
+            response.status = .seeOther
+            response.setHeader(.location, value: "/home")
+        }
     }
+    response.completed()
 }
 
 func newGetHandler(request: HTTPRequest, _ response: HTTPResponse) {
@@ -102,14 +111,8 @@ func newPostHandler(request: HTTPRequest, _ response: HTTPResponse) {
     user.lastname = request.params(named: "lastname")[0]
     user.email = request.params(named: "email")[0]
     user = encrypt(user)!
-    do {
-        let encoded = try user.jsonEncodedString()
-        print("json = \(encoded)")
-        storeProfile(profile: user)
-        sendSeeOther(response, value: "/success")
-    } catch {
-        sendInternalFail(response)
-    }
+    storeProfile(profile: user)
+    sendSeeOther(response, value: "/success")
 }
 
 func getHomeHandler(request: HTTPRequest, _ response: HTTPResponse) {
@@ -119,8 +122,8 @@ func getHomeHandler(request: HTTPRequest, _ response: HTTPResponse) {
         user = val
     }
     if user == "" {
-        loginGetHandler(request , response)
-    }else {
+        loginGetHandler(request, response)
+    } else {
         if let view = renderHomeView(user: user) {
             response.appendBody(string: view)
             response.completed()
@@ -274,6 +277,7 @@ class PublicFile {
 /**
  * Handler for chat
  */
+
 class ChatHandler: WebSocketSessionHandler {
     // Protocol
     let socketProtocol: String? = "chat"

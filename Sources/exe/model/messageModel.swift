@@ -8,7 +8,9 @@
 
 import Foundation
 
-public enum LoginMessage: String {
-    case none = ""
-    case serverfault = "(500) Entschuldigung, es ist ein Fehler aufgetretten"
+public struct Message {
+    static let ok = ""
+    static let serverfault = "Entschuldigung, es ist ein Fehler aufgetrette! Bitte versuch es später nochmal"
+    static let nouser = "Du bist noch nicht registriert"
+    static let fail = "Username oder Passwort falsch!"
 }
