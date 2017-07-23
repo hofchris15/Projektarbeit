@@ -2,10 +2,9 @@
 /.idea
 /cmake-build-debug
 /CMakeLists.txt
-/LICENSE
 /log.log
 log.log
-Packages/
-libmongoc-1.0
 profiles
 
+Würde LICENSE löschen
+Würde Sources/exe/model/session.swift löschen
