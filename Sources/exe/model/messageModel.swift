@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public enum LoginMessage: String {
+    case none = ""
+    case serverfault = "(500) Entschuldigung, es ist ein Fehler aufgetretten"
+}

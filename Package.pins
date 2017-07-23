@@ -2,6 +2,12 @@
   "autoPin": true,
   "pins": [
     {
+      "package": "AES256CBC",
+      "reason": null,
+      "repositoryURL": "https://github.com/SwiftyBeaver/AES256CBC.git",
+      "version": "1.2.0"
+    },
+    {
       "package": "COpenSSL",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL-Linux.git",
@@ -84,6 +90,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Thread.git",
       "version": "2.0.12"
+    },
+    {
+      "package": "PerfectWebSockets",
+      "reason": null,
+      "repositoryURL": "https://github.com/PerfectlySoft/Perfect-WebSockets.git",
+      "version": "2.0.1"
     },
     {
       "package": "SwiftMoment",

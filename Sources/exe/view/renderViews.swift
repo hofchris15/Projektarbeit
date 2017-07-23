@@ -10,51 +10,66 @@ import PerfectLogger
 var layout: String! = nil
 func setupLayout() -> Void {
     if (layout == nil) {
-        layout = getFileView(file: "layout.html") ?? "Layout failed {{ main }}!!"
+        layout = getFileView(file: "layout.html")
     }
 }
 
+var navbar: String! = nil
+func setupNavBar() -> Void {
+    if (navbar == nil) {
+        navbar = getFileView(file: "navbar.html") ?? ""
+    }
+}
+
+/// Build page from layout and navbar withview
+func buildView(_ view: String?, _ user: String) -> String? {
+    var result = layout?.replacingOccurrences(of: "{{ main }}", with: view ?? "Partial not found!!")
+    result = result?.replacingOccurrences(of: "{{ navbar }}", with: navbar ?? "<a href=\"/\"No navigation</a>")
+    result = result?.replacingOccurrences(of: "{{ user }}", with: user)
+    //todo message
+    return result
+}
 
 func renderLoginView() -> String? { //returns String or nil
     LogFile.debug("Rendering Login")
     setupLayout()
-    var view = getFileView(file: "login.html")
-    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
-    return view
+    setupNavBar()
+    return buildView(getFileView(file: "login.html"), "")
+}
+
+func renderChatView(user: String) -> String? {
+    LogFile.debug("Rendering Chat")
+    setupLayout()
+    setupNavBar()
+    return buildView(getFileView(file: "chat.html"), user)
 }
 
 func renderHomeView(user: String) -> String? {
     LogFile.debug("Rendering Home")
     setupLayout()
-    var view = getFileView(file: "home.html")
-    view = view?.replacingOccurrences(of: "{{ user }}", with: user)
-    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
-    return view
+    setupNavBar()
+    return buildView(getFileView(file: "home.html"), user)
 }
 
 func renderGradesView(user: String) -> String? {
     LogFile.debug("Rendering Grades")
     setupLayout()
-    var view = getFileView(file: "grades.html")
-    view = view?.replacingOccurrences(of: "{{ user }}", with: user)
-    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
-    return view
+    setupNavBar()
+    return buildView(getFileView(file: "grades.html"), user)
 }
 
 func renderRegistrationView() -> String? {
     LogFile.debug("Rendering New")
     setupLayout()
-    var view = getFileView(file: "registration.html")
-    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
-    return view
+    setupNavBar()
+    return buildView(getFileView(file: "registration.html"), "")
 }
 
 func renderSuccessView() -> String? {
     LogFile.debug("Rendering Success")
     setupLayout()
-    var view = getFileView(file: "success.html")
-    view = layout.replacingOccurrences(of: "{{ main }}", with: view ?? "Missing main")
-    return view
+    setupNavBar()
+    return buildView(getFileView(file: "success.html"), "")
 }
 
 func renderSchedularView() -> String {

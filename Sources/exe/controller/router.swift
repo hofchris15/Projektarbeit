@@ -6,6 +6,7 @@ import PerfectHTTP
 import PerfectLogger
 import PerfectLib
 import PerfectSession
+import PerfectWebSockets
 
 func makeRoutes() -> Routes {
     LogFile.debug("makeRoutes()")
@@ -18,6 +19,21 @@ func makeRoutes() -> Routes {
     routes.add(method: .post, uri: "/new", handler: newPostHandler)
     routes.add(method: .get, uri: "/success", handler: successHandler)
     routes.add(method: .get, uri: "/logout", handler: logoutHandler)
+    // Chat connection
+    routes.add(method: .get, uri: "/socket", handler: {
+        request, response in
+        WebSocketHandler(handlerProducer: {
+            (request: HTTPRequest, protocols: [String]) -> WebSocketSessionHandler? in
+            guard protocols.contains("chat") else {
+                LogFile.debug("Connection failed. Client use invalid protocols \(protocols)")
+                return nil
+            }
+            return ChatHandler()
+        }).handleRequest(request: request, response: response)
+        LogFile.debug("Starting Socket connection")
+        chatHandler(request: request, response: response)
+    })
+    routes.add(method: .get, uri: "/chat", handler: chatHandler)
 
     routes.add(method: .get, uri: "/home", handler: getHomeHandler)
     routes.add(method: .get, uri: "/schedular", handler: getSchedularHandler)
@@ -29,6 +45,7 @@ func makeRoutes() -> Routes {
                  PublicFile(route: "/javascript/clock.js"),
                  PublicFile(route: "/javascript/scripts.js"),
                  PublicFile(route: "/javascript/grade_worker.js"),
+                 PublicFile(route: "/javascript/chatFunctions.js"),
                  PublicFile(route: "/images/favicon.ico")]
     for file in files {
         routes.add(method: .get, uri: file.route, handler: file.sendFile)
@@ -155,6 +172,16 @@ func successHandler(request: HTTPRequest, _ response: HTTPResponse) {
     }
 }
 
+func chatHandler(request: HTTPRequest, response: HTTPResponse) {
+    LogFile.debug("chatHandler()")
+    if let view = renderChatView(user: (request.session?.data["user"] as? String) ?? "") {
+        response.appendBody(string: view)
+        response.completed()
+    } else {
+        sendFileNotFound(response)
+    }
+}
+
 func logoutHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("logoutHandler()")
     if let _ = request.session?.token {
@@ -240,6 +267,28 @@ class PublicFile {
 
     public func sendFile(request: HTTPRequest, _ response: HTTPResponse) {
         LogFile.debug("sendPublicFile(\(route))")
-        simpleSend(response, "./" + route)
+        simpleSend(response, "." + route)
+    }
+}
+
+/**
+ * Handler for chat
+ */
+class ChatHandler: WebSocketSessionHandler {
+    // Protocol
+    let socketProtocol: String? = "chat"
+
+    func handleSession(request: HTTPRequest, socket: WebSocket) {
+        socket.readStringMessage {
+            string, op, fin in
+            guard let string = string else {
+                socket.close()
+                return
+            }
+            LogFile.debug("Socket:: read:\(string) op:\(op) fin:\(fin)")
+            socket.sendStringMessage(string: string, final: true) {
+                self.handleSession(request: request, socket: socket)
+            }
+        }
     }
 }

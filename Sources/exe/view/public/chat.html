@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<main>
+    <section id="messageField">
+        <ul id="messages"></ul>
+    </section>
+    <form action="#" id="messageForm">
+        <input id="m" autocomplete="off" data-emojiable="true" placeholder="Gib hier deine Nachricht ein!" autofocus
+               required/>
+        <button id="sendmsg">Send</button>
+    </form>
+    <script src="/javascript/chatFunctions.js"></script>
+    <script src="/javascript/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            var socket = io.connect('http://localhost:3000');
+            $('form').submit(function () {
+                var username = document.getElementsByTagName("span");
+                for (var j = 0; j < username.length; ++j) {
+                    user = username[j].outerHTML;
+                }
+                user = user.match(/>([a-z0-9A-Z]*)</);
+                var message = user[1] + ": " + $('#m').val();
+                socket.emit('chat message', message);
+
+                $('#m').val('');
+
+                return false;
+            });
+            socket.on('chat message', function (msg) {
+
+
+                $('#messages').append($('<li>').text(msg));
+
+                document.getElementById("m").focus();
+                storeChat();
+            });
+        });
+    </script>
+</main>
