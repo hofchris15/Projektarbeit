@@ -112,9 +112,9 @@ public func readProfile(username: String) -> Profile? {
 
 public func validate(username: String, password: String) -> Bool {
     LogFile.debug("validate()")
-    let user: Profile! = readProfile(username: username)
-    let storedPasswd: String = user.password
-    let storedKey: String = user.key
+    let user: Profile? = readProfile(username: username)
+    let storedPasswd: String = user?.password ?? ""
+    let storedKey: String = user?.key ?? ""
     let decrypted = AES256CBC.decryptString(storedPasswd, password: storedKey)
     if password == decrypted {
         return true
