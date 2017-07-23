@@ -92,6 +92,18 @@ public func storeProfile(profile: Profile) -> Void {
 
 }
 
+public func fileExist(username:String) -> String {
+    LogFile.debug("fileExist()")
+    let profileFile = File("./profiles/\(username)/\(username).json")
+    var msg = ""
+    if !profileFile.exists{
+        msg = Message.nouser
+    } else {
+        msg = Message.ok
+    }
+    return msg
+}
+
 public func readProfile(username: String) -> Profile? {
     LogFile.debug("readProfile()")
     let profileFile = "./profiles/\(username)/\(username).json"
@@ -110,15 +122,17 @@ public func readProfile(username: String) -> Profile? {
     return nil
 }
 
-public func validate(username: String, password: String) -> Bool {
+public func validate(username: String, password: String) -> String {
     LogFile.debug("validate()")
     let user: Profile? = readProfile(username: username)
     let storedPasswd: String = user?.password ?? ""
     let storedKey: String = user?.key ?? ""
     let decrypted = AES256CBC.decryptString(storedPasswd, password: storedKey)
+    var msg = ""
     if password == decrypted {
-        return true
+        msg = Message.ok
     } else {
-        return false
+        msg = Message.fail
     }
+    return msg
 }
