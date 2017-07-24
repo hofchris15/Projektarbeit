@@ -278,26 +278,3 @@ class PublicFile {
         simpleSend(response, "." + route)
     }
 }
-
-/**
- * Handler for chat
- */
-
-class ChatHandler: WebSocketSessionHandler {
-    // Protocol
-    let socketProtocol: String? = "chat"
-
-    func handleSession(request: HTTPRequest, socket: WebSocket) {
-        socket.readStringMessage {
-            string, op, fin in
-            guard let string = string else {
-                socket.close()
-                return
-            }
-            LogFile.debug("Socket:: read:\(string) op:\(op) fin:\(fin)")
-            socket.sendStringMessage(string: string, final: true) {
-                self.handleSession(request: request, socket: socket)
-            }
-        }
-    }
-}
