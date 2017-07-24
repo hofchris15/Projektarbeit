@@ -35,7 +35,7 @@ function startWorker() {
 	var tmp = table.innerHTML;
 	if (typeof(Worker) !== "undefined") {
 		if (typeof(w) == "undefined") {
-			w = new Worker("grade_worker.js");
+            w = new Worker("/javascript/grade_worker.js");
 			var msg = new Array(user,pass);
 			w.postMessage(msg);
 			var parser, xml;

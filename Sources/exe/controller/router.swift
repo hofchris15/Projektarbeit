@@ -7,6 +7,7 @@ import PerfectLogger
 import PerfectLib
 import PerfectSession
 import PerfectWebSockets
+import Foundation
 
 func makeRoutes() -> Routes {
     LogFile.debug("makeRoutes()")
@@ -38,6 +39,7 @@ func makeRoutes() -> Routes {
     routes.add(method: .get, uri: "/home", handler: getHomeHandler)
     routes.add(method: .get, uri: "/schedular", handler: getSchedularHandler)
     routes.add(method: .get, uri: "/grades", handler: getGradesHandler)
+    routes.add(method: .get, uri: "/map", handler: getMapHandler)
 
     //public files
     let files = [PublicFile(route: "/style.css"),
@@ -47,7 +49,8 @@ func makeRoutes() -> Routes {
                  PublicFile(route: "/javascript/grade_worker.js"),
                  PublicFile(route: "/javascript/chatFunctions.js"),
                  PublicFile(route: "/javascript/socket.io.js"),
-                 PublicFile(route: "/images/favicon.ico")]
+                 PublicFile(route: "/images/favicon.ico"),
+                 PublicFile(route: "/javascript/geolocation.js")]
     for file in files {
         routes.add(method: .get, uri: file.route, handler: file.sendFile)
     }
@@ -64,6 +67,7 @@ func loginGetHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("loginGetHandler()")
     if let view = renderLoginView("") { // renderLoginView gives either String or nil -> renderLoginView
         response.appendBody(string: view) // String
+        sevenDayCaching(response)
         response.completed()
     } else { // if nil
         sendFileNotFound(response)
@@ -80,7 +84,7 @@ func loginPostHandler(request: HTTPRequest, _ response: HTTPResponse) {
         response.appendBody(string: view!)
     } else {
         msg = validate(username: request.params(named: "username")[0], password: request.params(named: "password")[0])
-        if msg == Message.fail{
+        if msg == Message.fail {
             let view = renderLoginView(msg)
             response.status = .forbidden
             response.appendBody(string: view!)
@@ -97,6 +101,7 @@ func newGetHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("newGetHandler()")
     if let view = renderRegistrationView() {
         response.appendBody(string: view)
+        sevenDayCaching(response)
         response.completed()
     } else {
         sendFileNotFound(response)
@@ -127,6 +132,7 @@ func getHomeHandler(request: HTTPRequest, _ response: HTTPResponse) {
     } else {
         if let view = renderHomeView(user: user) {
             response.appendBody(string: view)
+            sevenDayCaching(response)
             response.completed()
         } else {
             sendFileNotFound(response)
@@ -144,6 +150,7 @@ func getSchedularHandler(request: HTTPRequest, _ response: HTTPResponse) {
         loginGetHandler(request, response)
     } else {
         response.appendBody(string: renderSchedularView())
+        sevenDayCaching(response)
         response.completed()
     }
 }
@@ -159,6 +166,26 @@ func getGradesHandler(request: HTTPRequest, _ response: HTTPResponse) {
     } else {
         if let view = renderGradesView(user: user) {
             response.appendBody(string: view)
+            sevenDayCaching(response)
+            response.completed()
+        } else {
+            sendFileNotFound(response)
+        }
+    }
+}
+
+func getMapHandler(request: HTTPRequest, _ response: HTTPResponse) {
+    LogFile.debug("getMapHandler()")
+    var user = ""
+    if let val = request.session?.data["user"] as? String {
+        user = val
+    }
+    if user == "" {
+        loginGetHandler(request, response)
+    } else {
+        if let view = renderMapView(user: user) {
+            response.appendBody(string: view)
+            sevenDayCaching(response)
             response.completed()
         } else {
             sendFileNotFound(response)
@@ -170,6 +197,7 @@ func successHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("successHandler()")
     if let view = renderSuccessView() {
         response.appendBody(string: view)
+        sevenDayCaching(response)
         response.completed()
     } else {
         sendFileNotFound(response)
@@ -181,6 +209,7 @@ func chatHandler(request: HTTPRequest, response: HTTPResponse) {
     if let user = request.session?.data["user"] as? String {
         if let view = renderChatView(user: user) {
             response.appendBody(string: view)
+            noCaching(response)
             response.completed()
         } else {
             sendFileNotFound(response)
@@ -218,6 +247,7 @@ func sendHeaderPic(request: HTTPRequest, _ response: HTTPResponse) {
         response.status = .internalServerError
         response.setBody(string: "Error handling request: \(error)")
     }
+    sevenDayCaching(response)
     response.completed()
 }
 
@@ -255,8 +285,8 @@ func sendSeeOther(_ response: HTTPResponse, value: String) -> Void {
  */
 func simpleSend(_ response: HTTPResponse, _ file: String) {
     if let view = getFileView(file: file) {
-        print("file.realpath = \(file)")
         response.appendBody(string: view)
+        sevenDayCaching(response)
         response.completed()
     } else {
         sendFileNotFound(response)

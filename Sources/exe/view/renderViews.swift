@@ -61,6 +61,13 @@ func renderGradesView(user: String) -> String? {
     return buildView(getFileView(file: "grades.html"), user, "")
 }
 
+func renderMapView(user: String) -> String? {
+    LogFile.debug("Rendering Map")
+    setupLayout()
+    setupNavBar()
+    return buildView(getFileView(file: "map.html"), user, "")
+}
+
 func renderRegistrationView() -> String? {
     LogFile.debug("Rendering New")
     setupLayout()
