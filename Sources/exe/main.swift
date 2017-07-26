@@ -13,6 +13,7 @@ exit(1)
 #endif
 
 let server = HTTPServer()
+setupDir()
 LogFile.debug("init HTTPServer()")
 
 SessionConfig.name = "mobileExtendSession" //Session name which is set as cookie
