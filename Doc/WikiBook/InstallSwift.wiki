@@ -239,19 +239,19 @@ Objekte die als JSON serialisiert werden sollen, müssen von der Klasse JSONConv
 	&#160;&#160;&#160;&#160;var password = ""<br/>
 	....<br/>
 	....<br/>
-	&#160;&#160;&#160;&#160;override public func setJSONValues(_ values: [String: Any]) {<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;self.username = getJSONValue(named: "username", from: values, defaultValue: "")<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;self.password = getJSONValue(named: "password", from: values, defaultValue: "")<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;self.firstname = getJSONValue(named: "firstname", from: values, defaultValue: "")<br/>
+	override public func setJSONValues(_ values: [String: Any]) {<br/>
+	&#160;&#160;&#160;&#160;self.username = getJSONValue(named: "username", from: values, defaultValue: "")<br/>
+	&#160;&#160;&#160;&#160;self.password = getJSONValue(named: "password", from: values, defaultValue: "")<br/>
+	&#160;&#160;&#160;&#160;self.firstname = getJSONValue(named: "firstname", from: values, defaultValue: "")<br/>
 	....<br/>
 	....<br/>
 	override public func getJSONValues() -> [String: Any] {<br/>
 	return &#91;<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JSONDecoding.objectIdentifierKey: Profile.registerName,<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"username": username,<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"password": password,<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#93;<br/>
+	&#160;&#160;&#160;&#160;JSONDecoding.objectIdentifierKey: Profile.registerName,<br/>
+	&#160;&#160;&#160;&#160;"username": username,<br/>
+	&#160;&#160;&#160;&#160;"password": password,<br/>
+	&#160;&#160;&#160;&#160;...<br/>
+	&#160;&#160;&#160;&#160;&#93;<br/>
 	....<br/>
 	....<br/>
 </blockquote>
