@@ -208,7 +208,7 @@ Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server in
 
 ===Wichtige Punkte der Implementierung===
 
-===Linux===
+====Linux====
 Das Projekt soll nur auf Linux laufen deshalb wurde am Anfang folgender Code eingebunden, welcher das Betriebssystem überprüft und beendet sollte es kein Linux sein:
 <blockquote>
 	#if !os(Linux)<br/>
@@ -230,7 +230,7 @@ Bei der Session sind verschieden Konfigurationen möglich. Zu beachten ist jedoc
 	SessionConfig.userAgentLock = true //Session is bind to the user<br/>
 </blockquote>
 
-===JSON===
+====JSON====
 Objekte die als JSON serialisiert werden sollen, müssen von der Klasse JSONConvertibleObject erben, sowie die Methoden "setJSONValues" und "getJSONValues" müssen überschrieben bzw definiert werden. Zusätlich zu den üblichen Attributen des Objektes kommt ein Registrierungsname zum Einsatz. Dieser dient als Schlüssel für die Objektklasse und als Registrierungsschlüssel im Register der JSON-Decodable-Object Referenz. Mit diesem Schlüssel kann die Decodierung eines JSON Strings erfolgen und wird dem Objekt, dass erstellt werden soll zugeteilt.
 
 <blockquote>
@@ -263,7 +263,7 @@ Wichtig ist auch das die Objekt beim Start des Servers als JSONDecodable registr
 	JSONDecoding.registerJSONDecodable(name: Profile.registerName, creator: {return Profile()})<br/>
 </blockquote>
 
-===working Directory===
+====working Directory====
 Beim setzen des Working Directory ist zu beachten, dass solange der Server nicht neu gestartet wird, nicht mehr im Verzeichnisbaum nach oben gändert werden kann, nur nach unten. Deshalb sollte das Working Direktory vom Standardwert Sources, nur maximal in ein Unterverzeichnis, wie bei unserem Server, dem Verzeichnis "exe", geändert werden. Beim Setzen des Working Directory wird der Ausführungsprozess in ein darunterliegendes Verzeichnis verschoben.
 
 <blockquote>
