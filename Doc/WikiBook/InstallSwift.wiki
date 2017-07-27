@@ -191,6 +191,7 @@ Das Perfect Template hält die Standard Baumstruktur des swift init-Prozesses be
 
 ===Die wichtigsten Packages===
 Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server ins laufen zu bekommen. Diese Grund-Pakete sind PerfectLib COpenSSL, HTTP, HTTPServer, PerfectLib, LinuxBridge und Net.
+* Foundation ist die standard Bibliothek von Swift und bietet die grunsätlichen Funktionen und Definition wie (Strings, Numbers,...) die von der Swift.org veröffentlicht wurden. https://developer.apple.com/documentation/foundation
 * COpenSSL bietet verschieden Verschlüsselungstechniken und SSL/TLS Methoden zur Verfügung die auf Linux in C installiert werden (Dieses Paket wurde nicht verwendet) https://github.com/PerfectlySoft/Perfect-COpenSSL
 * HTTP bietet verschiedene Strukturen und Methoden um mit http Clients zu kommunizieren. Diese Paket muss mit "import PerfectHTTP" im Projekt eingebunden werden https://github.com/PerfectlySoft/Perfect-HTTP
 * HTTPServer bietet die Hauptstrukturen für HTTP 1.1 und HTTP 2 server und ist die Hauptabhängigkeit für das Projekt und muss mit "import PerfectHTTPServer" eingebunden werden https://github.com/PerfectlySoft/Perfect-HTTPServer
@@ -283,12 +284,6 @@ Beim setzen des Working Directory ist zu beachten, dass solange der Server nicht
 	}<br/>
 	var issetup = false<br/>
 </blockquote>
-
-==Conclusion==
-
-Leider mussten wir im lauf des Projektes feststellen, dass die Dokumentation von Swift nicht mehr auf dem aktuellsten Stand ist, Fehler enthält oder teilweise keine hilfreichen Information über die Verwendung verschiedener Packete bereithält.
-
-
 
 
 
