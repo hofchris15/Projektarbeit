@@ -13,7 +13,7 @@ Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine s
 
 ==Einzelnachweise==
 <ref name="ElektronikKompendium">{{Internetquelle |autor=Patrick Schnabel |jahr=2012 |titel=Compiler und Interpreter [online] |url=https://www.elektronik-kompendium.de/sites/com/1705231.htm |datum=2012-11-28 |zugriff=2017-07-27 }}
-Patrick Schnabel (2012), Compiler und Interpreter, 28.11.2012, Zugriff:27.07.2017</ref>
+Schnabel, Patrick (2012): Compiler und Interpreter, [online] 28.11.2012, https://www.elektronik-kompendium.de/sites/com/1705231.htm [27.07.2017]</ref>
 <ref name="SwiftAbout">{{Internetquelle |autor=o.V. |jahr=2017|titel=About Swift [online]|url=https://swift.org/about/|datum=ohne Veröffentlichunsdatum|zugriff=2017-07-27}}</ref>
 <ref name="devMozilla">{{Internetquelle|autor=o.V.|jahr=2017|titel=JavaScript Guide - Introduction|url=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction|datum=2017-05-25|zugriff=2017-07-27}}</ref>
 <ref name="w3schools.comjs">{{Internetquelle|autor=Refsnes Data|jahr=2017|titel=JavaScript Tutorial|url=https://www.w3schools.com/js|datum=ohne Datum|zugriff=2017-07-27}}</ref>
