@@ -81,9 +81,9 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 │&#09;│	└──router.swift<br/>
 │&#09;└──main.swift<br/>
 ├──Tests<br/>
-:::::::::├──FileTests<br/>
-:::::::::│	└──FileHandlerTests.swift<br/>
-:::::::::└──-LinuxMain.swift<br/>
+&#09;├──FileTests<br/>
+&#09;│	└──FileHandlerTests.swift<br/>
+&#09;└──-LinuxMain.swift<br/>
 </blockquote>
 ====richtige Struktur====
 <blockquote>
