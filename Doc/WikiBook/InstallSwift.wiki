@@ -73,17 +73,17 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 <blockquote>
 ├──Package.swift <br/>
 ├──Sources<br/>
-│&#160;&#160;&#160;&#160;├──model<br/>
-│&#09;│	└──fileHandler.swift<br/>
-│&#09;├──view<br/>
-│&#09;│	└──renderView.swift<br/>
-│&#09;├──controller<br/>
-│&#09;│	└──router.swift<br/>
-│&#09;└──main.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──model<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──fileHandler.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──view<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──renderView.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──controller<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──router.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──main.swift<br/>
 ├──Tests<br/>
-&#09;├──FileTests<br/>
-&#09;│	└──FileHandlerTests.swift<br/>
-&#09;└──-LinuxMain.swift<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──FileTests<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──FileHandlerTests.swift<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──-LinuxMain.swift<br/>
 </blockquote>
 ====richtige Struktur====
 <blockquote>
