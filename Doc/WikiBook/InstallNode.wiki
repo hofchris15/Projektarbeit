@@ -77,6 +77,7 @@ Der Compiler übersetz den Quellcode in ein maschinenlesbares Programm sodass, e
 JavaScript hat mit dem immer aufsteigenden Interesse und der schnellen Weiterentwicklung einen sehr interessante Geschichte. Auch wird es in der Webentwicklung serverseitig immer öfters eingesetz. Damit kann man neben PHP davon ausgehen das JavaScript mit Frameworks wie Node.js eine solide Basis für einen Vergleich bietet. Da Swift auch unter anderem die beste Sprache für die Webentwicklung werden möchte, kann somit ein Fazit gezogen werden, in wie weit Swift dieses Ziel bereits erreicht hat und in welchen Bereichen noch nachholbedarf besteht. 
 
 ===Installation des Node.js Servers===
+
 Der Server ist wie bereits bei der Installation des Swift-Servers von Github auszuchecken oder als .zip-Datei herunterzuladen. Nach dem auschecken oder entpacken des Projekts, muss mit einem Terminal ins Verzeichnis "NodeServer" gewechselt werden und der Server mit npm initalisiert werden. Dabei werden alle notwendigen Packages heruntergeladen und der Server kann mit node gestartet werden. 
 
 <blockquote>
@@ -85,7 +86,18 @@ Der Server ist wie bereits bei der Installation des Swift-Servers von Github aus
 	<code>node index.js</code><br/>
 </blockquote>
 
+===Die Server im Vergleich===
 
+Beide Server sind im MVC (Model View Controller) Pattern gehalten und haben folgenden Ablauf:
+Request wird empfangen und an einen den jeweiligen Handler weitergegeben.
+Handler geben entweder den Request direkt an eine View-Klasse/Methode oder an eine Model-Klasse/Methode weiter.
+Die Model Dateien speichern User-Daten wie Usernamen, Passwort, Vorname, Nachname und E-Mail in einem JSON File. Das Passwort wird bevor es gespeichert wird verschlüsselt.
+Die Profile der User werden in beide Servern als eigenen Objekt angelegt und können als JSON serialisiert werden. Als Sammelverzeichnis wird der Ordner "profiles" angelegt in dem wiederum ein Verzeichnis mit dem Usernamen in dem das JSON File gespeichert wird. Diese Verzeichnisse sind notwenig sollten Bilder oder ähnlichen zu den Usern gespeichert werden.
+Als zweite Funktion sind in den Model Dateien Funktionen enthalten, die diese Daten aus den JSON Files wieder ausliest, und das Passwort z.B. für den Login überprüfen. 
+Spätestens nachdem die Model-Funktionen fertig sind wird der Request an die View übergeben und werden hier in HTML aufbereitet und an den Client zurückgeschickt.
+Die Funktionalität ist für Studenten der FH Joanneum gedacht und können die tätsächlichen Noten mit dem Usernamen und Passwort der FH-Domain abrufen. 
+Die Server unterscheiden sich ausschließlich durch Sprach- und Framework spezifischen Vorgaben wie z.B. eine Funktion die in Express vorhanden ist jedoch in Perfect nicht und umgekehrt.
+Weiter haben wir versucht ähnliche Packages zu verwenden und so wenig Workaround zu verwenden, die Packages ersetzen.
 
 
 
