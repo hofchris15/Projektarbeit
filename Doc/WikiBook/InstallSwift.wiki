@@ -36,7 +36,6 @@ welches die Ausgabe:
 <code>Swift version 3.1.1 (swift-3.1.1-RELEASE)</code>
 
 zur Folge hat. 
-
 Eventuell muss die Besitzrechte des Swift-Installationsordner geändert werden, da eventuell Zugriffrechte nicht gegeben sind oder der root als Besitzer hinterlegt ist. Dazu wird folgender Befehl auf den Ordner angewand:
 
 <code>sudo chown -R user:user ~/install/swift-3.1.1-RELEASE-ubuntu16.10/</code>
@@ -59,49 +58,32 @@ Zuerst wird ein Verzeichnis erstellt, dass das neue Projekt repräsentiert und i
 
 Mit dem Ausführen des Init-Befehls wird unter anderem eine Package.swift Datei erstellt, in dem alle Abhängigkeiten des Projekt gespeichert werden. Weiter wir dein Verzeichnis Sources erstellt, in dem sich nur .swift-Datein befinden dürfen. Im Verzeichnis Tests befinden sich die Testklassen.
 
-<code>
+<blockquote>
 ├──Package.swift
-
 ├──Sources
-
-│	└──Hello.swift
-
+│:::::::::::::└──Hello.swift
 ├──Tests
-
-	├──HelloTests
-
-	│	 └──HelloTests.swift
-
-	└──LinuxMain.swift
-</code>
+::::::::::::├──HelloTests
+::::::::::::│:::::::::::::::└──HelloTests.swift
+::::::::::::└──LinuxMain.swift
+</blockquote>
 
 Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist direkt unter dem Sources Verzeichnis ein weiteres Verzeichnis z.b. "exe" anzulegen, in dem die gewünschte Ordnerstruktur z.b. für ein MVC-Pattern erstellt werden kann. Es ist aufgrund des Compilers und der Modularität nicht möglich, mehrere Ordner oder Ordner und .swift-Dateien gemischt im Sources-Verzeichnis zu compilieren. Dies liegt daran, dass der Compiler Verzeichnisse als Module versteht und jeweils nur ein Modul erstellt werden kann. Daher ignoriert er oder compiliert entweder nur die Hello.swift oder den ersten gefunden Ordner.
 ====flasche Struktur====
+<code>
 ├──Package.swift
-
 ├──Sources
-
-│	├──model
-
-│	│	└──fileHandler.swift
-
-│	├──view
-
-│	│	└──renderView.swift
-
-│	├──controller
-
-│	│	└──router.swift
-
-│	└──main.swift
-
+│::::::::::::├──model
+│::::::::::::│::::::::::└──fileHandler.swift
+│::::::::::::├──view
+│::::::::::::│::::::::::└──renderView.swift
+│::::::::::::├──controller
+│::::::::::::│::::::::::└──router.swift
+│::::::::::::└──main.swift
 ├──Tests
-
-	├──FileTests
-
-	│	 └──FileHandlerTests.swift
-
-	└──-LinuxMain.swift
+::::::::::::::├──FileTests
+::::::::::::::│:::::::::::::└──FileHandlerTests.swift
+::::::::::::::└──-LinuxMain.swift
 </code>
 ====richtige Struktur====
 <code>
