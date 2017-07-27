@@ -73,13 +73,13 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 <blockquote>
 ├──Package.swift <br/>
 ├──Sources<br/>
-│	├──model<br/>
-│	│	└──fileHandler.swift<br/>
-│	├──view<br/>
-│	│	└──renderView.swift<br/>
-│	├──controller<br/>
-│	│	└──router.swift<br/>
-│	└──main.swift<br/>
+│&#09;├──model<br/>
+│&#09;│	└──fileHandler.swift<br/>
+│&#09;├──view<br/>
+│&#09;│	└──renderView.swift<br/>
+│&#09;├──controller<br/>
+│&#09;│	└──router.swift<br/>
+│&#09;└──main.swift<br/>
 ├──Tests<br/>
 :::::::::├──FileTests<br/>
 :::::::::│	└──FileHandlerTests.swift<br/>
