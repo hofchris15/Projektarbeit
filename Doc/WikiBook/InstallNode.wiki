@@ -15,13 +15,13 @@ JavaScript am Server auszuführen ist seit Entstehung der Sprache eine laufende 
 	</tr>
 	<tr>
 		<td>Benutzer freundlichere Websites</td>
-		<td>JavaScript kann Clientseitig deaktiviert werden</td>
+		<td>JavaScript kann clientseitig deaktiviert werden</td>
 		<td>Open source server Framework</td>
-		<td>Unübersichtlichkeit der Community und Entwicklung durch sehr schnelles Wachstum</td>
+		<td>Unübersichtlichkeit der Community und der Entwicklung, durch sehr schnelles Wachstum</td>
 	</tr>
 	<tr>
 		<td>Dynamischer Inhalt von Websites</td>
-		<td>Wenn deaktiviert, oft schlechte Auswirkungen auf die Benutzerfreundlichkeit</td>
+		<td>Wenn deaktiviert, oft negative Auswirkungen</td>
 		<td>lauffähig auf Windows, Linux, Unix, Mac OS X, ...</td>
 		<td>Modulsytem verbraucht viel Speicher</td>
 	</tr>
@@ -32,16 +32,16 @@ JavaScript am Server auszuführen ist seit Entstehung der Sprache eine laufende 
 		<td>nur ein Prozess mit einem Speicher von 1,7 GB</td>
 	</tr>
 	<tr>
-		<td>Objekt-Referenzen werden erst zu Laufzeit geprüft</td>
+		<td>Objekt-Referenzen werden erst zur Laufzeit geprüft</td>
 		<td>schwach typisierte Variablen</td>
-		<td>Asyncron, event bassiert</td>
+		<td>Asynchron, event basiert</td>
 		<td>benötigt cluster um große Mengen abzuarbeiten</td>
 	</tr>
 	<tr>
 		<td>einfache prozeduale Sprache</td>
 		<td>kein natives Modulsystem</td>
-		<td>einbinden von C und C++ Libories</td>
-		<td>nicht alle Libories von C unc C++ verfügbar</td>
+		<td>einbinden von C und C++ libraries</td>
+		<td>nicht alle libraries von C und C++ verfügbar</td>
 	</tr>
 </table>
 
@@ -49,7 +49,7 @@ JavaScript am Server auszuführen ist seit Entstehung der Sprache eine laufende 
 
 JavaScript wurde in der <span class = "plainlinks">[http://www.ecma-international.org/ ECMA]</span> (European association for standardizing information and communication systems) spezifiziert. Der Name "ECMAScript" wurde deshalb gewählt weil Netscape und Microsoft sich nicht auf einen gemeinsamen Namen für die eigenständigen Sprachen "JScript und JavaScript" einigen konnten. Jedoch wurde dieser Name nie weitläufig zur Gewohnheit weil Brendan Eich, Erfinder von JavaScript meinte, dass dies "wie eine Hautkrankheit" klinge. Entwickler können die offene Sprache zum Entwickeln von Programmen nutzen und dabei sicher gehen, dass der Code unterstützt wird, wenn dieser den Standard einhält. 
 
-=== Swift vs. JavaScript=== (Quellen: https://www.elektronik-kompendium.de/sites/com/1705231.htm, Schrödinger lern HTML, CSS und JavaScript
+=== Swift vs. JavaScript=== 
 
 ====Ziel der Entwicklung====
 Einen großen Unterschied bei den beiden Sprachen liegt im Ziel der Entwicklung der Sprachen. JavaScript wurde entwickelt mit dem Ziel, statisches und langweiliges HTML und CSS im Web dynamischer zu gestallten und dem Client ein interaktives Web zu bietet. JavaScript ist beinahe auf jeder Website zu finden und auch nicht mehr wegzudenken.
@@ -61,19 +61,20 @@ Hingegen zu JavaScript ist Swift als eine Allzwecksprache erfunden worden, mit d
 ====Compiling====
 Da JavaScript eine dynamische Typisierte, prototypenbasierte, interpretierte Programmiersprache ist, wobei die Betonung auf "interpretierte" liegt. Der Unterschied liegt darin, dass Swift zu den kompilierten Sprachen zählt.
 
-''''Interpretiert Sprachen''''
+''''Interpretiert Sprachen:''''
+
 In dem Moment wo das Programm gestartet wird, wird der Code in Insturktionen übersetzt und auch ausgeführt. Diese Übersetzung übernimmt ein zusätliches Tool, der Interpreter. Dieser läuft wie eine virtuelle Maschine auf dem PC und nimmt Eingaben sowie den Quellcode und wandelt diesen in einen Hardwareunabhängigen Bytecode. Dies passiert während der Laufzeit wobei pro Porzessor ein Interpreter benötigt wird. 
 '''Vorteil:''' Leichter bei der Entwicklung, da bereits während der Entwicklung getestet werden kann. JavaScript wird im Plaintext an den Client übertragen und kann von anderen Entwicklern gelesen und gelernt werden.
 '''Nachteil:''' Langsamer und ineffizinter als kompilierte Sprachen, da Kontrollflusssteuernte Funktionen (Schleifen, Funktionen) immer wieder übersetzt werden müssen.
 
-''''Kompilierte Sprachen''''
+''''Kompilierte Sprachen:''''
 Der Compiler übersetz den Quellcode in ein maschinenlesbares Programm sodass, es vom Menschen nicht mehr gelesen werden kann jedoch sofort ausgeführt werden kann. Dieses Porgramm bzw. die Anweisungen im Programm werden direkt vom Prozessor ausgeführt. Jedesmal wenn sich im Programmcode etwas ändert, muss der gesamte Code neue kompiliert werden.
 '''Vorteil:''' Der Code wird durch den Compiler optimiert. Kompilierte Programme sind sehr schnell in der Ausführung.
 '''Nachteil:''' Der Aufwand bei der Entwicklung ist ist zeitraubender, da das Programm vor einem Testlauf jedesmal neu kompiliert werden muss.
 
 ===Warum JavaScript mit Node.js als Reverenz===
 
-JavaScript hat mit dem immer aufsteigenden Interesse und der schnellen Weiterentwicklung einen sehr interessante Geschichte. Auch wird es zusehens in der Webentwicklung serverseitig immer öfters eingesetz. Damit kann man neben PHP davon ausgehen das JavaScript mit Frameworks wie Node.js eine solide Basis für einen Vergleich ermöglicht. Da Swift auch unter anderem die beste Sprache für die Webentwicklung werden möchte, kann somit ein Fazit gezogen werden, in wie weit Swift dieses Ziel bereits erreicht hat und in welchen Bereichen noch nachholbedarf besteht. 
+JavaScript hat mit dem immer aufsteigenden Interesse und der schnellen Weiterentwicklung einen sehr interessante Geschichte. Auch wird es in der Webentwicklung serverseitig immer öfters eingesetz. Damit kann man neben PHP davon ausgehen das JavaScript mit Frameworks wie Node.js eine solide Basis für einen Vergleich bietet. Da Swift auch unter anderem die beste Sprache für die Webentwicklung werden möchte, kann somit ein Fazit gezogen werden, in wie weit Swift dieses Ziel bereits erreicht hat und in welchen Bereichen noch nachholbedarf besteht. 
 
 ===Installation des Node.js Servers===
 Der Server ist wie bereits bei der Installation des Swift-Servers von Github auszuchecken oder als .zip-Datei herunterzuladen. Nach dem auschecken oder entpacken des Projekts, muss mit einem Terminal ins Verzeichnis "NodeServer" gewechselt werden und der Server mit npm initalisiert werden. Dabei werden alle notwendigen Packages heruntergeladen und der Server kann mit node gestartet werden. 
