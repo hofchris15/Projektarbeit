@@ -86,14 +86,14 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 <blockquote>
 ├──Package.swift<br/>
 ├──Sources<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──exe<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──model<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──fileHandler.swift<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──view<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──renderView.swift<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──controller<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──router.swift<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──main.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──exe<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──model<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──fileHandler.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──view<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──renderView.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──controller<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──router.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──main.swift<br/>
 ├──Tests<br/>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──FileTests<br/>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──FileHandlerTests.swift<br/>
@@ -101,11 +101,13 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 </blockquote>
 
 ===Swift compiling===
-Der Swift Compiler kann mit dem Befehl <br/>
-<code>swift build</code><br/>
- gestartet werden, dazu muss man sich im Projektordner befinden. Durch das aufrufen des Compilers werden die im Package.swift eingetragenen Abhängigkeiten z.B. von Github heruntergeladen und compiliert. Dabei wird das Verzeichnis ".build" erstellt in dem sich der ausführbare Code befindet. Erst danach wird der eigene produzierte Code compiliert und ebenfalls ins Verzeichnis "/.build/debug" gespeichert. Das compilieren von Abhängigkeiten erfolgt nur einmal nach dem Download oder dem Download von Aktualiesierungen. Die Packages werden im Ordnerbaum abgespeichert damit sie nicht jedesmal compilieren heruntergeladen werden müssen. In der alten Version 3.0 wurde dazu ein eignes Verzeichnis "Packages" angelegt, und die aus Github ausgecheckten Module in Form von Source Code gespeichert. Seit dem Update auf die Version 3.1 wird diese Verzeichnis "Packages" im Überverzeichnis ".build" mit abgespeichert. Auch hier ist der Source Code der Module zu finden. Der Compiler ingnoriert beim compilieren grundsätlich alle Verzeichnisse ab dem Sources-Ordner was zur Folge hat, das Swift-Datein bzw. Klassen nicht wie in bekannt andern Sprachen z.B. mit einem "import"-Befehl zur Verfügung gestellt werden müssen, sondern automatisch als eine große Swift-Datei angesehen werden.
+Der Swift Compiler kann mit dem Befehl
 
-Der Swift Compiler unterstütz die Systemsprachen von C oder Objective-C was durch den Clang Importer erreicht wird. Der Clang-Importer importiert Clang-Module, die die C und Objective-C APIs auf die Swift APIs mappen, wodurch das compilieren auf Linux bewerkstelligt wird.
+<code>swift build</code>
+
+gestartet werden, dazu muss man sich im Projektordner befinden. Durch das aufrufen des Compilers werden die im Package.swift eingetragenen Abhängigkeiten z.B. von Github heruntergeladen und compiliert. Dabei wird das Verzeichnis ".build" erstellt in dem sich der ausführbare Code befindet. Erst danach wird der eigene produzierte Code compiliert und ebenfalls ins Verzeichnis "/.build/debug" gespeichert. Das compilieren von Abhängigkeiten erfolgt nur einmal nach dem Download oder dem Download von Aktualiesierungen. Die Packages werden im Ordnerbaum abgespeichert damit sie nicht jedesmal compilieren heruntergeladen werden müssen. In der alten Version 3.0 wurde dazu ein eignes Verzeichnis "Packages" angelegt, und die aus Github ausgecheckten Module in Form von Source Code gespeichert. Seit dem Update auf die Version 3.1 wird diese Verzeichnis "Packages" im Überverzeichnis ".build" mit abgespeichert. Auch hier ist der Source Code der Module zu finden. Der Compiler ingnoriert beim compilieren grundsätlich alle Verzeichnisse ab dem Sources-Ordner was zur Folge hat, das Swift-Datein bzw. Klassen nicht wie in bekannt andern Sprachen z.B. mit einem "import"-Befehl zur Verfügung gestellt werden müssen, sondern automatisch als eine große Swift-Datei angesehen werden.
+
+Der Swift Compiler unterstütz die Systemsprachen von C und Objective-C was durch den Clang Importer erreicht wird. Der Clang-Importer importiert Clang-Module, die die C und Objective-C APIs auf die Swift APIs mappen, wodurch das compilieren auf Linux bewerkstelligt wird.
 
 ==Server installieren==
 
@@ -115,10 +117,14 @@ Der Server wird auf Github ausgecheckt und compiliert. Dazu folgenden Link <span
 Folgende Befehle sind auszuführen:
 
 <blockquote>
-<code>mkdir SwiftServer</code><br/>
-<code>cd SwiftServer</code><br/>
-<code>git clone https://github.com/hofchris15/Projektarbeit.git</code><br/>
-<code>swift build</code> oder <code>swift build --configuration release</code><br/>
+	<code>mkdir SwiftServer</code><br/>
+	<code>cd SwiftServer</code><br/>
+	<code>git clone https://github.com/hofchris15/Projektarbeit.git</code><br/>
+	<code>swift build</code> 
+
+	oder 
+
+	<code>swift build --configuration release</code><br/>
 </blockquote>
 
 Mit dem ersten Befehl wird in einem beliebigen Verzeichnis der Ordner SwiftServer erstellt, der als Projektordner dient. Danach wechselt man in das Verzeichnis und checkt den Server von Github aus. Danach liegt der Server in Form von Source Code im Verzeichnis "SwiftServer" auf und kann mit dem letzten Befehl compiliert werden. Mit diesem Kommando wird ein debug compilierung durchgeführt, das für die Entwicklung benötigt wird, da mehr Informationen während der Laufzeit an den Entwickler ausgegeben werden. Um den Server jemanden außerhalb des Entwicklungsbereichs zu übergeben wird empfohlen den compiler auf den release-Modus zu stellen. Dazu wird der Befehl <code>swift build --configration release</code> ausgeführt. Je nach compiler Konfiguration wird das Produkt im Verzeichnis .build/debug/exe abgelegt oder .build/release/exe abgelegt.
@@ -128,25 +134,35 @@ Damit ist die Installation des Servers abgeschlossen und der Server kann gestart
 Der Ablauf ohne Git ist geringfühgig anders als bei der Installation mit Git. Dazu wird der Server als .zip-Archiv von Github heruntergeladen und in das zuvor erstellt Verzeichnis "SwiftServer" entpackt. 
 
 <blockquote>
-<code>mkdir SwiftServer</code><br/>
-<code>cd SwiftServer</code><br/>
-<code>sudo tar -xcf /path/to/SwiftServer.zip ./</code><br/>
-<code>swift build</code> oder <code>swift build --configuration release</code><br/>
+	<code>mkdir SwiftServer</code><br/>
+	<code>cd SwiftServer</code><br/>
+	<code>sudo tar -xcf /path/to/SwiftServer.zip ./</code><br/>
+	<code>swift build</code> 
+
+	oder 
+
+	<code>swift build --configuration release</code><br/>
 </blockquote>
 
 Danach ist die Installation auch ohne Git abgeschlossen und der Server kann gestartet werden.
 
 ==Server starten==
 Der Server kann über ein Terminal gestartet werden nachdem dieser compiliert wurde siehe auch: [[Installation von Swift#Server installieren]] 
-Danach kann der Server mit folgende Kommandos gestartet werden. Einzige Vorraussetzung ist, das man sich bereits mit dem Terminal im Projektordner befindet.<br/>
-<code> ./.build/debug/exe <code> oder mit <code>./.build/release/exe</code><br/>
+Danach kann der Server mit folgende Kommandos gestartet werden. Einzige Vorraussetzung ist, das man sich bereits mit dem Terminal im Projektordner befindet.
+
+<code> ./.build/debug/exe <code>
+
+oder mit 
+
+<code>./.build/release/exe</code><br/>
+
 Danach sollte folgend Ausgabe auf dem Terminal angezeigt werden:
 
 <blockquote>
-[DBG] init HTTPServer()<br/>
-[DBG] makeRoutes()<br/>
-[INFO] set config<br/>
-[INFO] Starting HTTP server on 0.0.0.0:3000<br/>
+	[DBG] init HTTPServer()<br/>
+	[DBG] makeRoutes()<br/>
+	[INFO] set config<br/>
+	[INFO] Starting HTTP server on 0.0.0.0:3000<br/>
 </blockquote>
 
 Mit der letzen Zeile wird darüber informiert, dass der Server gestartet wurde und auf dem Port 3000 hört. Somit kann dieser mit einem bliebigen Browser angesteuert werden. Dazu wird in die Adressleiste <small>localhost:3000</small> eingegeben und es sollte die Login-Seite des Services angezeigt werden. 
@@ -163,7 +179,11 @@ Schlussendlich haben wir uns für swift Perfect entschieden. Grund dafür waren 
 
 ===Installation von Perfect===
 
-Auch Perfect setzt einige Packet auf Linux voraus, darunter openssl, libssl-dev und uuid-dev. Diese können sehr leicht mit <code> sudo apt-get install openssl libssl-dev uuid-dev</code> installiert werden. 
+Auch Perfect setzt einige Packet auf Linux voraus, darunter openssl, libssl-dev und uuid-dev. Diese können sehr leicht mit 
+
+<code> sudo apt-get install openssl libssl-dev uuid-dev</code> 
+
+installiert werden. 
 
 ===Perfect Template ===
 Das Perfect Template wurde von uns als Ausgangspunkt der Entwicklung des HTTP Servers im MVC-Pattern gewählt. Als Reverence wurde von uns der selbe Server zuvor mit <span class = "plainlinks">[https://nodejs.org/en/  Node.js ]</span> und dem Framework <span class = "plainlinks">[http://expressjs.com/de/  Express.js ]</span> implementiert.
@@ -190,34 +210,29 @@ Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server in
 ===Linux===
 Das Projekt soll nur auf Linux laufen deshalb wurde am Anfang folgender Code eingebunden:
 <blockquote>
-	<syntaxhighlight lang="cpp">
 	#if !os(Linux)<br/>
 	import Glibc<br/>
 	print("We are sorry this is only meant to be run on Linux")<br/>
 	exit(1)<br/>
 	#endif<br/>
-	</syntaxhighlight>
 </blockquote>
 
 ====Session Verwaltung====
 Bei der Session sind verschieden Konfigurationen möglich zu beachten ist jedoch das die cookieDomain die festgelegt werden kann während der Entwicklung nicht festgelgt werden darf sollange der Server nicht gehostet wurde.
 
 <blockquote>
-	<syntaxhighlight lang="cpp">
 	SessionConfig.name = "mobileExtendSession" //Session name which is set as cookie<br/>
 	SessionConfig.idle = 86400  // idle time set to one day<br/>
 	// Optional<br/>
 	//SessionConfig.cookieDomain = "localhost"<br/>
 	SessionConfig.IPAddressLock = true //Session is bind to the IP address of the first request<br/>
 	SessionConfig.userAgentLock = true //Session is bind to the user<br/>
-	</syntaxhighlight>
 </blockquote>
 
 ===JSON===
 Objekte die als JSON serialisiert werden sollen müssen von der Klasse JSONConvertibleObject erben und die Methoden "setJSONValues" und "getJSONValues" müssen überschrieben werden.
 
 <blockquote>
-	<syntaxhighlight lang="cpp">
 	public class Profile: JSONConvertibleObject {<br/>
 	static let registerName = "profile"<br/>
 		var username = ""<br/>
@@ -239,22 +254,18 @@ Objekte die als JSON serialisiert werden sollen müssen von der Klasse JSONConve
 			]<br/>
 	....<br/>
 	....<br/>
-	</syntaxhighlight>
 </blockquote>
 
 Wichtig ist auch das die Objekt beim Start des Servers als JSONDecodable registriert werden müssen:
 
 <blockquote>
-	<syntaxhighlight lang="cpp">
 	JSONDecoding.registerJSONDecodable(name: Profile.registerName, creator: {return Profile()})<br/>
-	</syntaxhighlight>
 </blockquote>
 
 ===working Directory===
 Beim setzen des Working Directory ist zu beachten, dass solange der Server nicht neu gestartet wird, nicht mehr im Verzeichnisbaum nach oben gändert werden kann, nur nach unten. Deshalb sollte das Working Direktory vom Standardwert Sources, nur maximal in ein Unterverzeichnis, wie bei unserem Server, dem Verzeichnis "exe", geändert werden. Beim Setzen des Working Directory wird der Ausführungsprozess in ein darunterliegendes Verzeichnis verschoben.
 
 <blockquote>
-	<syntaxhighlight lang="cpp">
 	func setupDir(_: Void) -> Void {<br/>
 		let workingDir = Dir("./Sources/exe")<br/>
 		if workingDir.exists {<br/>
@@ -271,7 +282,6 @@ Beim setzen des Working Directory ist zu beachten, dass solange der Server nicht
 		issetup = true<br/>
 	}<br/>
 	var issetup = false<br/>
-	</syntaxhighlight>
 </blockquote>
 
 ==Conclusion==
