@@ -66,7 +66,7 @@ Mit dem Ausführen des Init-Befehls wird unter anderem eine Package.swift Datei 
 </blockquote>
 
 Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist direkt unter dem Sources Verzeichnis ein weiteres Verzeichnis z.b. "exe" anzulegen, in dem die gewünschte Ordnerstruktur z.b. für ein MVC-Pattern erstellt werden kann. Es ist aufgrund des Compilers und der Modularität nicht möglich, mehrere Ordner oder Ordner und .swift-Dateien gemischt im Sources-Verzeichnis zu compilieren. Dies liegt daran, dass der Compiler Verzeichnisse als Module versteht und jeweils nur ein Modul erstellt werden kann. Daher ignoriert er oder compiliert entweder nur die Hello.swift oder den ersten gefunden Ordner.
-====falsche Struktur====
+====Falsche Struktur====
 <blockquote>
 ├──Package.swift <br/>
 ├──Sources<br/>
@@ -82,7 +82,7 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──FileHandlerTests.swift<br/>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──-LinuxMain.swift<br/>
 </blockquote>
-====richtige Struktur====
+====Richtige Struktur====
 <blockquote>
 ├──Package.swift<br/>
 ├──Sources<br/>
@@ -111,10 +111,9 @@ Der Swift Compiler unterstütz die Systemsprachen von C und Objective-C was durc
 
 ==Server installieren==
 
-Der Server wird auf Github ausgecheckt und compiliert. Dazu folgenden Link <span class = "plainlinks">[https://github.com/hofchris15/Projektarbeit.git Github/Projekt ]</span> mit Git ausführen oder als zip herunterladen. In diesem Repository befinden sich der Ordner NodeServer in dem der Reverenz-Server in JavaScript mit Node und Express.js geschrieben ist. Im Ordner SwiftServer befindet sich der in Swifft geschriebene Server, der für diese Installation relevant ist. Damit der Server läuft ist der Node-Server irrelevant, sodass dieser gelöscht werden kann oder ausgeführt werden kann wie im Kapitel "Installation Node Server" beschrieben ist.
+Der Server wird auf Github ausgecheckt und compiliert. Davor können zwei Einstellungen in der Config.swift eingestellt werden. Der Host vorab auf "localhost" eingestellt und der Port der vorab auf "3000" eingestellt ist. Das Projekt ist unter <span class = "plainlinks">[https://github.com/hofchris15/Projektarbeit.git Github/Projekt ]</span> mit Git auszuchecken oder als zip herunterladen. In diesem Repository befinden sich der Ordner NodeServer in dem der Reverenz-Server in JavaScript mit Node und Express.js geschrieben ist. Im Ordner SwiftServer befindet sich der in Swifft geschriebene Server, der für diese Installation relevant ist. Damit der Server läuft ist der Node-Server irrelevant, sodass dieser gelöscht werden kann oder ausgeführt werden kann wie im Kapitel "Installation Node Server" beschrieben ist.
 
 ===Installation mit Git===
-Folgende Befehle sind auszuführen:
 
 <blockquote>
 	<code>mkdir SwiftServer</code><br/>
@@ -199,7 +198,7 @@ Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server in
 * LinuxBridge bildet die Brücke zwischen Perfect und den Linux Distriputionen https://github.com/PerfectlySoft/Perfect-LinuxBridge
 * Net ist ein networking Paket welches TCP, SSL, UNIX Socket files und IO Event Handling zur Verfügung stellt. https://github.com/PerfectlySoft/Perfect-Net
 
-===zusätzliche Packages===
+===Zusätzliche Packages===
 
 * Perfect-Logger und Perfect-RequestLogger sind Pakete die zum Loggen von Informationen auf die Konsole oder in ein Log File. der RequestLogger ist eine Kindklasse vom Logger und fängt durch das einbinden von Filtern alle Request und logged diese mit. https://github.com/PerfectlySoft/Perfect-RequestLogger
 * Perfect-Session wurde verwendet um einen Session zu starten, verwalten und wieder zu vernichten. https://github.com/PerfectlySoft/Perfect-Session
@@ -263,7 +262,7 @@ Wichtig ist auch das die Objekt beim Start des Servers als JSONDecodable registr
 	JSONDecoding.registerJSONDecodable(name: Profile.registerName, creator: {return Profile()})<br/>
 </blockquote>
 
-====working Directory====
+====Working Directory====
 Beim setzen des Working Directory ist zu beachten, dass solange der Server nicht neu gestartet wird, nicht mehr im Verzeichnisbaum nach oben gändert werden kann, nur nach unten. Deshalb sollte das Working Direktory vom Standardwert Sources, nur maximal in ein Unterverzeichnis, wie bei unserem Server, dem Verzeichnis "exe", geändert werden. Beim Setzen des Working Directory wird der Ausführungsprozess in ein darunterliegendes Verzeichnis verschoben.
 
 <blockquote>
