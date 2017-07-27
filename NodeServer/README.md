@@ -1,5 +1,5 @@
 RIA_Projekt_G1
-Rich Internet Application Abschlussprojekt erstellt von Roitinger Michael, Moder Stefan und Hofer Christian
+Rich Internet Application Abschlussprojekt & Referenzserver für die Projektarbeit des 4ten Semester SWD15 erstellt von Roitinger Michael, Moder Stefan und Hofer Christian
 
 Quick Start
 
