@@ -1,0 +1,36 @@
+{
+    "name": "extendmobile",
+    "version": "1.0.0",
+    "description": "procject for RIA",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha ./test/*.js",
+        "start": "node ./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hofchris15/RIA_Projekt_G1.git"
+    },
+    "author": "Moder Stefan, Roitinger Michael, Christian Hofer",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hofchris15/RIA_Projekt_G1/issues"
+    },
+    "homepage": "https://github.com/hofchris15/RIA_Projekt_G1#readme",
+    "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.17.1",
+        "compression": "^1.6.2",
+        "express": "^4.15.2",
+        "express-formidable": "^1.0.0",
+        "express-session": "^1.15.2",
+        "handlebars": "^4.0.6",
+        "minify-all": "^1.2.2",
+        "socket.io": "^2.0.3",
+        "validator": "^7.1.0",
+        "winston": "^2.3.1"
+    },
+    "devDependencies": {
+        "mocha": "^3.4.2"
+    }
+}

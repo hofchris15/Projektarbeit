@@ -1,0 +1,10 @@
+<script type="text/javascript">
+        (function(){
+            setTimeout(function(){
+                window.location="/login";
+            },5000); /* 1000 = 1 second*/
+        })();
+</script>
+<h1>Du wurdest erfolgreich registriert!</h1>
+<p>Wir leiten dich in kurze zum Login weiter! <br />
+Solltest du nicht weiter geleitet werden klicke bitter <a href="/login">hier!</a></p>

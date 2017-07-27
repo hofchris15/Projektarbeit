@@ -1,0 +1,507 @@
+/*mobile first: for mobile phones*/
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 2em 4fr 10%;
+    grid-template-columns: 100%;
+    grid-template-areas: "header" "nav" "main" "footer";
+    background: #cccccc;
+    y-overflow: auto;
+}
+
+header {
+    grid-area: header;
+
+}
+
+main {
+    grid-area: main;
+    margin: 0em;
+    padding: 1em 4em 1em 2em;
+}
+
+#change {
+    height: 100%;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+#canvasLogo {
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    height: 61em;
+    width: 100%;
+    background-color: white;
+}
+
+h1 {
+    color: #76b82a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 2em;
+    margin: 0 0 1em;
+}
+
+h2 {
+    color: #76b82a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.4em;
+    margin: 0 0 0.8em;
+}
+
+p {
+    color: #222;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1.4em;
+    margin: 0 0 0.8em;
+}
+
+a {
+    color: #222;
+    text-decoration: underline;
+}
+
+a:hover {
+    background: #76b82a;
+    color: #eee;
+    text-decoration: none;
+}
+
+/*
+ *
+ Style for Grades Table
+ *
+ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #76b82a;
+    color: white;
+}
+
+svg {
+    display: none;
+}
+
+th {
+    text-align: left;
+}
+
+img {
+    display: none;
+}
+
+#map {
+    height: 75%;
+    width: 100%;
+}
+
+#message {
+    color: red;
+    text-align: center;
+    background-color: white;
+    font-size: 2em;
+}
+
+div ul li a img {
+    height: 5%;
+    width: 5%;
+}
+
+/*
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+ */
+
+#messageForm {
+    background: #000;
+    padding: 0.2em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#messageForm input {
+    border: 0;
+    padding: 10px;
+    width: 75%;
+    margin-right: .5%;
+    line-break: auto;
+}
+
+#messageForm button {
+    width: 20%;
+    background: #76b82a;
+    border: none;
+    padding: 10px;
+
+}
+
+#messageForm button:hover {
+    background: linear-gradient(to bottom, #76b82a 5%, green 100%);
+    background-color: #76b82a;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+    background: #eee;
+}
+
+#messageField {
+    background-color: antiquewhite;
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+    height: 30em;
+    position: relative;
+    left: 25%;
+    max-height: 30em;
+    overflow-y: scroll;
+
+}
+
+ul {
+    margin: 0px;
+    padding: 1px;
+}
+
+li {
+    list-style: none;
+}
+
+/*
+navigation bar
+ */
+
+nav {
+    grid-area: nav;
+    position: relative;
+    background-color: #797979;
+    width: 100%;
+    z-index: 1;
+}
+
+#navi {
+    padding-top: 0.5em;
+}
+
+nav .username {
+    position: relative;
+    top: -0.3em;
+    left: 1em;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', arial, sans;
+    display: none;
+
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+
+    left: 1em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 2em;
+    min-width: 1em;
+    box-shadow: 0em 0em 0.9375em rgba(0, 0, 0, 0.2);
+    padding: 0.75em 1em;
+    z-index: 1;
+
+    background-color: #797979;
+}
+
+.dropdown-content a {
+    margin: 0em;
+    padding: 0em;
+    color: white;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: white;
+}
+
+/*
+Style for Login Form
+*/
+
+.form-style-8, .register-form-style {
+    font-family: 'Open Sans Condensed', arial, sans;
+    padding: 1.875em;
+    background: #FFFFFF;
+    margin: 3.125em auto;
+    box-shadow: 0em 0em 0.9375em rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0em 0em 0.9375em rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0em 0em 0.9375em rgba(0, 0, 0, 0.22);
+    width: 50%;
+}
+
+.form-style-8 h1, .register-form-style h1 {
+    background: #797979;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', sans-serif;
+    color: white;
+    font-size: 1.125em;
+    font-weight: 100;
+    padding: 1.25em;
+    margin: -1.67em -1.67em 1.67em -1.67em;
+}
+
+.form-style-8 input[type="text"], .form-style-8 input[type="password"], .form-style-8 select,
+.register-form-style input[type="text"], .register-form-style input[type="password"], .register-form-style input[type="email"],
+.register-form-style select {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 0.4375em;
+    border: none;
+    border-bottom: 0.0625em solid #ddd;
+    background: transparent;
+    margin-bottom: 0.625em;
+    font: 1em Arial, Helvetica, sans-serif;
+    height: 2.8125em;
+}
+
+.form-style-8 textarea, .register-form-style textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.form-style-8 input[type="button"], .form-style-8 input[type="submit"],
+.register-form-style input[type="button"], .register-form-style input[type="submit"] {
+    -moz-box-shadow: inset 0em 0.0625em 0em 0em #76b82a;
+    -webkit-box-shadow: inset 0em 0.0625em 0em 0em #76b82a;
+    box-shadow: inset 0px 1px 0px 0px #76b82a;
+    background-color: #76b82a;
+    border: 0.0625em solid green;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 0.875em;
+    padding: 0.56em 1.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.form-style-8 input[type="button"]:hover, .form-style-8 input[type="submit"]:hover,
+.register-form-style input[type="button"]:hover, .register-form-style input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #76b82a 5%, green 100%);
+    background-color: #76b82a;
+}
+
+#loading {
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+
+/*for tablets*/
+@media only screen and (min-width: 600px) {
+    body {
+        display: grid;
+        grid-template-rows: 7.2em 2em 4fr 10%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "header header" "nav nav" "main main" "footer footer";
+
+    }
+
+    section {
+        width: auto;
+        margin-left: 1em;
+    }
+
+    .form-style-8 {
+        width: 50%;
+        height: 17em;
+    }
+
+    .register-form-style {
+        width: 50%;
+        height: auto;
+    }
+
+    #canvasLogo {
+        width: auto;
+        height: 4em;
+        position: absolute;
+        right: 0em;
+    }
+
+    img {
+        display: inline-block;
+        height: 7.2em;
+        width: 100%;
+    }
+
+}
+
+/*for desktop*/
+@media screen and (min-width: 1200px) {
+    body {
+        display: grid;
+        grid-template-rows: 10em 2.5em 4fr 10em;
+        grid-template-columns: 10% 25% 40% 25%;
+        grid-template-areas: "header header header header" "nav nav nav nav" "main main main main" "footer footer footer footer";
+
+    }
+
+    br {
+        display: none;
+    }
+
+    #canvasLogo {
+        width: auto;
+        height: 8em;
+
+        position: absolute;
+        right: 0em;
+    }
+
+    svg {
+        display: block;
+        height: auto;
+        position: relative;
+        left: 85%;
+        bottom: 24em;
+    }
+
+    .clock {
+        bottom: 38em;
+    }
+
+    section {
+        width: auto;
+        margin-left: 1em;
+    }
+
+    .form-style-8 {
+        width: 50%;
+        height: 17em;
+    }
+
+    .register-form-style {
+        width: 50%;
+        height: 30em;
+    }
+
+    #register {
+        position: relative;
+        top: -20em;
+    }
+
+    /*
+    navigation bar
+    */
+    nav .username {
+        position: relative;
+        top: 0.3em;
+        left: 0.7em;
+        font-weight: bold;
+        font-family: 'Open Sans Condensed', arial, sans;
+        font-size: 1.5em;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    .dropdown {
+        position: relative;
+        display: block;
+        width: 100%;
+        top: 0em;
+        left: 0em;
+    }
+
+    .dropdown p {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: inline;
+        position: absolute;
+        top: -2em;
+        left: 10em;
+        min-width: 5em;
+        box-shadow: 0em 0em 0em rgba(0, 0, 0, 0);
+        padding: 1em;
+        z-index: 1;
+        background-color: transparent;
+    }
+
+    .dropdown-content a {
+        padding: 0.9em 0.5em 0.63em 0.5em;
+        text-decoration: none;
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+
+
+        background-color: #76b82a;
+    }
+
+    img {
+        display: inline-block;
+        height: 10em;
+        width: 100%;
+    }
+
+}
+
+/* loading svg */
+.map .loading_animation {
+	color: red);
+}

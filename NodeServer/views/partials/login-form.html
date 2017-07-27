@@ -1,0 +1,12 @@
+<div class="form-style-8"><h1>Login</h1>
+    <form action="#" method="post">
+        <p><input type="text" name="username" id="username" placeholder="Benutzername" pattern="[A-Za-z0-9]{1,}" required="required" ></p>
+        <p><input type="password" name="password" id="password" placeholder="Passwort" required="required" ></p>
+        <p><input type="submit" value="Login" id="loginButton" class="button" onclick="login()"/></p>
+    </form>
+    <svg id="clock" width="300" height="300"></svg>
+    <p id="register">Du bist noch nicht registriert? Bitte klicke <a href="new">hier!</a></p>
+</div>
+{{#if message}}<p id="message">{{ message }}</p>{{/if}}
+<script src="/snap.svg-min.js"></script>
+<script src="/clock.js"></script>

@@ -1,0 +1,33 @@
+﻿Lesson	|	Criteria 	|	Improvements
+
+1	  MVC, Structur, HTML5	  HTML ins Filesystemlegen -> Christian
+        -) check HTML incl xhtml mit validator
+        -) Config file einbinden sodass port & Projektnummer von FH-Server
+        -) Readme.md (info + installation infos zu WS-Server wegen WebWorker (kein POST, nur GET), Testbrowser Firefox + Version)
+
+2	  WebWorker, Async, ReST  JSON, Übertragung notwendig? -> Stefan
+        -) Ajax "else" definieren
+        -) Benutzereingaben sanitize (node-validator, express-validator)
+			switch case
+
+3	  Canvas Animation	  Hilfs Funkionen zu Tool-Modul -> Michael
+	    -) fixe größe pro Gerät
+
+4	  SVG -> ok
+
+5	  RWD, MediaQueries -> Michael
+        -) CSS durchtesten und überarbeiten
+        -) Homepage, Map, Chat
+
+6 	  Sensors, Location, Info, placeholder -> Michael
+        -) Anleitung für Map und Chat
+
+7	  Offline Storage -> Christian
+        -) Chat history
+
+8	  Performance, Minify, Scalierte Bilder -> Michael
+        -) header bild anpassen an bildschirmgröße
+
+9 	  WebSockets, Logging, Feedback -> Stefan
+        -) Fehlerinformation
+

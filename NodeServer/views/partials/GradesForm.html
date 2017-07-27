@@ -1,0 +1,24 @@
+<h1>Noten</h1>
+<p>Hier kannst du die Noten deiner bisher abgelegten Prüfungen ansehen.</p>
+<div id="grades">
+    <p>Bitte gib hier die Anmeldedaten für die FH-Domäne ein.</p>
+    <noscript>JavaScript wird für die Darstellung dieser Seite benötigt!</noscript>
+    <div class="form-style-8"><h1>Login</h1>
+        <form name="login" id="login">
+            <p><input type="text" name="username" Placeholder="Benutzername" id="fhusername" maxlength="40"
+                      autofocus/></p>
+            <p><input type="password" name="password" Placeholder="Passwort" id="fhpassword" maxlength="40"/></p>
+            <p><input id="wbutton" onclick="startWorker()" type="submit" value="Login"/></p>
+        </form>
+    </div>
+</div>
+<table id="table" style="visibility:hidden">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Note</th>
+    </tr>
+    </thead>
+</table>
+<script src="/grade_worker.js"></script>
+<script>document.getElementById("wbutton").removeAttribute("disabled");</script>
