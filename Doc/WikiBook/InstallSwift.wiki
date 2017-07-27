@@ -61,11 +61,11 @@ Mit dem Ausführen des Init-Befehls wird unter anderem eine Package.swift Datei 
 <blockquote>
 ├──Package.swift<br/>
 ├──Sources<br/>
-│	└──Hello.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──Hello.swift<br/>
 ├──Tests<br/>
-:::::::::├──HelloTests<br/>
-:::::::::│	└──HelloTests.swift<br/>
-:::::::::└──LinuxMain.swift<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──HelloTests<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──HelloTests.swift<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──LinuxMain.swift<br/>
 </blockquote>
 
 Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist direkt unter dem Sources Verzeichnis ein weiteres Verzeichnis z.b. "exe" anzulegen, in dem die gewünschte Ordnerstruktur z.b. für ein MVC-Pattern erstellt werden kann. Es ist aufgrund des Compilers und der Modularität nicht möglich, mehrere Ordner oder Ordner und .swift-Dateien gemischt im Sources-Verzeichnis zu compilieren. Dies liegt daran, dass der Compiler Verzeichnisse als Module versteht und jeweils nur ein Modul erstellt werden kann. Daher ignoriert er oder compiliert entweder nur die Hello.swift oder den ersten gefunden Ordner.
@@ -89,18 +89,18 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 <blockquote>
 ├──Package.swift<br/>
 ├──Sources<br/>
-│	├──exe<br/>
-│		├──model<br/>
-│		│	└──fileHandler.swift<br/>
-│		├──view<br/>
-│		│	└──renderView.swift<br/>
-│		├──controller<br/>
-│		│	└──router.swift<br/>
-│		└──main.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──exe<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──model<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──fileHandler.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──view<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──renderView.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──controller<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──router.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──main.swift<br/>
 ├──Tests<br/>
-:::::::::├──FileTests<br/>
-:::::::::│	 └──FileHandlerTests.swift<br/>
-:::::::::└──LinuxMain.swift<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──FileTests<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──FileHandlerTests.swift<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──LinuxMain.swift<br/>
 </blockquote>
 
 ===Swift compiling===
