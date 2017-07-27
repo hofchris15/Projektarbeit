@@ -12,40 +12,44 @@ Grundsätlich ist das Framework weiter zu empfählen, jedoch muss bis zum Sicher
 Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine sehr schöne und lesbare Sprache ist, wenn nur wenige Kurzschreibweisen verwendet werden. Der Ansatz der Sicherheit und der daraus schließenden "absoluten Definition" ist nachvollziebar und auch sehr vorteilhaft, da man bei jeder Methode und Funktion das Verhalten genau erkennt. Jedoch ist es bis zum Einholen des Node.js Frameworks noch viel Arbeit, da das Node.js Framework ausgereifter und mehr Funktionen in Form von Modulen bietet. Leider ist Perfect für die Version 3.0 entwickelt worden, der Server bereits auf 3.1 entwickelt, und während der Entwicklung Version 4.0 von Swift veröffentlich worden, wodurch sich Fehler in der Dokumentation eingeschlichen haben.
 
 ==Quellen==
+Beispiel:
+<references>
+<ref name="hlportalPrey">{{Internetquelle|url=http://www.hlportal.de/?site=news&do=shownews&news_id=4832 |titel=Prey ab sofort über Steam erhältlich |autor=Andreas W. |hrsg=gutekunst internet services |werk=Half-Life Portal |datum=2006-11-30 |zugriff=2012-07-27}}</ref>
+
 <ref name="Elektronik-Kompendium">
 {{cite web
 |url=https://www.elektronik-kompendium.de/sites/com/1705231.htm
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="Swift.org">
 {{cite web
 |url=https://swift.org
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="developer.mozilla.org">
 {{cite web
 |url=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="developer.mozilla.org/JavaScript">
 {{cite web
 |url=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction#What_is_JavaScript
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="w3schools.com/js">
 {{cite web
 |url=https://www.w3schools.com/js/
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="SEO-Analyse">
 {{cite web
 |url=https://www.seo-analyse.com/seo-lexikon/j/javascript/
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="codecentric.de">
@@ -54,49 +58,49 @@ Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine s
 |year=2014
 |title=Ist Node.js ein Superheld?
 |url=https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="Mathematik-Uni Ulm">
 {{cite web
 |url=http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="w3schools.com/nodejs">
 {{cite web
 |url=https://www.w3schools.com/nodejs/nodejs_intro.asp
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="t3n.de">
 {{cite web
 |url=http://t3n.de/magazin/nodejs-javascript-server-revolutioniert-schubrakete-226177/
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="developer.apple.com">
 {{cite web
 |url=https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="Github PerfectlySoft">
 {{cite web
 |url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="Github PerfectlySoft">
 {{cite web
 |url=https://www.perfect.org/
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="Github PerfectlySoft">
 {{cite web
 |url=https://github.com/SwiftyBeaver/AES256CBC/blob/master/Sources/AES256CBC.swift
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
 <ref name="Schrödinger lernt HTML5, CSS3 & JavaScript>
@@ -106,6 +110,7 @@ Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine s
 |title=Schrödinger lernt HTML5, CSS3 & JavaScript
 |isbn=978-3-8362-2020-0
 |publisher=Galileo Computing
-|date=2017-07-27
+|accessdate=2017-07-27
 }}
 </ref>
+</references>
