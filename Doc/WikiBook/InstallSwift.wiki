@@ -1,28 +1,43 @@
 ==Installation von Swift==
 Da Swift eine Sprache die vorrängig für MacOS erstellt wurde, ist es erst mit ein wenig Aufwand auf Linux Distributionen lauffähig. Dazu muss die Toolchain von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> in ein Verzeichnis geladen werden, und je nach Wunsch in der Systemumgebung definiert werden. Eine genau Installationsanleitung kann ebenfalls unter <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span>nachgelesen werden. Für die Code Beispiele ist der user gegen den tatsächlichen username auszutauschen. Um dies zu vereinfachen ist der Username unseres Beispielusers "user".
 Lade die aktuelle stabile Toolchain auf der Download Seite von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> herunter und speicher es in einem beliebigen Verzeichnis z.B. im Downloads-Verzeichnis des aktuellen users.  
-Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich:<br/> 
-<code>sudo apt-get install clang</code><br/>
+Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich:
+
+<code>sudo apt-get install clang</code>
+
 Danach muss die heruntergeladenen Swift Toolchain in ein geeignetes Verzeichnis extrahiert werden und der PATH Variable hinzugefügt werden:
-Dazu erstellen wir im ersten Schritt das Verzeichnis "install" im user Home-Verzeichnis<br/>
-<code>sudo mkdir /home/user/install</code><br/>
-Entpacken der toolchain in das zuvor erstelle "intall" Verzeichnis:<br/>
-<code>sudo tar -xf /home/user/Downloads/swift-3.1.1-RELEASE-ubuntu16.10.tar.gz -C /home/user/install</code><br/>
-Um das ausführen von Swift leichter zu gestallten kann Swift der PATH-Variable temporär hinzugefügt werden:<br/>
-<code>export PATH=${PATH}:/home/user/install/swift-3.1.1-RELEASE-ubuntu16.10/usr/bin</code><br/>
+Dazu erstellen wir im ersten Schritt das Verzeichnis "install" im user Home-Verzeichnis
+
+<code>sudo mkdir /home/user/install</code>
+
+Entpacken der toolchain in das zuvor erstelle "intall" Verzeichnis:
+
+<code>sudo tar -xf /home/user/Downloads/swift-3.1.1-RELEASE-ubuntu16.10.tar.gz -C /home/user/install</code>
+
+Um das ausführen von Swift leichter zu gestallten kann Swift der PATH-Variable temporär hinzugefügt werden:
+
+<code>export PATH=${PATH}:/home/user/install/swift-3.1.1-RELEASE-ubuntu16.10/usr/bin</code>
+
 Um dauerhaft, z.B. nach einem Neustart, Swift im Terminal zur Verfügung zu haben, kann der Pfad zur Toolchain in die Datei /etc/environment eingetragen werden.
-Dazu wird die Datei environment mit einem Texteditor, in unserem Fall "VIM" geöffnet und erweitert:<br/>
-<code>sudo vim /etc/environment</code><br/>
-und folgenden Text angefügen:<br/>
+Dazu wird die Datei environment mit einem Texteditor, in unserem Fall "VIM" geöffnet und erweitert:
+
+<code>sudo vim /etc/environment</code>
+
+und folgenden Text angefügen:
+
 ''''':/home/user/install/swift-3.1.1-RELEASE-ubuntu16.10/usr/bin''''' 
 
 Danach sollte die Installation mit der Ausgabe der Version von Swift überprüft werden:
-<code>swift --version</code><br/>
-welches die Ausgabe: <br/>
-<code>Swift version 3.1.1 (swift-3.1.1-RELEASE)</code><br/>
+
+<code>swift --version</code>
+
+welches die Ausgabe:
+
+<code>Swift version 3.1.1 (swift-3.1.1-RELEASE)</code>
+
 zur Folge hat. 
 Eventuell muss die Besitzrechte des Swift-Installationsordner geändert werden, da eventuell Zugriffrechte nicht gegeben sind oder der root als Besitzer hinterlegt ist. Dazu wird folgender Befehl auf den Ordner angewand:<br/>
-<code>sudo chown -R user:user ~/install/swift-3.1.1-RELEASE-ubuntu16.10/</code><br/>
+<code>sudo chown -R user:user ~/install/swift-3.1.1-RELEASE-ubuntu16.10/</code>
 
 Damit ist die Installation abgeschlossen.
 
@@ -34,9 +49,9 @@ Da dies für das ausführen des Servers nicht notwendig ist, wird hier darauf ni
 Der Package Manager ist eine Möglichkeit ein Skelton für ein Projekt zu erstellen. Der Package Manger erstellt einen Verzeichnisbaum der eine gewisse Grundstruktur ermöglicht. Diese Struktur wird auf <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span> noch in der Version 3.0 beschrieben jedoch änderte sich dies mit dem RELEASE von Version 3.1.
 Zuerst wird ein Verzeichnis erstellt, dass das neue Projekt repräsentiert und in weiterer folge als Projektordner bezeichnet wird.
 <blockquote>
-<code>mkdir Hello</code><br/>
-<code>cd Hello</code><br/>
-<code>swift package init</code><br/>
+	<code>mkdir Hello</code><br/>
+	<code>cd Hello</code><br/>
+	<code>swift package init</code><br/>
 </blockquote>
 Mit dem Ausführen des Init-Befehls wird unter anderem eine Package.swift Datei erstellt, in dem alle Abhängigkeiten des Projekt gespeichert werden. Weiter wir dein Verzeichnis Sources erstellt, in dem sich nur .swift-Datein befinden dürfen. Im Verzeichnis Tests befinden sich die Testklassen.
 
@@ -72,13 +87,13 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 ├──Package.swift<br/>
 ├──Sources<br/>
 │&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──exe<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──model<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──fileHandler.swift<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──view<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──renderView.swift<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──controller<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──router.swift<br/>
-│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──main.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──model<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──fileHandler.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──view<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──renderView.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──controller<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──router.swift<br/>
+│&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──main.swift<br/>
 ├──Tests<br/>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;├──FileTests<br/>
 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;│&#160;&#160;&#160;&#160;&#160;&#160;&#160;└──FileHandlerTests.swift<br/>
