@@ -98,24 +98,3 @@ Spätestens nachdem die Model-Funktionen fertig sind wird der Request an die Vie
 Die Funktionalität ist für Studenten der FH Joanneum gedacht und können die tätsächlichen Noten mit dem Usernamen und Passwort der FH-Domain abrufen. 
 Die Server unterscheiden sich ausschließlich durch Sprach- und Framework spezifischen Vorgaben wie z.B. eine Funktion die in Express vorhanden ist jedoch in Perfect nicht und umgekehrt.
 Weiter haben wir versucht ähnliche Packages zu verwenden und so wenig Workaround zu verwenden, die Packages ersetzen.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
