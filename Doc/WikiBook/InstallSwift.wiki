@@ -73,7 +73,7 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 <blockquote>
 ├──Package.swift <br/>
 ├──Sources<br/>
-│&#09;├──model<br/>
+│&#160;&#160;&#160;&#160;├──model<br/>
 │&#09;│	└──fileHandler.swift<br/>
 │&#09;├──view<br/>
 │&#09;│	└──renderView.swift<br/>
