@@ -154,7 +154,7 @@ Danach kann der Server mit folgende Kommandos gestartet werden. Einzige Vorrauss
 
 oder mit 
 
-<code>./.build/release/exe</code><br/>
+<code>./.build/release/exe</code>
 
 Danach sollte folgend Ausgabe auf dem Terminal angezeigt werden:
 
@@ -208,7 +208,7 @@ Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server in
 ===Wichtige Punkte der Implementierung===
 
 ===Linux===
-Das Projekt soll nur auf Linux laufen deshalb wurde am Anfang folgender Code eingebunden:
+Das Projekt soll nur auf Linux laufen deshalb wurde am Anfang folgender Code eingebunden, welcher das Betriebssystem überprüft und beendet sollte es kein Linux sein:
 <blockquote>
 	#if !os(Linux)<br/>
 	import Glibc<br/>
@@ -218,7 +218,7 @@ Das Projekt soll nur auf Linux laufen deshalb wurde am Anfang folgender Code ein
 </blockquote>
 
 ====Session Verwaltung====
-Bei der Session sind verschieden Konfigurationen möglich zu beachten ist jedoch das die cookieDomain die festgelegt werden kann während der Entwicklung nicht festgelgt werden darf sollange der Server nicht gehostet wurde.
+Bei der Session sind verschieden Konfigurationen möglich. Zu beachten ist jedoch, dass die cookieDomain, die festgelegt werden kann, während der Entwicklung nicht festgelegt werden darf. Erst wenn der Server gehostet wird, kann die Domain angepasst werden, was jedoch nicht nötig ist, da mit das IPAddressLock und der userAgentLock eingeschalten sind.
 
 <blockquote>
 	SessionConfig.name = "mobileExtendSession" //Session name which is set as cookie<br/>
@@ -230,28 +230,28 @@ Bei der Session sind verschieden Konfigurationen möglich zu beachten ist jedoch
 </blockquote>
 
 ===JSON===
-Objekte die als JSON serialisiert werden sollen müssen von der Klasse JSONConvertibleObject erben und die Methoden "setJSONValues" und "getJSONValues" müssen überschrieben werden.
+Objekte die als JSON serialisiert werden sollen, müssen von der Klasse JSONConvertibleObject erben, sowie die Methoden "setJSONValues" und "getJSONValues" müssen überschrieben bzw definiert werden. Zusätlich zu den üblichen Attributen des Objektes kommt ein Registrierungsname zum Einsatz. Dieser dient als Schlüssel für die Objektklasse und als Registrierungsschlüssel im Register der JSON-Decodable-Object Referenz. Mit diesem Schlüssel kann die Decodierung eines JSON Strings erfolgen und wird dem Objekt, dass erstellt werden soll zugeteilt.
 
 <blockquote>
 	public class Profile: JSONConvertibleObject {<br/>
 	static let registerName = "profile"<br/>
-		var username = ""<br/>
-		var password = ""<br/>
+	&#160;&#160;&#160;&#160;var username = ""<br/>
+	&#160;&#160;&#160;&#160;var password = ""<br/>
 	....<br/>
 	....<br/>
-	  override public func setJSONValues(_ values: [String: Any]) {<br/>
-			self.username = getJSONValue(named: "username", from: values, defaultValue: "")<br/>
-			self.password = getJSONValue(named: "password", from: values, defaultValue: "")<br/>
-			self.firstname = getJSONValue(named: "firstname", from: values, defaultValue: "")<br/>
+	&#160;&#160;&#160;&#160;override public func setJSONValues(_ values: [String: Any]) {<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;self.username = getJSONValue(named: "username", from: values, defaultValue: "")<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;self.password = getJSONValue(named: "password", from: values, defaultValue: "")<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;self.firstname = getJSONValue(named: "firstname", from: values, defaultValue: "")<br/>
 	....<br/>
 	....<br/>
 	override public func getJSONValues() -> [String: Any] {<br/>
-			return [<br/>
-					JSONDecoding.objectIdentifierKey: Profile.registerName,<br/>
-					"username": username,<br/>
-					"password": password,<br/>
-			...<br/>
-			]<br/>
+	return [<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JSONDecoding.objectIdentifierKey: Profile.registerName,<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"username": username,<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"password": password,<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]<br/>
 	....<br/>
 	....<br/>
 </blockquote>
@@ -267,19 +267,19 @@ Beim setzen des Working Directory ist zu beachten, dass solange der Server nicht
 
 <blockquote>
 	func setupDir(_: Void) -> Void {<br/>
-		let workingDir = Dir("./Sources/exe")<br/>
-		if workingDir.exists {<br/>
-			do {<br/>
-				try workingDir.setAsWorkingDir()<br/>
-				LogFile.debug("Working directory set to \(workingDir.name)")<br/>
-			} catch {<br/>
-				LogFile.debug("error in getFile() setting WorkingDir: \(error)")<br/>
-			}<br/>
-		} else {<br/>
-			LogFile.error("Directory \(workingDir.path) does not exist. Main executable not started from root of MVC cannot find resources?")<br/>
-			exit(2)<br/>
-		}<br/>
-		issetup = true<br/>
+	&#160;&#160;&#160;&#160;let workingDir = Dir("./Sources/exe")<br/>
+	&#160;&#160;&#160;&#160;if workingDir.exists {<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;do {<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;try workingDir.setAsWorkingDir()<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;LogFile.debug("Working directory set to \(workingDir.name)")<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;} catch {<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;LogFile.debug("error in getFile() setting WorkingDir: \(error)")<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br/>
+	&#160;&#160;&#160;&#160;} else {<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;LogFile.error("Directory \(workingDir.path) does not exist. Main executable not started from root of MVC cannot find resources?")<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;exit(2)<br/>
+	&#160;&#160;&#160;&#160;}<br/>
+	&#160;&#160;&#160;&#160;issetup = true<br/>
 	}<br/>
 	var issetup = false<br/>
 </blockquote>
