@@ -246,12 +246,12 @@ Objekte die als JSON serialisiert werden sollen, müssen von der Klasse JSONConv
 	....<br/>
 	....<br/>
 	override public func getJSONValues() -> [String: Any] {<br/>
-	return [<br/>
+	return \[<br/>
 	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;JSONDecoding.objectIdentifierKey: Profile.registerName,<br/>
 	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"username": username,<br/>
 	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"password": password,<br/>
 	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...<br/>
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]<br/>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;\]<br/>
 	....<br/>
 	....<br/>
 </blockquote>
