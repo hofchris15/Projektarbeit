@@ -12,7 +12,6 @@ Grundsätlich ist das Framework weiter zu empfählen, jedoch muss bis zum Sicher
 Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine sehr schöne und lesbare Sprache ist, wenn nur wenige Kurzschreibweisen verwendet werden. Der Ansatz der Sicherheit und der daraus schließenden "absoluten Definition" ist nachvollziebar und auch sehr vorteilhaft, da man bei jeder Methode und Funktion das Verhalten genau erkennt. Jedoch ist es bis zum Einholen des Node.js Frameworks noch viel Arbeit, da das Node.js Framework ausgereifter und mehr Funktionen in Form von Modulen bietet. Leider ist Perfect für die Version 3.0 entwickelt worden, der Server bereits auf 3.1 entwickelt, und während der Entwicklung Version 4.0 von Swift veröffentlich worden, wodurch sich Fehler in der Dokumentation eingeschlichen haben.
 
 ==Einzelnachweise==
-<references>
 	<ref name="ElektronikKompendium">
 	{{Internetquelle
 	|autor=Patrick Schnabel
@@ -153,4 +152,5 @@ Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine s
 	|zugriff=2017-07-27
 	}}
 	</ref>
-</references>
+
+	<references/>

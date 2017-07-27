@@ -10,7 +10,7 @@ Dazu erstellen wir im ersten Schritt das Verzeichnis "install" im user Home-Verz
 
 <code>sudo mkdir /home/user/install</code>
 
-Entpacken der toolchain in das zuvor erstelle "intall" Verzeichnis:
+Entpacken der toolchain in das zuvor erstelle "install" Verzeichnis:
 
 <code>sudo tar -xf /home/user/Downloads/swift-3.1.1-RELEASE-ubuntu16.10.tar.gz -C /home/user/install</code>
 
