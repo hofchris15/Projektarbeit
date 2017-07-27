@@ -4,20 +4,25 @@ Lade die aktuelle stabile Toolchain auf der Download Seite von <span class="plai
 Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich: 
 
 <code>sudo apt-get install clang</code>
+
 Danach muss die heruntergeladenen Swift Toolchain in ein geeignetes Verzeichnis extrahiert werden und der PATH Variable hinzugefügt werden:
 Dazu erstellen wir im ersten Schritt das Verzeichnis "install" im user Home-Verzeichnis
 
 <code>sudo mkdir /home/user/install</code>
+
 Entpacken der toolchain in das zuvor erstelle "intall" Verzeichnis:
 
 <code>sudo tar -xf /home/user/Downloads/swift-3.1.1-RELEASE-ubuntu16.10.tar.gz -C /home/user/install</code>
+
 Um das ausführen von Swift leichter zu gestallten kann Swift der PATH-Variable temporär hinzugefügt werden:
 
 <code>export PATH=${PATH}:/home/user/install/swift-3.1.1-RELEASE-ubuntu16.10/usr/bin</code>
+
 Um dauerhaft, z.B. nach einem Neustart, Swift im Terminal zur Verfügung zu haben, kann der Pfad zur Toolchain in die Datei /etc/environment eingetragen werden.
 Dazu wird die Datei environment mit einem Texteditor, in unserem Fall "VIM" geöffnet und erweitert:
 
 <code>sudo vim /etc/environment</code>
+
 und folgenden Text angefügen:
 
 ''''':/home/user/install/swift-3.1.1-RELEASE-ubuntu16.10/usr/bin''''' 
@@ -25,9 +30,11 @@ und folgenden Text angefügen:
 Danach sollte die Installation mit der Ausgabe der Version von Swift überprüft werden:
 
 <code>swift --version</code>
+
 welches die Ausgabe: 
 
 <code>Swift version 3.1.1 (swift-3.1.1-RELEASE)</code>
+
 zur Folge hat. 
 
 Eventuell muss die Besitzrechte des Swift-Installationsordner geändert werden, da eventuell Zugriffrechte nicht gegeben sind oder der root als Besitzer hinterlegt ist. Dazu wird folgender Befehl auf den Ordner angewand:
@@ -51,8 +58,8 @@ Zuerst wird ein Verzeichnis erstellt, dass das neue Projekt repräsentiert und i
 <code>swift package init</code>
 
 Mit dem Ausführen des Init-Befehls wird unter anderem eine Package.swift Datei erstellt, in dem alle Abhängigkeiten des Projekt gespeichert werden. Weiter wir dein Verzeichnis Sources erstellt, in dem sich nur .swift-Datein befinden dürfen. Im Verzeichnis Tests befinden sich die Testklassen.
-<code>
 
+<code>
 ├──Package.swift
 
 ├──Sources
