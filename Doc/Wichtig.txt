@@ -1,0 +1,17 @@
+www.schreiblabor.com
+
+Stefan: 
+  Kurzfassung
+  Einleitung
+  Stand der Technik (gzip)
+  
+Christian:
+  Umsetzung
+  Zusammenfassung
+  
+Conclusion gemeinsam
+
+Style-Code:
+  labels von Sektionen sind Name der Sektion in klein ohne whitespace
+  
+//TODO yslow, netzwerk, ap, speicherauslastung, apache bench
