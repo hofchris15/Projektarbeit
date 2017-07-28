@@ -14,18 +14,27 @@ Abschließend bleibt noch zu sagen, dass diese Sprache für sich genommen eine s
 ==Einzelnachweise==
 <ref name="ElektronikKompendium">{{Internetquelle |autor=Patrick Schnabel |jahr=2012 |titel=Compiler und Interpreter [online] |url=https://www.elektronik-kompendium.de/sites/com/1705231.htm |datum=2012-11-28 |zugriff=2017-07-27 }}
 Schnabel, Patrick (2012): Compiler und Interpreter, [online] 28.11.2012, https://www.elektronik-kompendium.de/sites/com/1705231.htm [27.07.2017]</ref>
-<ref name="SwiftAbout">{{Internetquelle |autor=o.V. |jahr=2017|titel=About Swift [online]|url=https://swift.org/about/|datum=ohne Veröffentlichunsdatum|zugriff=2017-07-27}}</ref>
-<ref name="devMozilla">{{Internetquelle|autor=o.V.|jahr=2017|titel=JavaScript Guide - Introduction|url=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction|datum=2017-05-25|zugriff=2017-07-27}}</ref>
-<ref name="w3schools.comjs">{{Internetquelle|autor=Refsnes Data|jahr=2017|titel=JavaScript Tutorial|url=https://www.w3schools.com/js|datum=ohne Datum|zugriff=2017-07-27}}</ref>
-<ref name="SEOAnalyse">{{Internetquelle|autor=Fuchs Media Solutions|jahr=o.J.|titel=JavaScript Begriffserklärung und Definition|url=https://www.seo-analyse.com/seo-lexikon/j/javascript/|datum=ohne Datum|zugriff=2017-07-27}}</ref>
-<ref name="codecentricde">{{Internetquelle|author=Gregor Elke|jahr=2014|title=Ist Node.js ein Superheld? [online]|url=https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/|datum=2014-06-19|zugriff=2017-07-27}}</ref>
-<ref name="MathematikUniUlm">{{Internetquelle|autor=o.V.|jahr=o.J.|titel=Gefahren und Anwendungsmöglichkeiten durch JavaScript|url=http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/|datum=ohne Datum|zugriff=2017-07-27}}</ref>
-<ref name="w3schools.com/nodejs">{{Internetquelle|autor=Refnes Data|jahr=2017|titel=Node.js Introduction|url=https://www.w3schools.com/nodejs/nodejs_intro.asp|datum=ohne Datum|zugriff=2017-07-27}}</ref>
-<ref name="t3n.de">{{Internetquelle|autor=Felix Gelsendörfer|jahr=2010|titel=Wie Node.js JavaScript auf dem Server revolutioniert: Schubrakete für JavaScript|url=http://t3n.de/magazin/nodejs-javascript-server-revolutioniert-schubrakete-226177/|datum=2010-12-08|zugriff=2017-07-27}}</ref>
-<ref name="devApple">{{Internetquelle|autor=Apple Inc|jahr=2017|titel=Language Guide|url=https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309|datum=05-06-2017|zugriff=2017-07-27}}</ref>
-<ref name="Github PerfectlySoft">{{Internetquelle|autor=Kyle Jessup et al.|jahr=2017|titel=Getting Started|url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md|datum=2017-05-19|zugriff=2017-07-27}}</ref>
-<ref name="Perfectorg">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.|titel=Documentation|url=https://www.perfect.org/docs/|datum=ohne Datum|zugriff=2017-07-27}}</ref>
-<ref name="SwiftyBeaver">{{Internetquelle|autor=Sebastian Kreutzberger|jahr=2017|titel=AES256CBC.swift|url=https://github.com/SwiftyBeaver/AES256CBC/blob/master/Sources/AES256CBC.swift|datum=2017-07-25|zugriff=2017-07-27}}</ref>
-<ref name="Schrödinger lernt HTML5, CSS3 & JavaScript>{{cite book|author=Kai Günster|jahr=2017|title=Schrödinger lernt HTML5, CSS3 & JavaScript|isbn=978-3-8362-2020-0|publisher=Galileo Computing|zugriff=2017-07-27}}</ref>
+<ref name="SwiftAbout">{{Internetquelle |autor=o.V. |jahr=2017|titel=About Swift [online]|url=https://swift.org/about/ |datum=ohne Veröffentlichunsdatum|zugriff=2017-07-27}}
+o.V.(2017): About Swift, [online] ohne Datum, https://swift.org/about/ [27.07.2017]</ref>
+<ref name="devMozilla">{{Internetquelle|autor=o.V.|jahr=2017|titel=JavaScript Guide - Introduction|url=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction |datum=2017-05-25|zugriff=2017-07-27}}
+o.V. (2017): JavaScript Guide - Introduction, [online] 25.05.2017, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction [27.07.2017]</ref>
+<ref name="w3schools.comjs">{{Internetquelle|autor=Refsnes Data|jahr=2017|titel=JavaScript Tutorial|url=https://www.w3schools.com/js |datum=ohne Datum|zugriff=2017-07-27}}
+Refsnes Data (2017): JavaScript Tutorial, [online] ohne Datum, https://www.w3schools.com/js [27.07.2017]</ref>
+<ref name="SEOAnalyse">{{Internetquelle|autor=Fuchs Media Solutions|jahr=o.J.|titel=JavaScript Begriffserklärung und Definition|url=https://www.seo-analyse.com/seo-lexikon/j/javascript/ |datum=ohne Datum| zugriff=2017-07-27}}
+Fuchs Media Solutions (o.J.): JavaScript Begriffserklärung und Definition, [online] ohne Datum, https://www.seo-analyse.com/seo-lexikon/j/javascript/, [27.07.2017]</ref>
+<ref name="codecentricde">{{Internetquelle|author=Gregor Elke|jahr=2014|title=Ist Node.js ein Superheld? [online]|url=https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/ |datum=2014-06-19|zugriff=2017-07-27}}
+Elke, Gregor (2014): Ist Node.js ein Superheld?, [online] 19.06.2014, https://www.seo-analyse.com/seo-lexikon/j/javascript/ [27.07.2017]</ref>
+<ref name="MathematikUniUlm">{{Internetquelle|autor=o.V.|jahr=o.J.|titel=Gefahren und Anwendungsmöglichkeiten durch JavaScript|url=http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/ |datum=ohne Datum|zugriff=2017-07-27}}</ref>
+<ref name="w3schools.com/nodejs">{{Internetquelle|autor=Refnes Data|jahr=2017|titel=Node.js Introduction|url=https://www.w3schools.com/nodejs/nodejs_intro.asp |datum=ohne Datum |zugriff=2017-07-27}}</ref>
+<ref name="t3n.de">{{Internetquelle|autor=Felix Gelsendörfer|jahr=2010|titel=Wie Node.js JavaScript auf dem Server revolutioniert: Schubrakete für JavaScript|url=http://t3n.de/magazin/nodejs-javascript-server-revolutioniert-schubrakete-226177/ |datum=2010-12-08 |zugriff=2017-07-27}}</ref>
+<ref name="devApple">{{Internetquelle|autor=Apple Inc|jahr=2017|titel=Language Guide|url=https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309 |datum=05-06-2017 |zugriff=2017-07-27}} Apple Inc (2017): Swift - Language Guide, [online] 05.06.2014, https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309 [27.07.2017]</ref>
+<ref name="Github PerfectlySoft">{{Internetquelle|autor=Kyle Jessup et al.|jahr=2017|titel=Getting Started|url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md |datum=2017-05-19|zugriff=2017-07-27}}
+Jessup, Kyle et al. (2017): Getting Started, [online] 19.05.2017, https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md [27.07.2017]</ref>
+<ref name="Perfectorg">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.|titel=Documentation|url=https://www.perfect.org/docs/ |datum=ohne Datum|zugriff=2017-07-27}}
+Stephens, Sean et al. (o.J.): Documentation, [online] ohne Datum, https://www.perfect.org/docs/ [27.07.2017]</ref>
+<ref name="SwiftyBeaver">{{Internetquelle|autor=Sebastian Kreutzberger|jahr=2017|titel=AES256CBC.swift|url=https://github.com/SwiftyBeaver/AES256CBC/blob/master/Sources/AES256CBC.swift|datum=2017-07-25|zugriff=2017-07-27}}
+Kreutzberger, Sebastian (2017): AES256CBC.swift [online] 25.07.2017 https://github.com/SwiftyBeaver/AES256CBC/blob/master/Sources/AES256CBC.swift [27.07.2017] </ref>
+<ref name="Schrödinger lernt HTML5, CSS3 & JavaScript>{{cite book|author=Kai Günster|jahr=2013|title=Schrödinger lernt HTML5, CSS3 & JavaScript|isbn=978-3-8362-2020-0|publisher=Galileo Computing|zugriff=2017-07-27}}
+ </ref>
 
 <references/>
