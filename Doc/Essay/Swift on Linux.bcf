@@ -368,7 +368,6 @@
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">dashed</bcf:option>
     <bcf:option datatype="boolean">mergedate</bcf:option>
-    <bcf:option datatype="boolean">ibidpage</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
     <bcf:option datatype="integer">maxnames</bcf:option>
@@ -2150,8 +2149,9 @@
     <bcf:citekey order="3">ieee:xplore</bcf:citekey>
     <bcf:citekey order="4">ieee:xplore</bcf:citekey>
     <bcf:citekey order="5">Batina:2011:HER:2188496.2188508</bcf:citekey>
-    <bcf:citekey order="7">Fernandez-Mir:2011:SRA:2188496.2188506</bcf:citekey>
-    <bcf:citekey order="9">Li:2008:TRP:2043628.2043631</bcf:citekey>
+    <bcf:citekey order="6">Fernandez-Mir:2011:SRA:2188496.2188506</bcf:citekey>
+    <bcf:citekey order="7">Li:2008:TRP:2043628.2043631</bcf:citekey>
+    <bcf:citekey order="8">jetbrain</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global/" type="entry" sortscheme="nyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

@@ -61,12 +61,12 @@
 % Biblatex
 % ---------------------------------------------------------------------
 \usepackage{csquotes}		% context sensitive quotation; recommended for usage with Biblatex
-% Note: date, origdate, eventdate, and urldate require yyyy-mm-dd format
-% dd or mm-dd may be omitted
+%% Note: date, origdate, eventdate, and urldate require yyyy-mm-dd format
+%% dd or mm-dd may be omitted
 \usepackage[
     backend=biber,
     urldate=long,		% default: short, e.g. 08/15/2010
-    style=authoryear-icomp,	% Harvard citation style
+    style=authoryear,	% Harvard citation style
 %   sorting=nty		this is default: sort by name, title, year
 %   sortlocale=de_DE	set according to your needs
     natbib=true,		% if you want to use natbib compatible citation commands; do _not_ use package natbib!
@@ -82,7 +82,6 @@
 \DeclareFieldFormat{url}{Available\space from\addcolon\space <\url{#1}>}
 \addbibresource{references.bib}
 % ---------------------------------------------------------------------
-
 \usepackage[			% hyperref should be last package loaded
     pdftex,			% driver
     pdftitle={<Title of Your Thesis>},
@@ -160,8 +159,10 @@
   \onehalfspacing
   \include{chapters/introduction}
 % add chapters as required
-  \include{chapters/conclusion}
+  \include{chapters/main}
 
+
+  \include{chapters/conclusion}
   \appendix
   \include{acronyms}
 
