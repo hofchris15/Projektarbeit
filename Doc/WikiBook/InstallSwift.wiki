@@ -1,7 +1,8 @@
-==Installation von Swift==<ref name="devApple">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Getting Started |url=https://swift.org/getting-started/#installing-swift |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017e): Swift - Language Guide, [online] https://swift.org/getting-started/#installing-swift [27.07.2017].</ref>
-Da Swift eine Sprache die vorrängig für MacOS erstellt wurde, ist es erst mit ein wenig Aufwand auf Linux Distributionen lauffähig. Dazu muss die Toolchain von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> in ein Verzeichnis geladen werden, und je nach Wunsch in der Systemumgebung definiert werden. Eine genau Installationsanleitung kann ebenfalls unter <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span>nachgelesen werden. Für die Code Beispiele ist der user gegen den tatsächlichen username auszutauschen. Um dies zu vereinfachen ist der Username unseres Beispielusers "user".
+==Installation von Swift==
+
+Da Swift eine Sprache die vorrängig für MacOS erstellt wurde, ist es erst mit ein wenig Aufwand auf Linux Distributionen lauffähig. Dazu muss die Toolchain von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> in ein Verzeichnis geladen werden, und je nach Wunsch in der Systemumgebung definiert werden. Eine genau Installationsanleitung kann ebenfalls unter <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span> nachgelesen werden. Für die Code Beispiele ist der user gegen den tatsächlichen username auszutauschen. Um dies zu vereinfachen ist der Username unseres Beispielusers "user".
 Lade die aktuelle stabile Toolchain auf der Download Seite von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> herunter und speicher es in einem beliebigen Verzeichnis z.B. im Downloads-Verzeichnis des aktuellen users.  
-Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich:
+Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich<ref name="swiftStart">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Getting Started |url=https://swift.org/getting-started/#installing-swift |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017f): Getting Started, [online] https://swift.org/getting-started/#installing-swift [27.07.2017].</ref>:
 
 <code>sudo apt-get install clang</code>
 
@@ -43,8 +44,7 @@ Damit ist die Installation abgeschlossen.
 
 ===Swift REPL===
 Swift bietet bei dieser Installation ein Terminal Tool namens Swift-REPL (Swift-Read-eval-print-loop) welches es ermöglicht Swift direkt auf der Konsole zu test und auszuführen
-Da dies für das ausführen des Servers nicht notwendig ist, wird hier darauf nicht näher eingegangen, dazu aber jedenfalls mehr auf <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span><ref name="SwiftREPL">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Using the REPL |url=https://swift.org/getting-started/#using-the-repl |datum=ohne Datum |zugriff=2017-07-26}}
-Apple Inc (2017c): Using the REPL, [online] https://swift.org/getting-started/#using-the-repl [26.07.2017].</ref>.
+Da dies für das ausführen des Servers nicht notwendig ist, wird hier darauf nicht näher eingegangen, dazu aber jedenfalls mehr auf <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span><ref name="SwiftREPL">{{Internetquelle|autor=Apple Inc |jahr=2017c |titel=Using the REPL |url=https://swift.org/getting-started/#using-the-repl |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017c): Using the REPL, [online] https://swift.org/getting-started/#using-the-repl [26.07.2017].</ref>.
 
 ===Swift Package Manager===
 Der Package Manager ist eine Möglichkeit ein Skelton für ein Projekt zu erstellen. Der Package Manger erstellt einen Verzeichnisbaum der eine gewisse Grundstruktur ermöglicht. Diese Struktur wird auf <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span> noch in der Version 3.0 beschrieben jedoch änderte sich dies mit dem RELEASE von Version 3.1.
@@ -55,7 +55,7 @@ Zuerst wird ein Verzeichnis erstellt, dass das neue Projekt repräsentiert und i
 	<code>swift package init</code><br/>
 </blockquote>
 Mit dem Ausführen des Init-Befehls wird unter anderem eine Package.swift Datei erstellt, in dem alle Abhängigkeiten des Projekt gespeichert werden. Weiter wir dein Verzeichnis Sources erstellt, in dem sich nur .swift-Datein befinden dürfen. Im Verzeichnis Tests befinden sich die Testklassen<ref name="SwiftPackageManager">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Using the Package Manager |url=https://swift.org/getting-started/#using-the-package-manager |datum=ohne Datum |zugriff=2017-07-26}}
-Apple Inc (2017c): Using the Package Manger, [online] https://swift.org/getting-started/#using-the-package-manager [26.07.2017].</ref>.
+Apple Inc (2017d): Using the Package Manger, [online] https://swift.org/getting-started/#using-the-package-manager [26.07.2017].</ref>.
 
 <blockquote>
 ├──Package.swift<br/>
@@ -105,8 +105,7 @@ Sollte eine Strukturierung z.B. mit Hilfe von Ordner in Sources erfolgen, ist di
 </blockquote>
 
 ===Swift compiling===
-<ref name="AppleCompiler">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel= Compiler and Standard Library|url=https://swift.org/compiler-stdlib/#compiler-architecture |datum=ohne Datum |zugriff=2017-07-26}}
-Apple Inc (2017d): Compiler and Standard Library, [online] https://swift.org/compiler-stdlib/#compiler-architecture [26.07.2017].</ref>
+<ref name="AppleCompiler">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel= Compiler and Standard Library|url=https://swift.org/compiler-stdlib/#compiler-architecture |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017e): Compiler and Standard Library, [online] https://swift.org/compiler-stdlib/#compiler-architecture [26.07.2017].</ref>
 Der Swift Compiler kann mit dem Befehl
 
 <code>swift build</code>
@@ -178,7 +177,7 @@ Weiter mit einigen Details zum Server und den Packages die Verwendet werden.
 
 Der Server entstand in Zusammenhang mit der Lehrveranstaltung "Projektarbeit" der FH Joanneum Kapfenberg Studienrichtung Software Design, mit dem Thema Swift on Linux. 
 Dazu wurde von uns rechachiert und zwei interessante Frameworks für die Entwicklung eines Servers ausgewählt. Diese beiden Frameworks sind <span class = "plainlinks">[http://www.kitura.io/ Kitura.io ]</span> und <span class = "plainlinks">[http://perfect.org/ Perfect ]</span>.
-Grundsätzlich sind beide Frameworks sehr ähnlich, wobei hierbei einige Punkte zu beachten sind <ref name="Kitura">{{Internetquelle|autor=IBM |jahr=o.J. |titel= Setting Up |url=http://www.kitura.io/en/starter/settingup.html |datum=ohne Datum |zugriff=2017-07-26}} IBM (o.J.): Setting Up, [online] http://www.kitura.io/en/starter/settingup.html [26.07.2017].</ref> <ref name="PerfectAbout">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.|titel=What Is Perfect |url=http://perfect.org/about.html |datum=ohne Datum|zugriff=2017-07-26}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (o.J.): What Is Perfect, [online] http://perfect.org/about.html [26.07.2017].</ref>:
+Grundsätzlich sind beide Frameworks sehr ähnlich, wobei hierbei einige Punkte zu beachten sind <ref name="Kitura">{{Internetquelle|autor=IBM |jahr=o.J.a |titel= Setting Up |url=http://www.kitura.io/en/starter/settingup.html |datum=ohne Datum |zugriff=2017-07-26}} IBM (o.J.): Setting Up, [online] http://www.kitura.io/en/starter/settingup.html [26.07.2017].</ref> <ref name="PerfectAbout">{{Internetquelle |autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie |jahr=o.J. |titel=What Is Perfect |url=http://perfect.org/about.html |datum=ohne Datum |zugriff=2017-07-26}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (o.J.): What Is Perfect, [online] http://perfect.org/about.html [26.07.2017].</ref>:
 * Kitura ist ein Framework das von IBM erstellt wurde und auf MAC sowie auf Linux lauffähig ist. Perfect wurde von PerfectlySoft Inc. einem kleinem Startup Unternehmen, das sich auf die Entwicklung mit Swift spezialisiert hat. 
 * IBM's Kitura hat einen Grundsätzliche Bibliothek die verwendet wird um einen HTTP Server umzusetzen und einige Packages um die Funktionalität zu erweitern. Perfect setzt auf das selbe Prinzip wie Kitura und hält wie auch Kitura ein Template als Startpunkt für den Server zur Verfügung. 
 * Kitura ist für die Swift Versionen 3.1 entwickelt, Perfect für Swift Versionen der 3.0 Reihe. Leider gibt es für Perfect zu Swift 3.1 kein Update.
@@ -187,20 +186,20 @@ Grundsätzlich sind beide Frameworks sehr ähnlich, wobei hierbei einige Punkte 
 Schlussendlich haben wir uns für Perfect entschieden. Gründe dafür waren, der eben erwähnte Punkt der Dokumentation, und das Perfect bereits länger auf dem Markt vorhanden ist. 
 Viele Beispiel, Bibliotheken und Packages werden von PerfectlySoft auf deren Github Account gehostet: <span class = "plainlinks">[https://github.com/PerfectlySoft PerfectlySoft on Github ]</span>
 
-===Installation von Perfect===<ref name="PerfectlySoft">{{Internetquelle|autor=Kyle Jessup et al.|jahr=2017|titel=Getting Started|url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md |datum=2017-05-19|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (2017a): Getting Started, [online] https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md [27.07.2017].</ref>
+===Installation von Perfect===
 
 Auch Perfect setzt einige Packet auf Linux voraus, darunter openssl, libssl-dev und uuid-dev. Diese können sehr leicht mit 
 
 <code> sudo apt-get install openssl libssl-dev uuid-dev</code> 
 
-installiert werden. 
+installiert werden<ref name="PerfectlySoft">{{Internetquelle|autor=Kyle Jessup et al. |jahr=2017a |titel=Getting Started|url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md |datum=2017-05-19 |zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (2017a): Getting Started, [online] https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md [27.07.2017].</ref>. 
 
 ===Perfect Template ===
 Das Perfect Template wurde von uns als Ausgangspunkt der Entwicklung des HTTP Servers im MVC-Pattern gewählt. Als Reverence wurde von uns der selbe Server zuvor mit <span class = "plainlinks">[https://nodejs.org/en/  Node.js ]</span> und dem Framework <span class = "plainlinks">[http://expressjs.com/de/  Express.js ]</span> implementiert.
 Das Perfect Template hält die Standard Baumstruktur des swift init-Prozesses bereit, die bereits in der [[Installation von Swift#Swift Package Manager]] vorgestellt wurde. Weiter befinden sich ein Datei names "main.swift" enthält, die die Initalisierung eines Serves bereithält. Interressant ist jedoch das in der Package.swift enhaltene Abhängigkeit <span class = "plainlinks">[https://github.com/PerfectlySoft/Perfect-HTTPServer.git ]</span>. Der Perfect-HTTPServer hat einige sehr nützliche Abhängigkeiten die auch wir im Server verwendet haben.
 
-===Die wichtigsten Packages=== <ref name="Perfectorg">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.|titel=Documentation|url=https://www.perfect.org/docs/ |datum=ohne Datum|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (o.J.): Documentation, [online] https://www.perfect.org/docs/ [27.07.2017].</ref>
-Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server ins laufen zu bekommen. Diese Grund-Pakete sind PerfectLib COpenSSL, HTTP, HTTPServer, PerfectLib, LinuxBridge und Net.
+===Die wichtigsten Packages=== 
+Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server ins laufen zu bekommen. Diese Grund-Pakete sind PerfectLib COpenSSL, HTTP, HTTPServer, PerfectLib, LinuxBridge und Net<ref name="Perfectorg">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.b |titel=Documentation|url=https://www.perfect.org/docs/ |datum=ohne Datum|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (o.J.): Documentation, [online] https://www.perfect.org/docs/ [27.07.2017].</ref>.
 * Foundation ist die standard Bibliothek von Swift und bietet die grunsätlichen Funktionen und Definition wie (Strings, Numbers,...) die von der Swift.org veröffentlicht wurden. https://developer.apple.com/documentation/foundation
 * COpenSSL bietet verschieden Verschlüsselungstechniken und SSL/TLS Methoden zur Verfügung die auf Linux in C installiert werden (Dieses Paket wurde nicht verwendet) https://github.com/PerfectlySoft/Perfect-COpenSSL
 * HTTP bietet verschiedene Strukturen und Methoden um mit http Clients zu kommunizieren. Diese Paket muss mit "import PerfectHTTP" im Projekt eingebunden werden https://github.com/PerfectlySoft/Perfect-HTTP
@@ -209,8 +208,8 @@ Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server in
 * LinuxBridge bildet die Brücke zwischen Perfect und den Linux Distriputionen https://github.com/PerfectlySoft/Perfect-LinuxBridge
 * Net ist ein networking Paket welches TCP, SSL, UNIX Socket files und IO Event Handling zur Verfügung stellt. https://github.com/PerfectlySoft/Perfect-Net
 
-===Zusätzliche Packages=== <ref name="Perfectorg" />
-
+===Zusätzliche Packages=== 
+Einige für die Server wichtige zusätzliche Packages<ref name="Perfectorg" />:
 * Perfect-Logger und Perfect-RequestLogger sind Pakete die zum Loggen von Informationen auf die Konsole oder in ein Log File. der RequestLogger ist eine Kindklasse vom Logger und fängt durch das einbinden von Filtern alle Request und logged diese mit. https://github.com/PerfectlySoft/Perfect-RequestLogger
 * Perfect-Session wurde verwendet um einen Session zu starten, verwalten und wieder zu vernichten. https://github.com/PerfectlySoft/Perfect-Session
 * Perfect-Websockets bietet eine Funktionen zum Aufbauen von WebSocket-Verbindungen
