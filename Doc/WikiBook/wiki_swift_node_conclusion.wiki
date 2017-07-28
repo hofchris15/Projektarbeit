@@ -1,7 +1,8 @@
-==Installation von Swift==<ref name="devApple">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Getting Started |url=https://swift.org/getting-started/#installing-swift |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017e): Swift - Language Guide, [online] https://swift.org/getting-started/#installing-swift [27.07.2017].</ref>
+==Installation von Swift==
+
 Da Swift eine Sprache die vorrängig für MacOS erstellt wurde, ist es erst mit ein wenig Aufwand auf Linux Distributionen lauffähig. Dazu muss die Toolchain von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> in ein Verzeichnis geladen werden, und je nach Wunsch in der Systemumgebung definiert werden. Eine genau Installationsanleitung kann ebenfalls unter <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span>nachgelesen werden. Für die Code Beispiele ist der user gegen den tatsächlichen username auszutauschen. Um dies zu vereinfachen ist der Username unseres Beispielusers "user".
 Lade die aktuelle stabile Toolchain auf der Download Seite von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> herunter und speicher es in einem beliebigen Verzeichnis z.B. im Downloads-Verzeichnis des aktuellen users.  
-Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich:
+Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich<ref name="devApple">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Getting Started |url=https://swift.org/getting-started/#installing-swift |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017e): Swift - Language Guide, [online] https://swift.org/getting-started/#installing-swift [27.07.2017].</ref>:
 
 <code>sudo apt-get install clang</code>
 
