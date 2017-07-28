@@ -1,6 +1,6 @@
 ==Installation von Swift==
 
-Da Swift eine Sprache die vorrängig für MacOS erstellt wurde, ist es erst mit ein wenig Aufwand auf Linux Distributionen lauffähig. Dazu muss die Toolchain von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> in ein Verzeichnis geladen werden, und je nach Wunsch in der Systemumgebung definiert werden. Eine genau Installationsanleitung kann ebenfalls unter <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span>nachgelesen werden. Für die Code Beispiele ist der user gegen den tatsächlichen username auszutauschen. Um dies zu vereinfachen ist der Username unseres Beispielusers "user".
+Da Swift eine Sprache die vorrängig für MacOS erstellt wurde, ist es erst mit ein wenig Aufwand auf Linux Distributionen lauffähig. Dazu muss die Toolchain von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> in ein Verzeichnis geladen werden, und je nach Wunsch in der Systemumgebung definiert werden. Eine genau Installationsanleitung kann ebenfalls unter <span class = "plainlinks">[https://swift.org/getting-started/ Swift.org ]</span> nachgelesen werden. Für die Code Beispiele ist der user gegen den tatsächlichen username auszutauschen. Um dies zu vereinfachen ist der Username unseres Beispielusers "user".
 Lade die aktuelle stabile Toolchain auf der Download Seite von <span class="plainlinks">[https://swift.org/download/#releases Swift.org ] </span> herunter und speicher es in einem beliebigen Verzeichnis z.B. im Downloads-Verzeichnis des aktuellen users.  
 Danach muss <span class="plainlinks">[http://clang.org/ clang]</span> installiert werden, um das compilieren von Swift Programmen zu ermöglichen. Dies ist mit dem Befehl auf einer Linux Bash möglich<ref name="swiftStart">{{Internetquelle|autor=Apple Inc |jahr=2017 |titel=Getting Started |url=https://swift.org/getting-started/#installing-swift |datum=ohne Datum |zugriff=2017-07-26}} Apple Inc (2017f): Getting Started, [online] https://swift.org/getting-started/#installing-swift [27.07.2017].</ref>:
 
@@ -186,13 +186,13 @@ Grundsätzlich sind beide Frameworks sehr ähnlich, wobei hierbei einige Punkte 
 Schlussendlich haben wir uns für Perfect entschieden. Gründe dafür waren, der eben erwähnte Punkt der Dokumentation, und das Perfect bereits länger auf dem Markt vorhanden ist. 
 Viele Beispiel, Bibliotheken und Packages werden von PerfectlySoft auf deren Github Account gehostet: <span class = "plainlinks">[https://github.com/PerfectlySoft PerfectlySoft on Github ]</span>
 
-===Installation von Perfect===<ref name="PerfectlySoft">{{Internetquelle|autor=Kyle Jessup et al.|jahr=2017|titel=Getting Started|url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md |datum=2017-05-19|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (2017a): Getting Started, [online] https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md [27.07.2017].</ref>
+===Installation von Perfect===
 
 Auch Perfect setzt einige Packet auf Linux voraus, darunter openssl, libssl-dev und uuid-dev. Diese können sehr leicht mit 
 
 <code> sudo apt-get install openssl libssl-dev uuid-dev</code> 
 
-installiert werden. 
+installiert werden<ref name="PerfectlySoft">{{Internetquelle|autor=Kyle Jessup et al.|jahr=2017|titel=Getting Started|url=https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md |datum=2017-05-19|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (2017a): Getting Started, [online] https://github.com/PerfectlySoft/PerfectDocs/blob/master/guide/gettingStarted.md [27.07.2017].</ref>. 
 
 ===Perfect Template ===
 Das Perfect Template wurde von uns als Ausgangspunkt der Entwicklung des HTTP Servers im MVC-Pattern gewählt. Als Reverence wurde von uns der selbe Server zuvor mit <span class = "plainlinks">[https://nodejs.org/en/  Node.js ]</span> und dem Framework <span class = "plainlinks">[http://expressjs.com/de/  Express.js ]</span> implementiert.
@@ -301,8 +301,8 @@ Ursprünglich wurde JavaScript als Teil vom Webbrowsern implementiert um cleint-
 Die Sprache war in der Vergangenheit sehr negativ besetz und hat auch heute noch bei vielen einen negativen beigeschmack. Leider wird oft die Entwicklung von JavaScript in den lezten Jahren außer acht gelassen, wo sich JavaScript immer mehr Richtung "Unverzichtbarkeit" gearbeitet hat. Derzeit ist JavaScript beinahe auf jeder WebSite und Webanwendung vertretten. Früher als Spielzeug bezeichnet ist es heute ein beliebtes Werkzeug um dynamische WebSites zu erstellen und es Usern zu ermöglichen interaktiv im Browser und im Internet unterwegs zu sein. Auch große Firmen wie Mozilla, Google, Microsoft und Apple setzen mittlerweile auf JavaScript<ref name="t3n">{{Internetquelle|autor=Felix Gelsendörfer|jahr=2010|titel=Wie Node.js JavaScript auf dem Server revolutioniert: Schubrakete für JavaScript|url=http://t3n.de/magazin/nodejs-javascript-server-revolutioniert-schubrakete-226177/ |datum=2010-12-08 |zugriff=2017-07-27}} Gelsendörfer, Felix (2010): Wie Node.js JavaScript auf dem Server revolutioniert: Schubrakete für JavaScript, [online] http://t3n.de/magazin/nodejs-javascript-server-revolutioniert-schubrakete-226177/ [27.07.2017].</ref>. Mittlerweile ist die Sprache prototypenbasierte, dynamisch und typensicher ist. Grundlage für JavaScript bildet die Skriptsprache C sowie sehr viele Begriffsstandards von Java<ref name="SEOAnalyse">{{Internetquelle|autor=Fuchs Media Solutions|jahr=o.J.|titel=JavaScript Begriffserklärung und Definition|url=https://www.seo-analyse.com/seo-lexikon/j/javascript/ |datum=ohne Datum| zugriff=2017-07-27}} Fuchs Media Solutions (o.J.): JavaScript Begriffserklärung und Definition, [online] https://www.seo-analyse.com/seo-lexikon/j/javascript/ [27.07.2017].</ref>.
 JavaScript am Server auszuführen ist seit Entstehung der Sprache eine laufende Idee von JavaScript Entwicklern und wurde bereits ein Jahr nach Entwicklung 1996 umgesetzt. Der Druchbruch gelang aber erst am 8. November 2009 als Ryan Dahl, Node.js vorstellte, dass bis heute immer beliebter wird. Mittlerweile gibt es sehr viele Tutorials, die es ermöglichen JavaScript und Node.js zu lernen und auch sehr viele Beispiel um sich diese Sprache und das Framework zu erlernen. 
 
-=== Pros and Cons===<ref name="w3schooljs">{{Internetquelle|autor=Refsnes Data|jahr=2017|titel=JavaScript Tutorial|url=https://www.w3schools.com/js |datum=ohne Datum|zugriff=2017-07-27}}
-Refsnes Data (2017a): JavaScript Tutorial, [online] https://www.w3schools.com/js [27.07.2017].</ref> <ref name="codecentricde">{{Internetquelle|author=Gregor Elke|jahr=2014|title=Ist Node.js ein Superheld? [online]|url=https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/ |datum=2014-06-19|zugriff=2017-07-27}} Elke, Gregor (2014): Ist Node.js ein Superheld?, [online] https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/ [27.07.2017].</ref> <ref name="MathematikUniUlm">{{Internetquelle|autor=o.V.|jahr=o.J.|titel=Gefahren und Anwendungsmöglichkeiten durch JavaScript|url=http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/ |datum=ohne Datum|zugriff=2017-07-27}} o.V. (o.J.): Gefahren und Anwendungsmöglichkeiten druch JavaScript, [online], http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/ [27.07.2017].</ref> <ref name="w3schoolnodejs">{{Internetquelle|autor=Refnes Data|jahr=2017|titel=Node.js Introduction|url=https://www.w3schools.com/nodejs/nodejs_intro.asp |datum=ohne Datum |zugriff=2017-07-27}} Refnes Data (2017b): Node.js Introduction, [online] https://www.w3schools.com/nodejs/nodejs_intro.asp [27.07.2017].</ref>
+=== Pros and Cons===
+
 <table>
 	<tr>
 		<th>Pros of JavaScript</th>
@@ -313,32 +313,32 @@ Refsnes Data (2017a): JavaScript Tutorial, [online] https://www.w3schools.com/js
 	<tr>
 		<td>Benutzer freundlichere Websites</td>
 		<td>JavaScript kann clientseitig deaktiviert werden</td>
-		<td>Open source server Framework</td>
-		<td>Unübersichtlichkeit der Community und der Entwicklung, durch sehr schnelles Wachstum</td>
+		<td>Open source server Framework<ref name="w3schoolnodejs">{{Internetquelle|autor=Refnes Data|jahr=2017|titel=Node.js Introduction|url=https://www.w3schools.com/nodejs/nodejs_intro.asp |datum=ohne Datum |zugriff=2017-07-27}} Refnes Data (2017b): Node.js Introduction, [online] https://www.w3schools.com/nodejs/nodejs_intro.asp [27.07.2017].</ref></td>
+		<td>Unübersichtlichkeit der Community und der Entwicklung, durch sehr schnelles Wachstum<ref name="codecentricde">{{Internetquelle|author=Gregor Elke|jahr=2014|title=Ist Node.js ein Superheld? [online]|url=https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/ |datum=2014-06-19|zugriff=2017-07-27}} Elke, Gregor (2014): Ist Node.js ein Superheld?, [online] https://blog.codecentric.de/2014/06/ist-node-js-ein-superheld/ [27.07.2017].</ref></td>
 	</tr>
 	<tr>
 		<td>Dynamischer Inhalt von Websites</td>
 		<td>Wenn deaktiviert, oft negative Auswirkungen</td>
-		<td>lauffähig auf Windows, Linux, Unix, Mac OS X, ...</td>
-		<td>Modulsytem verbraucht viel Speicher</td>
+		<td>lauffähig auf Windows, Linux, Unix, Mac OS X, ...<ref name="w3schoolnodejs"/></td>
+		<td>Modulsytem verbraucht viel Speicher<ref name="codecentricde" /></td>
 	</tr>
 	<tr>
 		<td>objekt-basiert, prototyping für Vererbung</td>
 		<td>ursprünglich keine Vererbung</td>
-		<td>Verwendung von serverseitigen JavaScript</td>
-		<td>nur ein Prozess mit einem Speicher von 1,7 GB</td>
+		<td>Verwendung von serverseitigen JavaScript<ref name="codecentricde" /></td>
+		<td>nur ein Prozess mit einem Speicher von 1,7 GB <ref name="codecentricde" /></td>
 	</tr>
 	<tr>
-		<td>Objekt-Referenzen werden erst zur Laufzeit geprüft</td>
-		<td>schwach typisierte Variablen</td>
-		<td>Asynchron, event basiert</td>
-		<td>benötigt cluster um große Mengen abzuarbeiten</td>
+		<td>Objekt-Referenzen werden erst zur Laufzeit geprüft<ref name="MathematikUniUlm">{{Internetquelle|autor=o.V.|jahr=o.J.|titel=Gefahren und Anwendungsmöglichkeiten durch JavaScript|url=http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/ |datum=ohne Datum|zugriff=2017-07-27}} o.V. (o.J.): Gefahren und Anwendungsmöglichkeiten druch JavaScript, [online], http://www.mathematik.uni-ulm.de/sai/ws01/portalsem/wiede/ [27.07.2017].</ref></td>
+		<td>schwach typisierte Variablen<ref name="MathematikUniUlm"/></td>
+		<td>Asynchron, event basiert<ref name="codecentricde" /></td>
+		<td>benötigt cluster um große Mengen abzuarbeiten<ref name="codecentricde" /></td>
 	</tr>
 	<tr>
-		<td>einfache prozeduale Sprache</td>
-		<td>kein natives Modulsystem</td>
-		<td>einbinden von C und C++ libraries</td>
-		<td>nicht alle libraries von C und C++ verfügbar</td>
+		<td>einfache prozeduale Sprache<ref name="MathematikUniUlm"/></td>
+		<td>kein natives Modulsystem<ref name="codecentricde" /></td>
+		<td>einbinden von C und C++ libraries<ref name="codecentricde" /></td>
+		<td>nicht alle libraries von C und C++ verfügbar<ref name="codecentricde" /></td>
 	</tr>
 </table>
 
