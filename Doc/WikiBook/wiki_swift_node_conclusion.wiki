@@ -198,8 +198,8 @@ installiert werden<ref name="PerfectlySoft">{{Internetquelle|autor=Kyle Jessup e
 Das Perfect Template wurde von uns als Ausgangspunkt der Entwicklung des HTTP Servers im MVC-Pattern gewählt. Als Reverence wurde von uns der selbe Server zuvor mit <span class = "plainlinks">[https://nodejs.org/en/  Node.js ]</span> und dem Framework <span class = "plainlinks">[http://expressjs.com/de/  Express.js ]</span> implementiert.
 Das Perfect Template hält die Standard Baumstruktur des swift init-Prozesses bereit, die bereits in der [[Installation von Swift#Swift Package Manager]] vorgestellt wurde. Weiter befinden sich ein Datei names "main.swift" enthält, die die Initalisierung eines Serves bereithält. Interressant ist jedoch das in der Package.swift enhaltene Abhängigkeit <span class = "plainlinks">[https://github.com/PerfectlySoft/Perfect-HTTPServer.git ]</span>. Der Perfect-HTTPServer hat einige sehr nützliche Abhängigkeiten die auch wir im Server verwendet haben.
 
-===Die wichtigsten Packages=== <ref name="Perfectorg">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.b |titel=Documentation|url=https://www.perfect.org/docs/ |datum=ohne Datum|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (o.J.): Documentation, [online] https://www.perfect.org/docs/ [27.07.2017].</ref>
-Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server ins laufen zu bekommen. Diese Grund-Pakete sind PerfectLib COpenSSL, HTTP, HTTPServer, PerfectLib, LinuxBridge und Net.
+===Die wichtigsten Packages=== 
+Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server ins laufen zu bekommen. Diese Grund-Pakete sind PerfectLib COpenSSL, HTTP, HTTPServer, PerfectLib, LinuxBridge und Net<ref name="Perfectorg">{{Internetquelle|autor=Sean Stephens, Kyle Jessup, Lucas Chang, Jonathan Guthrie|jahr=o.J.b |titel=Documentation|url=https://www.perfect.org/docs/ |datum=ohne Datum|zugriff=2017-07-27}} Jessup, Kyle / Stephens, Sean / Chang, Lucas / Guthrie, Jonathan (o.J.): Documentation, [online] https://www.perfect.org/docs/ [27.07.2017].</ref>.
 * Foundation ist die standard Bibliothek von Swift und bietet die grunsätlichen Funktionen und Definition wie (Strings, Numbers,...) die von der Swift.org veröffentlicht wurden. https://developer.apple.com/documentation/foundation
 * COpenSSL bietet verschieden Verschlüsselungstechniken und SSL/TLS Methoden zur Verfügung die auf Linux in C installiert werden (Dieses Paket wurde nicht verwendet) https://github.com/PerfectlySoft/Perfect-COpenSSL
 * HTTP bietet verschiedene Strukturen und Methoden um mit http Clients zu kommunizieren. Diese Paket muss mit "import PerfectHTTP" im Projekt eingebunden werden https://github.com/PerfectlySoft/Perfect-HTTP
@@ -208,8 +208,8 @@ Wie oben beschrieben sind einige Packete grunsätlich notwendig um den Server in
 * LinuxBridge bildet die Brücke zwischen Perfect und den Linux Distriputionen https://github.com/PerfectlySoft/Perfect-LinuxBridge
 * Net ist ein networking Paket welches TCP, SSL, UNIX Socket files und IO Event Handling zur Verfügung stellt. https://github.com/PerfectlySoft/Perfect-Net
 
-===Zusätzliche Packages=== <ref name="Perfectorg" />
-
+===Zusätzliche Packages=== 
+Einige für die Server wichtige zusätzliche Packages<ref name="Perfectorg" />:
 * Perfect-Logger und Perfect-RequestLogger sind Pakete die zum Loggen von Informationen auf die Konsole oder in ein Log File. der RequestLogger ist eine Kindklasse vom Logger und fängt durch das einbinden von Filtern alle Request und logged diese mit. https://github.com/PerfectlySoft/Perfect-RequestLogger
 * Perfect-Session wurde verwendet um einen Session zu starten, verwalten und wieder zu vernichten. https://github.com/PerfectlySoft/Perfect-Session
 * Perfect-Websockets bietet eine Funktionen zum Aufbauen von WebSocket-Verbindungen
