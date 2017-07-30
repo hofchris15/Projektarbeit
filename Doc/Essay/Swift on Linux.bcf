@@ -2152,6 +2152,20 @@
     <bcf:citekey order="6">Fernandez-Mir:2011:SRA:2188496.2188506</bcf:citekey>
     <bcf:citekey order="7">Li:2008:TRP:2043628.2043631</bcf:citekey>
     <bcf:citekey order="8">jetbrain</bcf:citekey>
+    <bcf:citekey order="9">expressinaction</bcf:citekey>
+    <bcf:citekey order="10">expressjs</bcf:citekey>
+    <bcf:citekey order="11">loopback</bcf:citekey>
+    <bcf:citekey order="12">clang</bcf:citekey>
+    <bcf:citekey order="13">llvm</bcf:citekey>
+    <bcf:citekey order="14">llvm</bcf:citekey>
+    <bcf:citekey order="15">llvmpulbic</bcf:citekey>
+    <bcf:citekey order="16">swiftcompiler</bcf:citekey>
+    <bcf:citekey order="17">swiftbibliothek</bcf:citekey>
+    <bcf:citekey order="18">swiftcore</bcf:citekey>
+    <bcf:citekey order="19">swiftdebugger</bcf:citekey>
+    <bcf:citekey order="20">swiftpm</bcf:citekey>
+    <bcf:citekey order="21">socketio</bcf:citekey>
+    <bcf:citekey order="22">winston</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global/" type="entry" sortscheme="nyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

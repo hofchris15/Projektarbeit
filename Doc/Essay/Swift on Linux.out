@@ -3,5 +3,8 @@
 \BOOKMARK [0][-]{chapter.2}{2 Umsetzung}{}% 3
 \BOOKMARK [1][-]{section.2.1}{2.1 Die Umgebung}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.2}{2.2 Der Reverenz-Server}{chapter.2}% 5
-\BOOKMARK [0][-]{chapter.3}{3 Conclusion and Outlook}{}% 6
-\BOOKMARK [0][-]{appendix*.16}{References}{}% 7
+\BOOKMARK [1][-]{section.2.3}{2.3 Der Swift-Server}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.4}{2.4 Vergleich der Implementierungen}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.5}{2.5 Leistungsvergleich}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{3 Conclusion and Outlook}{}% 9
+\BOOKMARK [0][-]{appendix*.36}{References}{}% 10
