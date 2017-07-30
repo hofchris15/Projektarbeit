@@ -1,0 +1,340 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nyt/global/}
+    \entry{expressinaction}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=0fc72e3db6292806fffee1bc7f69f990}{%
+           family={{Hahn, Evan M.}},
+           familyi={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Shelter Island, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Manning Publications}%
+      }
+      \strng{namehash}{0fc72e3db6292806fffee1bc7f69f990}
+      \strng{fullhash}{0fc72e3db6292806fffee1bc7f69f990}
+      \strng{authornamehash}{0fc72e3db6292806fffee1bc7f69f990}
+      \strng{authorfullhash}{0fc72e3db6292806fffee1bc7f69f990}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781617292422}
+      \field{title}{Express in Action, Writing, building, and testing Node.js applications}
+      \field{year}{2016}
+    \endentry
+    \entry{jetbrain}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=96b320d91fc42079e76eea76a458b2bf}{%
+           family={{JetBrain s.r.o.}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{96b320d91fc42079e76eea76a458b2bf}
+      \strng{fullhash}{96b320d91fc42079e76eea76a458b2bf}
+      \strng{authornamehash}{96b320d91fc42079e76eea76a458b2bf}
+      \strng{authorfullhash}{96b320d91fc42079e76eea76a458b2bf}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{CLion, A cross-platform IDE for C and C++}
+      \field{urlday}{28}
+      \field{urlmonth}{7}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.jetbrains.com/clion/
+      \endverb
+    \endentry
+    \entry{clang}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=f8c7dddc06c430b02f7e8b2d00cbeef9}{%
+           family={{LLVM Foundation}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \strng{fullhash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \strng{authornamehash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \strng{authorfullhash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{clang: a C language family frontend for LLVM}
+      \field{urlday}{29}
+      \field{urlmonth}{7}
+      \field{urlyear}{2017}
+      \field{year}{o.J.}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://clang.llvm.org/index.html
+      \endverb
+    \endentry
+    \entry{llvm}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=f8c7dddc06c430b02f7e8b2d00cbeef9}{%
+           family={{LLVM Foundation}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \strng{fullhash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \strng{authornamehash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \strng{authorfullhash}{f8c7dddc06c430b02f7e8b2d00cbeef9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The LLVM Compiler Infrastructure}
+      \field{urlday}{29}
+      \field{urlmonth}{7}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://llvm.org/
+      \endverb
+    \endentry
+    \entry{winston}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=5e7cff39ededb401ea5e7cba4dc83e3f}{%
+           family={{Robinson, Charlie / Bergman, Matthew / Squires, Marak}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e7cff39ededb401ea5e7cba4dc83e3f}
+      \strng{fullhash}{5e7cff39ededb401ea5e7cba4dc83e3f}
+      \strng{authornamehash}{5e7cff39ededb401ea5e7cba4dc83e3f}
+      \strng{authorfullhash}{5e7cff39ededb401ea5e7cba4dc83e3f}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{winston}
+      \field{year}{2017-05-02}
+      \verb{url}
+      \verb https://github.com/winstonjs/winston#logging-levels
+      \endverb
+      \warn{\item Entry 'winston' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{socketio}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=8f0b9c25f1589f4278c8daf966a61ba6}{%
+           family={{Socket.IO}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f0b9c25f1589f4278c8daf966a61ba6}
+      \strng{fullhash}{8f0b9c25f1589f4278c8daf966a61ba6}
+      \strng{authornamehash}{8f0b9c25f1589f4278c8daf966a61ba6}
+      \strng{authorfullhash}{8f0b9c25f1589f4278c8daf966a61ba6}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How to user - Using with Express 3/4}
+      \field{year}{o.J.}
+      \verb{url}
+      \verb https://socket.io/docs/#
+      \endverb
+      \warn{\item Entry 'socketio' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{expressjs}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=20f71038678d297a5c6cc0dbdc915e9c}{%
+           family={{StrongLoop, Inc./IBM}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \strng{fullhash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \strng{authornamehash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \strng{authorfullhash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Express - Schnelles, offenes, unkompliziertes Web-Framework für Node.js}
+      \field{urlday}{29}
+      \field{urlmonth}{7}
+      \field{urlyear}{2017}
+      \field{year}{o.J.a}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://expressjs.com/de/
+      \endverb
+    \endentry
+    \entry{loopback}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=20f71038678d297a5c6cc0dbdc915e9c}{%
+           family={{StrongLoop, Inc./IBM}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \strng{fullhash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \strng{authornamehash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \strng{authorfullhash}{20f71038678d297a5c6cc0dbdc915e9c}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{LoopBack - The Node.js API Framework}
+      \field{urlday}{29}
+      \field{urlmonth}{7}
+      \field{urlyear}{2017}
+      \field{year}{o.J.b}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb http://loopback.io/
+      \endverb
+    \endentry
+    \entry{swiftcompiler}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
+           family={{Swift.org}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{fullhash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authornamehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{extrayear}{1}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Compiler Architecture}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://swift.org/compiler-stdlib/#compiler-architecture
+      \endverb
+      \warn{\item Entry 'swiftcompiler' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftpm}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
+           family={{Swift.org}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{fullhash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authornamehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{extrayear}{2}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Package Manager}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://swift.org/package-manager/
+      \endverb
+      \warn{\item Entry 'swiftpm' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftdebugger}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
+           family={{Swift.org}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{fullhash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authornamehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{extrayear}{3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{REPL and Debugger}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://swift.org/lldb/#why-combine-the-repl-and-debugger
+      \endverb
+      \warn{\item Entry 'swiftdebugger' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftbibliothek}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
+           family={{Swift.org}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{fullhash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authornamehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{extrayear}{4}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Standard Library Design}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://swift.org/compiler-stdlib/#standard-library-design
+      \endverb
+      \warn{\item Entry 'swiftbibliothek' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftcore}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
+           family={{Swift.org}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{fullhash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authornamehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{extrayear}{5}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Swift Core Libraries}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://swift.org/core-libraries/#foundation
+      \endverb
+      \warn{\item Entry 'swiftcore' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+  \endsortlist
+  \missing{acm:diglibrary}
+  \missing{Batina:2011:HER:2188496.2188508}
+  \missing{llvmpulbic}
+  \missing{ieee:xplore}
+  \missing{Li:2008:TRP:2043628.2043631}
+  \missing{Fernandez-Mir:2011:SRA:2188496.2188506}
+\endrefsection
+\endinput
+
