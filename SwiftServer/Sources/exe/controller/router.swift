@@ -311,13 +311,9 @@ func simpleSend(_ response: HTTPResponse, _ file: String) {
  * Try to compress data else uncompressed
  */
 func compress(_ data: String) -> [UInt8] {
-	LogFile.debug("Trying to compress \(data)")
+	LogFile.debug("Trying to compress data")
 	let enc = data.data(using: .utf8)!
-	LogFile.debug("Trying to compress \(enc)")
 	let zipped = try? enc.gzipped()
-	LogFile.debug("After compression \(zipped!)")
-	//let result = zipped!.base64EncodedString()
-	//LogFile.debug("As String \(result)")
 	return [UInt8](zipped!)
 }
 
