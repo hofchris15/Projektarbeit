@@ -2,6 +2,14 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Train engine in Kapfenberg\relax }}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Train engine in Kapfenberg}}{2}{figure.1.1}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Yslow des Node-Servers}}}{24}{subfigure.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Yslow des Swift-Servers}}}{24}{subfigure.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Request-Abarbeitung von Express.js und Perfect}}{25}{figure.2.1}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

@@ -53,13 +53,10 @@ In order to see what's possible -- here are two fancy tables: \ref{tab:olive} an
 \begin{table}[h]
 \begin{tabular}{|l|l|l|l|}\hline
 \rowcolor{olivegreen30}
-\textcolor{white}{\textbf{Version}}
-		&
-		\textcolor{white}{\textbf{Description}}	&
-							\textcolor{white}{\textbf{Author(s)}}	&
-																\textcolor{white}{\textbf{Date}}\\\hline
-1.0		& Initial				& Ohrt					& July 15, 2014\\\hline
-1.1		& Filled section ``Open Issues''	& Ohrt					& July 16, 2014\\\hline
+\textcolor{white}{\textbf{Version}}		& \textcolor{white}{\textbf{Description}}	
+& \textcolor{white}{\textbf{Author(s)}}	& \textcolor{white}{\textbf{Date}}\\\hline
+1.0		& Initial							& Ohrt					& July 15, 2014\\\hline
+1.1		& Filled section ``Open Issues''		& Ohrt					& July 16, 2014\\\hline
 1.2		& Added section ``Restrictions''	& Ohrt					& September 15, 2014\\\hline
 \end{tabular}
 \caption{Olive green heading} \label{tab:olive}
@@ -67,17 +64,13 @@ In order to see what's possible -- here are two fancy tables: \ref{tab:olive} an
 
 \begin{table}[h]
 \begin{tabular}{ l | l }
-\rowcolor{gray20}\textbf{Error}	& \textbf{Solution} \\
-\rowcolor{gray5}Java.lang.OutOfMemoryError: PermGen space
-									& -XX:MaxPermSize=1024M \\
-\rowcolor{gray5}\textit{(32-/64-bit issue)}
-									& \\
-\rowcolor{gray20}Error occurred during initialization of VM \textit{or}
-									& increase or remove -Xms value \\
-\rowcolor{gray20}Could not reserve enough space for object heap
-									& e.g.\ -Xms128m -Xmx512m \\
-\rowcolor{gray20}					& \small{(Eclipse default:}\\
-\rowcolor{gray20}					& \small{-Xms40m -Xmx512m)} \\
+\rowcolor{gray20}	\textbf{Error}									& \textbf{Solution} 				\\
+\rowcolor{gray5}		Java.lang.OutOfMemoryError: PermGen space 		& -XX:MaxPermSize=1024M 		\\
+\rowcolor{gray5}		\textit{(32-/64-bit issue)}							& 								\\
+\rowcolor{gray20}	Error occurred during initialization of VM \textit{or}	& increase or remove -Xms value 	\\
+\rowcolor{gray20}	Could not reserve enough space for object heap		& e.g.\ -Xms128m -Xmx512m 		\\
+\rowcolor{gray20}													& \small{(Eclipse default:}			\\
+\rowcolor{gray20}													& \small{-Xms40m -Xmx512m)} 	\\
 \end{tabular}
 \caption{A grey table} \label{tab:grey}
 \end{table}

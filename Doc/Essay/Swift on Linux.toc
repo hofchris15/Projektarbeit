@@ -10,4 +10,90 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Some \LaTeX {} Basics}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Conclusion and Outlook}{4}{chapter.2}
+\contentsline {chapter}{\numberline {2}Umsetzung}{4}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Die Umgebung}{4}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Stabilit\IeC {\"a}t}{4}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Entwicklungsumgebung}{5}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Virtuelle Maschine}{5}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Der Reverenz-Server}{5}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Framework}{6}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Dynamische Websites}{6}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Registrieren, speichern, verschl\IeC {\"u}sseln}{7}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Login und Session}{7}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Caching}{7}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Socketverbindung}{7}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Model View Controller Pattern}{7}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Logging}{8}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Der Swift-Server}{8}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Swift auf Linux installieren}{8}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Clang}{8}{section*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Der LLVM Compiler}{9}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{libicu-dev und libcurllpp}{10}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{git}{10}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Installation}{10}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Das Swift Package}{10}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Swift Compiler}{10}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Standard Bibliothek}{11}{section*.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Core Bibliothek}{11}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{LLDB Debugger}{12}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Swift Package Manager}{12}{section*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Xcode Playground support}{13}{section*.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Vergleich der Implementierungen}{13}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.1}Framework}{13}{subsection.2.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Perfect}{13}{section*.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.2}Dynamische Website Erstellung}{14}{subsection.2.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.3}Registrieren, Speichern, verschl\IeC {\"u}sseln}{17}{subsection.2.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Filehandling}{18}{section*.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{verschl\IeC {\"u}sseln}{21}{section*.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.4}Session}{21}{subsection.2.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.5}Caching}{22}{subsection.2.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.6}Socketverbindung}{22}{subsection.2.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.7}Logging}{23}{subsection.2.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Leistungsvergleich}{23}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.1}Yslow}{24}{subsection.2.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.2}Apache Bench}{24}{subsection.2.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Conclusion and Outlook}{27}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{29}{appendix*.36}
