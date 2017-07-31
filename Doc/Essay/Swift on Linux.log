@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  30 JUL 2017 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  31 JUL 2017 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1114,11 +1114,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )
 (./Swift on Linux.aux (./titlepages.aux) (./chapters/introduction.aux)
-(./chapters/main.aux
-
-LaTeX Warning: Label `para:clang' multiply defined.
-
-) (./chapters/conclusion.aux) (./acronyms.aux))
+(./chapters/main.aux) (./chapters/conclusion.aux) (./acronyms.aux))
 \openout1 = `"Swift on Linux.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
@@ -1225,6 +1221,12 @@ Package biblatex Info: ... file '"Swift on Linux".bbl' found.
 (./Swift on Linux.bbl
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'winston':
+(biblatex)                - Entry 'winston' (references.bib): Invalid format '3
+0-07-2017' of date field 'urldate' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'socketio':
 (biblatex)                - Entry 'socketio' (references.bib): Invalid format '
 30-07-2017' of date field 'urldate' - ignoring.
@@ -1262,14 +1264,14 @@ Package biblatex Warning: Biber reported the following issues
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                Li:2008:TRP:2043628.2043631
+(biblatex)                llvmpulbic
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                llvmpulbic
+(biblatex)                Batina:2011:HER:2188496.2188508
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1283,13 +1285,6 @@ Package biblatex Warning: The following entry could not be found
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                Fernandez-Mir:2011:SRA:2188496.2188506
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                acm:diglibrary
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -1297,7 +1292,14 @@ Package biblatex Warning: The following entry could not be found
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                Batina:2011:HER:2188496.2188508
+(biblatex)                Fernandez-Mir:2011:SRA:2188496.2188506
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Li:2008:TRP:2043628.2043631
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1324,7 +1326,7 @@ LaTeX Info: Redefining \nameref on input line 154.
 \openout2 = `titlepages.aux'.
 
  (./titlepages.tex
-<images/logo_FHJ_100mm_cmyk.pdf, id=44, pagebox=cropbox, 285.065pt x 58.2175pt>
+<images/logo_FHJ_100mm_cmyk.pdf, id=52, pagebox=cropbox, 285.065pt x 58.2175pt>
 
 File: images/logo_FHJ_100mm_cmyk.pdf Graphic file (type pdf)
 <use images/logo_FHJ_100mm_cmyk.pdf>
@@ -1475,7 +1477,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
-<images/engine.jpg, id=110, 192.72pt x 144.54pt>
+<images/engine.jpg, id=118, 192.72pt x 144.54pt>
 File: images/engine.jpg Graphic file (type jpg)
 <use images/engine.jpg>
 Package pdftex.def Info: images/engine.jpg  used on input line 34. on input lin
@@ -1527,115 +1529,124 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 ] [5]
 [6]
-Overfull \hbox (12.03854pt too wide) in paragraph at lines 61--62
+Overfull \hbox (12.03854pt too wide) in paragraph at lines 62--63
 \T1/ptm/m/n/12 plizite Ses-sion ges-tartet. Diese wird au-toma-tisch durch Ex-p
 ress und dem Modul "express-
  []
 
 
-Overfull \hbox (28.08345pt too wide) in paragraph at lines 70--71
+Overfull \hbox (0.86794pt too wide) in paragraph at lines 68--69
+ []\T1/ptm/b/n/12 Socketverbindung[] \T1/ptm/m/n/12 Für die Sock-etverbindung i
+m Server, um einen Chat zu be-treiben,
+ []
+
+
+Overfull \hbox (28.08345pt too wide) in paragraph at lines 71--72
  []\T1/ptm/b/n/12 Model View Con-troller Pat-tern[] \T1/ptm/m/n/12 Der Rev-eren
 -zserver wurde im MVC-Pattern geschrieben,
  []
 
 [7]
-Overfull \hbox (7.21512pt too wide) in paragraph at lines 80--82
+Overfull \hbox (16.551pt too wide) in paragraph at lines 84--86
 \T1/ptm/m/n/12 Für die In-stal-la-tion von Swift sind vier wichtige Bib-lio-the
-ken bzw. Pro-grame notwendig,
+ken bzw. Pro-gramme notwendig,
  []
 
 [8]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 94.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 98.
 
-Overfull \hbox (6.12375pt too wide) in paragraph at lines 105--106
+Overfull \hbox (1.13118pt too wide) in paragraph at lines 109--110
+\T1/ptm/m/n/12 statis-che wie auch dy-namis-che Kom-pilierung von ver-schiede-n
+en Pro-gram-mier-sprachen
+ []
+
+
+Overfull \hbox (6.12375pt too wide) in paragraph at lines 109--110
 \T1/ptm/m/n/12 mit einer Vielzahl von com-piler Tech-niken. Darüber hin-aus ver
 -fügt er über eine Codeop-
  []
 
-[9] [10] [11] [12]
-Overfull \hbox (5.05482pt too wide) in paragraph at lines 177--188
+[9] [10]
+Overfull \hbox (1.14362pt too wide) in paragraph at lines 144--145
+\T1/ptm/m/n/12 Swift Code ab. Diese Un-ter-schiede sind auf den Nutzen der Bib-
+lio-thek zurück-zuführen,
+ []
+
+[11] [12]
+Overfull \hbox (5.05482pt too wide) in paragraph at lines 181--193
 \T1/ptm/m/n/12 In diesem Kapi-tel geht es um die Um-set-zung des in ref-sec:der
 reverenzserver beschriebe-
  []
 
 
-Overfull \hbox (9.75943pt too wide) in paragraph at lines 190--192
-\T1/ptm/m/n/12 Als Frame-work für den Swift Server standen zwei ver-schieden Fr
-ame-works zur Auswahl: 
+Overfull \hbox (15.08736pt too wide) in paragraph at lines 195--197
+\T1/ptm/m/n/12 Als Frame-work für den Swift Server standen zwei ver-schiedene F
+rame-works zur Auswahl: 
+ []
+
+[13]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 205.
+
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 243.
+[14] [15]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 314.
+
+Overfull \hbox (5.22385pt too wide) in paragraph at lines 314--318
+\T1/ptm/m/n/12 dafür beauf-tragte Meth-ode \T1/ptm/b/n/12 ren-der-ChatView \T1/
+ptm/m/n/12 bekommt dafür den User-na-men übergeben
  []
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 200.
-
-[13]
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 237.
- [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 308--312
+Underfull \hbox (badness 10000) in paragraph at lines 314--318
 
  []
 
 [16] [17]
-
-LaTeX Warning: Reference `lst:jsonstrigifyinswift' on page 18 undefined on inpu
-t line 369.
-
-
-Overfull \hbox (26.22203pt too wide) in paragraph at lines 385--388
-\T1/ptm/m/n/12 Profil-Objekt ist somit au-toma-tisch reg-istri-ert, so-das die 
-Be-fehle \T1/ptm/m/it/12 pro-file.jsonEncodedString()
+Overfull \hbox (30.88991pt too wide) in paragraph at lines 391--394
+\T1/ptm/m/n/12 Profil-Objekt ist somit au-toma-tisch reg-istri-ert, so-dass die
+ Be-fehle \T1/ptm/m/it/12 pro-file.jsonEncodedString()
  []
 
-[18]
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 392.
- [19] [20] [21]
+[18] [19] [20] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
 
-LaTeX Warning: Reference `swiftdestroysession' on page 22 undefined on input li
-ne 554.
+ []
 
-[22]
-
-LaTeX Warning: Citation 'winston' on page 23 undefined on input line 625.
-
-[23]
-<images/nodeslow.png, id=520, 197.23688pt x 487.06969pt>
+[23] [24] [25]
+<images/nodeslow.png, id=603, 197.23688pt x 487.06969pt>
 File: images/nodeslow.png Graphic file (type png)
 <use images/nodeslow.png>
-Package pdftex.def Info: images/nodeslow.png  used on input line 642. on input 
-line 642.
+Package pdftex.def Info: images/nodeslow.png  used on input line 757. on input 
+line 757.
 Package pdftex.def Info: Requested size: 118.34302pt x 292.24405pt on input lin
-e 642.
-<images/swiftslow.png, id=521, 196.48407pt x 485.56406pt>
+e 757.
+<images/swiftslow.png, id=604, 196.48407pt x 485.56406pt>
 File: images/swiftslow.png Graphic file (type png)
 <use images/swiftslow.png>
-Package pdftex.def Info: images/swiftslow.png  used on input line 643. on input
- line 643.
+Package pdftex.def Info: images/swiftslow.png  used on input line 758. on input
+ line 758.
 Package pdftex.def Info: Requested size: 117.89134pt x 291.34068pt on input lin
-e 643.
- [24 <./images/nodeslow.png> <./images/swiftslow.png>]
-<images/time.jpg, id=530, 749.4399pt x 419.166pt>
+e 758.
+ [26]
+<images/time.jpg, id=610, 760.2804pt x 370.0224pt>
 File: images/time.jpg Graphic file (type jpg)
 <use images/time.jpg>
-Package pdftex.def Info: images/time.jpg  used on input line 653. on input line
- 653.
-Package pdftex.def Info: Requested size: 374.71902pt x 209.58249pt on input lin
-e 653.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[25 <./images/time.jpg>]) [26]
+Package pdftex.def Info: images/time.jpg  used on input line 767. on input line
+ 767.
+Package pdftex.def Info: Requested size: 304.10677pt x 148.00633pt on input lin
+e 767.
+ [27 <./images/nodeslow.png> <./images/swiftslow.png> <./images/time.jpg>] [28]
+) [29]
 \openout2 = `chapters/conclusion.aux'.
 
  (./chapters/conclusion.tex
 Chapter 3.
-[27
+[30
 
 
 
@@ -1645,7 +1656,7 @@ Chapter 3.
  (./acronyms.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 8.
-) [28
+) [31
 
 
 
@@ -1662,42 +1673,31 @@ Overfull \hbox (4.81296pt too wide) in paragraph at lines 215--215
  Avail-able from: <[][]$\T1/pcr/m/n/12 https : / / swift . org / package -[]
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
-[29
+[32
 
 
 ]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
+ [33]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
- (./Swift on Linux.aux (./titlepages.aux) (./chapters/introduction.aux)
-(./chapters/main.aux) (./chapters/conclusion.aux) (./acronyms.aux))
+ (./Swift on Linux.aux (./titlepages.aux) (./chapters/introduction.aux) (./chap
+ters/main.aux) (./chapters/conclusion.aux) (./acronyms.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `"Swift on Linux".out' has not changed.
-(rerunfilecheck)             Checksum: 4FAE90D31FE510FAD3439DB4EC2BF7D1;616.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                "Swift on Linux"
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: BADA39D6D3A31C6F933ED386AD802A62;747.
 Package logreq Info: Writing requests to '"Swift on Linux".run.xml'.
 \openout1 = `"Swift on Linux.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17913 strings out of 492990
- 281638 string characters out of 6131684
- 893953 words of memory out of 5000000
- 20789 multiletter control sequences out of 15000+600000
+ 18072 strings out of 492990
+ 283939 string characters out of 6131684
+ 910152 words of memory out of 5000000
+ 20880 multiletter control sequences out of 15000+600000
  79505 words of font info for 108 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 45i,11n,51p,1486b,1966s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,11n,51p,1495b,1966s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/Programme/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/Program
 me/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb><d:/Programme/tex
 live/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/Programme/texlive/2
@@ -1708,10 +1708,10 @@ ts/type1/urw/times/utmbi8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type
 1/urw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on "Swift on Linux.pdf" (37 pages, 418261 bytes).
+Output written on "Swift on Linux.pdf" (41 pages, 428027 bytes).
 PDF statistics:
- 692 PDF objects out of 1000 (max. 8388607)
- 632 compressed objects within 7 object streams
- 348 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 803 PDF objects out of 1000 (max. 8388607)
+ 738 compressed objects within 8 object streams
+ 416 named destinations out of 1000 (max. 500000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

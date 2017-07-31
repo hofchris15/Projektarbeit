@@ -1,34 +1,34 @@
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'Swift on Linux.blg'
 [25] biber-MSWIN32:303> INFO - === 
-[55] Biber.pm:359> INFO - Reading 'Swift on Linux.bcf'
-[134] Biber.pm:835> INFO - Found 19 citekeys in bib section 0
-[145] Biber.pm:3670> INFO - Processing section 0
-[160] Biber.pm:3840> INFO - Looking for bibtex format file 'references.bib' for section 0
-[171] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[179] bibtex.pm:1292> INFO - Found BibTeX data source 'references.bib'
-[207] Utils.pm:164> WARN - year field 'o.J.a' in entry 'expressjs' is not an integer - this will probably not sort properly.
-[209] Utils.pm:164> WARN - year field 'o.J.b' in entry 'loopback' is not an integer - this will probably not sort properly.
-[209] Utils.pm:164> WARN - year field 'o.J.' in entry 'clang' is not an integer - this will probably not sort properly.
-[212] Utils.pm:164> WARN - Entry 'swiftcompiler' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
-[213] Utils.pm:164> WARN - Entry 'swiftbibliothek' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
-[213] Utils.pm:164> WARN - Entry 'swiftcore' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
-[214] Utils.pm:164> WARN - Entry 'swiftdebugger' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
-[215] Utils.pm:164> WARN - Entry 'swiftpm' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
-[216] Utils.pm:164> WARN - year field 'o.J.' in entry 'socketio' is not an integer - this will probably not sort properly.
-[217] Utils.pm:164> WARN - Entry 'socketio' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring
-[217] Utils.pm:164> WARN - year field '2017-05-02' in entry 'winston' is not an integer - this will probably not sort properly.
-[218] Utils.pm:164> WARN - Entry 'winston' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring
-[219] Utils.pm:164> WARN - I didn't find a database entry for 'acm:diglibrary' (section 0)
-[219] Utils.pm:164> WARN - I didn't find a database entry for 'ieee:xplore' (section 0)
-[219] Utils.pm:164> WARN - I didn't find a database entry for 'Batina:2011:HER:2188496.2188508' (section 0)
-[219] Utils.pm:164> WARN - I didn't find a database entry for 'Fernandez-Mir:2011:SRA:2188496.2188506' (section 0)
-[220] Utils.pm:164> WARN - I didn't find a database entry for 'Li:2008:TRP:2043628.2043631' (section 0)
-[220] Utils.pm:164> WARN - I didn't find a database entry for 'llvmpulbic' (section 0)
-[238] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[238] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[238] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
-[238] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
-[247] bbl.pm:608> INFO - Writing 'Swift on Linux.bbl' with encoding 'UTF-8'
-[249] bbl.pm:712> INFO - Output to Swift on Linux.bbl
-[253] Biber.pm:109> INFO - WARNINGS: 18
+[44] Biber.pm:359> INFO - Reading 'Swift on Linux.bcf'
+[119] Biber.pm:835> INFO - Found 19 citekeys in bib section 0
+[130] Biber.pm:3670> INFO - Processing section 0
+[144] Biber.pm:3840> INFO - Looking for bibtex format file 'references.bib' for section 0
+[157] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[165] bibtex.pm:1292> INFO - Found BibTeX data source 'references.bib'
+[190] Utils.pm:164> WARN - year field 'o.J.a' in entry 'expressjs' is not an integer - this will probably not sort properly.
+[191] Utils.pm:164> WARN - year field 'o.J.b' in entry 'loopback' is not an integer - this will probably not sort properly.
+[192] Utils.pm:164> WARN - year field 'o.J.' in entry 'clang' is not an integer - this will probably not sort properly.
+[194] Utils.pm:164> WARN - Entry 'swiftcompiler' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
+[194] Utils.pm:164> WARN - Entry 'swiftbibliothek' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
+[195] Utils.pm:164> WARN - Entry 'swiftcore' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
+[196] Utils.pm:164> WARN - Entry 'swiftdebugger' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
+[197] Utils.pm:164> WARN - Entry 'swiftpm' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring
+[197] Utils.pm:164> WARN - year field 'o.J.' in entry 'socketio' is not an integer - this will probably not sort properly.
+[198] Utils.pm:164> WARN - Entry 'socketio' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring
+[198] Utils.pm:164> WARN - year field '2017-05-02' in entry 'winston' is not an integer - this will probably not sort properly.
+[199] Utils.pm:164> WARN - Entry 'winston' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring
+[200] Utils.pm:164> WARN - I didn't find a database entry for 'acm:diglibrary' (section 0)
+[200] Utils.pm:164> WARN - I didn't find a database entry for 'ieee:xplore' (section 0)
+[200] Utils.pm:164> WARN - I didn't find a database entry for 'Batina:2011:HER:2188496.2188508' (section 0)
+[200] Utils.pm:164> WARN - I didn't find a database entry for 'Fernandez-Mir:2011:SRA:2188496.2188506' (section 0)
+[200] Utils.pm:164> WARN - I didn't find a database entry for 'Li:2008:TRP:2043628.2043631' (section 0)
+[201] Utils.pm:164> WARN - I didn't find a database entry for 'llvmpulbic' (section 0)
+[216] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[217] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[217] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[217] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[225] bbl.pm:608> INFO - Writing 'Swift on Linux.bbl' with encoding 'UTF-8'
+[226] bbl.pm:712> INFO - Output to Swift on Linux.bbl
+[230] Biber.pm:109> INFO - WARNINGS: 18

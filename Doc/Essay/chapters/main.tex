@@ -2,7 +2,7 @@
 
 \chapterstart
 
-Folgend wird die Umsetzung beschrieben die in mehrere Bereiche aufgeteilt wurde. Diese Teilbereiche gliedern sich wie folgt:
+Folgend wird die Umsetzung beschrieben, die in mehrere Bereiche aufgeteilt wurde. Diese Teilbereiche gliedern sich wie folgt:
 \begin{itemize}
 	\item Vorbereitung der Entwicklungsumgebung
 	\item Erstellen des Reverenzservers in Javascript mit Node.js
@@ -14,21 +14,21 @@ Folgend wird die Umsetzung beschrieben die in mehrere Bereiche aufgeteilt wurde.
 \section{Die Umgebung}
 \label{sec:dieumgebung}
 
-Für die Entwicklung des Swift-Servers musste eine Linux Distribution gefunden werden, die den Ansprüchen einer Entwicklungsumgebung entspricht. Mehrer Faktoren spielten dabei eine Rolle. Die wichtigesten Punkte dabei waren die Stabilität der Distribution, die Möglichkeit Entwicklungsumgebungen beziehungsweise Programme zu installieren ohne großen Aufwand mit dem auflösen von Abhängigkeiten und gerniger Wahrscheinlichkeit möglicher Inkompatibilität. Weiter sollte es möglich sein diese als Virtuellen Maschine laufen zu lassen. 
+Für die Entwicklung des Swift-Servers musste eine Linux Distribution gefunden werden, die den Ansprüchen einer Entwicklungsumgebung entspricht. Mehrere Faktoren spielten dabei eine Rolle. Die wichtigsten Punkte dabei waren die Stabilität der Distribution, die Möglichkeit Entwicklungsumgebungen beziehungsweise Programme zu installieren ohne großen Aufwand mit dem auflösen von Abhängigkeiten zu haben, und geringer Wahrscheinlichkeit möglicher Inkompatibilität. Weiters sollte es möglich sein diese als Virtuelle Maschine laufen zu lassen. 
 
 \paragraph{Stabilität}
-Die Stabilität ist wichtig da Swift die Sprache "C" verwendet und es die Möglichkeit gibt, die Virtuelle Maschine, zum Beispiel durch das Abstürzen des OS zu beschädigen. Außerdem sollte es möglich sein Programme aller Art auf dem OS zu installieren, sodass es keine Überraschungen im laufe des Projektes gibt. Weiter wurde auch Seitens der Swift-Entwickler Ubuntu empfohlen. Daher fiel die Wahl auf die zu diesem Zeitpunkt aktuelle Ubuntu Version 16.04 LTS da diese auch möglichst leichtgewichtig ist. 
+Die Stabilität ist wichtig da Swift die Sprache "C" verwendet und es die Möglichkeit gibt, die Virtuelle Maschine, zum Beispiel durch das Abstürzen des OS zu beschädigen. Außerdem sollte es möglich sein, Programme aller Art auf dem OS zu installieren, sodass es keine Überraschungen im Laufe des Projektes gibt. Weiter wurde auch seitens der Swift-Entwickler Ubuntu empfohlen. Daher fiel die Wahl auf die zu diesem Zeitpunkt aktuelle Ubuntu Version 16.04 LTS, da diese auch möglichst leichtgewichtig ist. 
 
 \paragraph{Entwicklungsumgebung}
-Da Swift eine noch nicht sehr weit verbreitete Sprache auserhalb der Mac-Welt ist, war es eine Herausforderung einen IDE die auf Linux lauffähig ist zu finden, in der eine Unterstützung in Form von zum Beisiel Syntaxhighliting oder Autoverfollständigung, für Swift zur Verfügung steht. Zur Lösung des Problems wurde \textit{CLION} von \textit{JetBrains} \parencite{jetbrain} in der Version 2017.2 verwendet, dass ein Plugin für Swift bereithält.
+Da Swift eine noch nicht sehr weit verbreitete Sprache außerhalb der Mac-Welt ist, war es eine Herausforderung einen IDE, die auf Linux lauffähig ist, zu finden, in der eine Unterstützung in Form von zum Beispiel Syntaxhighliting oder Autovervollständigung für Swift zur Verfügung steht. Zur Lösung des Problems wurde \textit{CLION} von \textit{JetBrains} \parencite{jetbrain} in der Version 2017.2 verwendet, das ein Plugin für Swift bereithält.
 
 \paragraph{Virtuelle Maschine}
-Für das Betriebssystem musste die Möglichkeit bestehen es als eine Virtuelle Maschine auf einem PC lauffähig zu bekommen. Dazu wurde als Umgebung für die VM \textit{VitualBox} von \textit{Oracle} installiert und darauf die vorhin erwähnte Ubuntu 16.04 LTS Distribution aufgesetzt.
+Für das Betriebssystem musste die Möglichkeit bestehen, es als eine Virtuelle Maschine auf einem PC lauffähig zu bekommen. Dazu wurde als Umgebung für die VM \textit{VirtualBox} von \textit{Oracle} installiert und darauf die vorhin erwähnte Ubuntu 16.04 LTS Distribution aufgesetzt.
 
 \section{Der Reverenz-Server}
 \label{sec:derreverenzserver}
 
-Um den Swift-Server vergleichen zu können wurde zuvor ein Server benötigt, der verschieden serverseitige Anforderungen erfüllt. Anforderungen die nicht direkt mit Node.js und Express.js in Verbindung stehen, zum Beispiel Responsive Web welches mit CSS erreicht wurde, werden hier nicht berücksichtigt. Dieser Server wurde bereits im Zuge der Lehrveranstaltung "Rich Internet Application" von Michael Rotinger, Stefan Moder und Christian Hofer implementiert und erfüllt folgende serverseitige Anforderungen: 
+Um den Swift-Server vergleichen zu können, wurde zuvor ein Server benötigt, der verschieden serverseitige Anforderungen erfüllt. Anforderungen, die nicht direkt mit Node.js und Express.js in Verbindung stehen, zum Beispiel Responsive Web, welches mit CSS erreicht wurde, werden hier nicht berücksichtigt. Dieser Server wurde bereits im Zuge der Lehrveranstaltung "Rich Internet Application" von Michael Rotinger, Stefan Moder und Christian Hofer implementiert und erfüllt folgende serverseitige Anforderungen: 
 \begin{itemize}
 	\item Verwendung eines aktuellen Frameworks
 	\item Dynamische Website Erstellung
@@ -38,46 +38,50 @@ Um den Swift-Server vergleichen zu können wurde zuvor ein Server benötigt, der
 	\item Socketverbindung
 	\item Model View Controller Pattern
 	\item Logging
+	\item Kompression
 \end{itemize}
 
 \paragraph{Framework}
-Der Server ist in JavaScrip geschrieben, wobei hier Node.js mit dem Framework Express verwendet wurde. Node.js ist eine I/O-Umgebung die als einziger Thread auf dem Server läuft der niemals geblockt wird. Stattesen arbeitet es auf Event-Basis mit Callbacks. Jeder Request ist als Event zu verstehen und wird zum Beispiel als Datenbankabfrage erkannt. Der Mainthread wartet dabei nicht darauf das die Datenbankabfrage fertig ist, und blockiert inzwischen sondern kann in der Zwischenzeit weiter Requests behandeln. Bei Beendigung des I/O-Prozess wird durch den Callback die eventuelle Response gesendet. Neben der Asynchronität von Node.js, ist die Geschwindigkeit von dieser JavaScript-Maschine enorm. Entwickelt wurde Node.js auf Basis der "Google Chrome V8 engine" die JavaScipt enorm schnell bearbeiten kann. Unterstützt durch das Framework Express können weiter Vorteile wie Middleware und modulbasierte Plugins verwendet werden. Weitere Vorteile von Express sind, dass es ein offenes, schnelles und unkompliziertes Web-Framework ist, das auch mobile Anwendungen unterstützt. Grundsätzlich werden 4 Hauptaufgaben von Express.js zur Verfügung gestellt:
+Der Server ist in JavaScript geschrieben, wobei hier Node.js mit dem Framework Express verwendet wurde. Node.js ist eine I/O-Umgebung, die als einziger Thread auf dem Server läuft, der niemals geblockt wird. Stattdesen arbeitet es auf Event-Basis mit Callbacks. Jeder Request ist als Event zu verstehen und wird zum Beispiel als Datenbankabfrage erkannt. Der Mainthread wartet dabei nicht darauf, dass die Datenbankabfrage fertig ist und blockiert inzwischen, sondern kann in der Zwischenzeit weitere Requests behandeln. Bei Beendigung des I/O-Prozesses wird durch den Callback die eventuelle Response gesendet. Neben der Asynchronität von Node.js ist die Geschwindigkeit von dieser JavaScript-Maschine enorm. Entwickelt wurde Node.js auf Basis der "Google Chrome V8 engine" die JavaScipt enorm schnell bearbeiten kann. Unterstützt durch das Framework Express können weitere Vorteile wie Middleware und modulbasierte Plugins verwendet werden. Weitere Vorteile von Express sind, dass es ein offenes, schnelles und unkompliziertes Web-Framework ist, das auch mobile Anwendungen unterstützt. Grundsätzlich werden 4 Hauptaufgaben von Express.js zur Verfügung gestellt:
 \begin{itemize}
-	\item Middleware: diese bildet ein Array mit Funktionen, mit dennen Request standardmäßig vorbearbeitet werden können zum Beispiel setzten einer Variabel
-	\item Routing: ist ein fester Bestandteil des Frameworks und ist mit dem unterschied das es aufgerufen werden muss mit einer Middleware vergleichbar
+	\item Middleware: diese bildet ein Array mit Funktionen, mit denen Request standardmäßig vorbearbeitet werden können, zum Beispiel setzen einer Variabel
+	\item Routing: ist ein fester Bestandteil des Frameworks und ist mit dem Unterschied, das es aufgerufen werden muss mit einer Middleware vergleichbar
 	\item Erweiterungen für Request und Response Objekte
 	\item Views: Dynamisches rendern von HTML
 \end {itemize} 
 Diese vier Bestandteile ermöglichen ein schnelles Erstellen eines WebServices \parencite{expressinaction}. 
-Express wir von der Stifung Node.js projektiert und verwaltet und wird auch ständig weiterentwickelt\parencite{expressjs}. Mitlerweile steht auch auf Basis von Express.js ein neues Framework LoopBack zur Verfügung welches die Entwicklung von dynamischen ent-to-end REST APIs für verschiedene Geräte und Browser zulässt, inklusive der Entwicklung von Client Application auf Android, iOS und AngularJS SDKs \parencite{loopback}.
+Express wird von der Stiftung Node.js projektiert und verwaltet und wird auch ständig weiterentwickelt \parencite{expressjs}. Mittlerweile steht auch auf Basis von Express.js ein neues Framework LoopBack zur Verfügung, welches die Entwicklung von dynamischen end-to-end REST APIs für verschiedene Geräte und Browser zulässt, inklusive der Entwicklung von Client Application auf Android, iOS und AngularJS SDKs \parencite{loopback}.
 
 \paragraph{Dynamische Websites}
-Die Websites können mit der Eingabe von Usern verändert werden zum Beispiel durch die Anzeige des Usernamens auf der Website. Dies soll serverseitig ermöglicht werden bevor das HTML an den Client gesendet wird. Im Reverenzserver übernimmt dies das Modul "Handlbars". Diese Module ermöglicht es HTML-Skelete zu erstellen und mit Eingaben zu befüllen.
+Die Websites können mit der Eingabe von Usern verändert werden, zum Beispiel durch die Anzeige des Usernamens auf der Website. Dies soll serverseitig ermöglicht werden bevor das HTML an den Client gesendet wird. Im Reverenzserver übernimmt dies das Modul "Handlbars". Diese Module ermöglichen es HTML-Skelete zu erstellen und mit Eingaben zu befüllen.
 
 \paragraph{Registrieren, speichern, verschlüsseln}
-Der Server ermöglicht es dem Client sich in einen gesicherten Bereich zu bewegen, dazu erfolgt zuvor eine Registrierung. Dazu werden die Daten des Users in Form eines JSON-Strings im Filesystem gespeichert. Für das Filehandling wurde das standardmäßig in Node.js enthaltene Modul "fs" verwendet. Dieses Modul übernimmte jegliche I/O-Aufgaben betreffend dem Filehandling, wie auch das einlesen von Datein. Eine Varition wäre das verwenden einer Datenbank zum Beispiel Redis. Bevor das Passwort des Users gespeichert wird, soll diese natürlich verschlüsselt werden, welches mit dem Modul "bcrypt-nodejs" erreicht wurde. Dieser verwndet eine "salted" SHA256 Verschlüsselung welches Asynchron oder Synchron ausgeführt werden können. 
+Der Server ermöglicht es dem Client sich in einen gesicherten Bereich zu bewegen, dazu erfolgt zuvor eine Registrierung. Dazu werden die Daten des Users in Form eines JSON-Strings im Filesystem gespeichert. Für das Filehandling wurde das standardmäßig in Node.js enthaltene Modul "fs" verwendet. Dieses Modul übernimmt jegliche I/O-Aufgaben betreffend dem Filehandling, wie auch das Einlesen von Dateien. Eine Variation wäre das Verwenden einer Datenbank zum Beispiel Redis. Bevor das Passwort des Users gespeichert wird, soll dieses natürlich verschlüsselt werden, welches mit dem Modul "bcrypt-nodejs" erreicht wurde. Dieser verwendet eine "salted" SHA256 Verschlüsselung, welches asynchron oder synchron ausgeführt werden kann. 
 
 \paragraph{Login und Session}
-Nach dem einloggen des Users wird auf dem Server eine explizite Session gestartet. Diese wird automatisch durch Express und dem Modul "express-session" verwaltet und benötigt nur die Initalisierung und die Löschung der Session. Dadurch ist eine minimale Sessionverwaltung erreicht.
+Nach dem Einloggen des Users wird auf dem Server eine explizite Session gestartet. Diese wird automatisch durch Express und dem Modul "express-session" verwaltet und benötigt nur die Initialisierung und die Löschung der Session. Dadurch ist eine minimale Sessionverwaltung erreicht.
 
 \paragraph{Caching}
-Das Caching, wurde durch das setzen von Caching Headern erreicht. Das Setzen dier Header wurde durch aufruf von selbst implementierten Methoden erreicht welche wiederum im Laufe der Requestbehandlung aufgerufen werden. Dazu wurde kein externes Modul verwendet beziehungsweise benötigt.
+Das Caching wurde durch das Setzen von Caching Headern erreicht. Das Setzen dieser Header wurde durch Aufruf von selbst implementierten Methoden erreicht, welche wiederum im Laufe der Requestbehandlung aufgerufen werden. Dazu wurde kein externes Modul verwendet beziehungsweise benötigt.
 
 \paragraph{Socketverbindung}
-Für die Socketverbindung im Server um einen Chat zu betreiben wurde das Modul "socket.io" verwendet. Dieses Modul bildet einen Adapter um eine unkomplizierte Errichtung einer WebSocket-Verbindung zu implementieren.
+Für die Socketverbindung im Server, um einen Chat zu betreiben, wurde das Modul "socket.io" verwendet. Dieses Modul bildet einen Adapter, um eine unkomplizierte Errichtung einer WebSocket-Verbindung zu implementieren.
 
 \paragraph{Model View Controller Pattern}
-Der Reverenzserver wurde im MVC-Pattern geschrieben, da diese zu den wichtigsten Design Patterns in der Webentwicklung zählt. Das MVC ist eines der offensten Patterns und behält sich einen großen Spielraum bereit. Das Pattern kann mehr als allgemeine Empfehlung gesehen werden als eine Anleitung, da es dem Entwickler selbst obliegt, zu entscheiden welche Klassen, Objekt, Methoden oder Funktionen zu den einzelnen Fraktionen des MVC gehören. Beim Implementieren des Servers wurde eine grobe Einteilung getroffen. Controller nehmen Request entgegen, steuern den Kontrollfluss und senden die Response, Model führen Operationen auf Daten aus und View sind für die Generierung des HTML-Codes zuständig.
+Der Reverenzserver wurde im MVC-Pattern geschrieben, da diese zu den wichtigsten Design Patterns in der Webentwicklung zählt. Das MVC ist eines der offensten Patterns und behält sich einen großen Spielraum bereit. Das Pattern kann mehr als allgemeine Empfehlung gesehen werden als eine Anleitung, da es dem Entwickler selbst obliegt, zu entscheiden, welche Klassen, Objekte, Methoden oder Funktionen zu den einzelnen Fraktionen des MVC gehören. Beim Implementieren des Servers wurde eine grobe Einteilung getroffen. Controller nehmen Request entgegen, steuern den Kontrollfluss und senden die Response, Models führen Operationen auf Daten aus und Views sind für die Generierung des HTML-Codes zuständig.
 
 \paragraph{Logging}
-Für eine Erleichterung der Entwicklung und im späteren Betrieb, wurde auch eine Logging miteingerichtet, welche mit verschiedenen Logging-Level arbeitet. Die Informationen werden nicht nur auf der Konsole ausgegeben sondern auch in ein Log-File geschrieben und wird für eventuelle Debugging auch im File System gespeichert.
+Für eine Erleichterung der Entwicklung und im späteren Betrieb wurde auch eine Logging miteingerichtet, welches mit verschiedenen Logging-Level arbeitet. Die Informationen werden nicht nur auf der Konsole ausgegeben, sondern auch in ein Log-File geschrieben und wird für eventuelle Debugging auch im File System gespeichert.
+
+\paragraph{Kompression}
+Die HTML Daten werden vor der Übermittlung an den Client per gzip komprimiert. Dafür wurde das Modul \textit{compression} verwendet.
 
 \section{Der Swift-Server}
 \label{sec:derswiftserver}
-Um einen Server in Swift zu programmieren muss die in \ref{sec:dieumgebung} erwähnte Ubuntu Distribution mehrere Vorraussetzungen erfühlen. Verschieden C-Bibliotheken und "Clang" müssen installiert werden. Diese einzelnen Bedingungen und deren Installationbedingungen und -vorgänge werden nun näher erläutert.
+Um einen Server in Swift zu programmieren, muss die in \ref{sec:dieumgebung} erwähnte Ubuntu Distribution mehrere Vorraussetzungen erfüllen. Verschiedene C-Bibliotheken und "Clang" müssen installiert werden. Diese einzelnen Bedingungen und deren Installationsbedingungen und -vorgänge werden nun näher erläutert.
 
 \subsection{Swift auf Linux installieren}
-Für die Installation von Swift sind vier wichtige Bibliotheken bzw. Programe notwendig, die vorinstalliert werden müssen, damit die danach installiert Swift-Toolchain installiert und ausgeführt werden kann. 
+Für die Installation von Swift sind vier wichtige Bibliotheken bzw. Programme notwendig, die vorinstalliert werden müssen, damit die danach installierte Swift-Toolchain installiert und ausgeführt werden kann. 
 \begin{itemize}
 	\item clang
 	\item libicu-dev
@@ -87,7 +91,7 @@ Für die Installation von Swift sind vier wichtige Bibliotheken bzw. Programe no
 
 \paragraph{Clang}
 \label{para:clang}
-Clang ist ein Front-End Compiler für C-basierte Sprachen wie C, C++, Objective C/C++, OpenCL C und andere Sprachen für den LLVM Compiler. Einige Ziele des Clang sind ein schnelles kompilieren mit wenig Speicherverwendung zu erreichen, ausführliche Diagnose- und Fehlerberichte zu erstellen und auszugeben und GCC kompatible zu sein. Dadurch wird eine bessere Komptabilität mit verschiedenen IDEs erreicht und Sprachen wie Swift können auf Betriebssystemen kompiliert werden. Clang ist unter der BSD Lizenz verfügbar und darf daher auch als integraler Bestandteil von kommerziellen Projekten verwendet werden \parencite{clang}. Clang ist bei der Kompilierung von Code bis zu drei mal so schnell als zum Beispiel der GCC. Zusätzlich hält der Clang Compiler auch den Clang Static Analyzer bereit, der automatisch Bugs im Code \parencite{llvm}. Im Projekt ist Clang nur bei der Compilierung beteiligt und wird im Code nur einmal direkt verwendet. 
+Clang ist ein Front-End Compiler für C-basierte Sprachen wie C, C++, Objective C/C++, OpenCL C und andere Sprachen für den LLVM Compiler. Einige Ziele des Clang sind ein schnelles compilieren mit wenig Speicherverwendung zu erreichen, ausführliche Diagnose- und Fehlerberichte zu erstellen und auszugeben und GCC kompatibl zu sein. Dadurch wird eine bessere Kompatibilität mit verschiedenen IDEs erreicht und Sprachen wie Swift können auf Betriebssystemen kompiliert werden. Clang ist unter der BSD Lizenz verfügbar und darf daher auch als integraler Bestandteil von kommerziellen Projekten verwendet werden \parencite{clang}. Clang ist bei der Kompilierung von Code bis zu drei mal so schnell als zum Beispiel der GCC. Zusätzlich hält der Clang Compiler auch den Clang Static Analyzer bereit, der automatisch Bugs im Code \parencite{llvm}. Im Projekt ist Clang nur bei der Compilierung beteiligt und wird im Code nur einmal direkt verwendet. 
 
 \lstset{caption=OS Prüfung, basicstyle=\small\ttfamily, label=lst:osprüfung, language=C}
 \begin{lstlisting}
@@ -99,19 +103,19 @@ exit(1)
 #endif
 \end{lstlisting}
 
-Bei diesem Codeteil handelt es sich um eine Prüfung des Betriebssystems, wobei darauf geprüft wird, dass das System eine Linux Distribution ist und ansonsten abgebrochen wird. Die Syntax dieser OS Prüfung entspricht Clang und wird daher auch direkt von dieser kompiliert. Das kompilieren von Swift wird ebenfalls von Clang übernommen, welches zu Maschinencode für die LLVM überführt wird, und auf der Objctive-C runtime läuft.
+Bei diesem Codeteil handelt es sich um eine Prüfung des Betriebssystems, wobei darauf geprüft wird, dass das System eine Linux Distribution ist und ansonsten abgebrochen wird. Die Syntax dieser OS Prüfung entspricht Clang und wird daher auch direkt von dieser kompiliert. Das compilieren von Swift wird ebenfalls von Clang übernommen, welches zu Maschinencode für die LLVM überführt wird und auf der Objctive-C runtime läuft.
 
 \subparagraph{Der LLVM Compiler}
-Ein Fehler wäre zu denken LLVM wäre ein Acronym, tatsächlich ist es der vollständige Name des Compilers. Das LLVM begann als Wissenschaftsprojekt auf der Universiät von Illinoi und hat das Ziel, eine moderne SSA-basierte Kompilierungsstrategie zur Verfügung zu stellen. Dabei soll es möglich sein statische wie auch dynamische Kompilierung von verschiedenen Programiersprachen durchzuführen. LLVM ist derzeit zu einer großen Sammlung von modularen und wiederverwenbaren Compilern und Toolchains geworden die unter der BSD Lizenz Verfügbar sind \parencite{llvm}. Tatsächlich arbeitet der LLVM Compiler mit einer Vielzahl von compiler Techniken. Darüber hinaus verfügt er über eine Codeoptimierung und Generierung, den llvm-gcc als Backend und den Clang Front-end und unterstützt die Microsoft Intermediate Language und die .Net Vitual Machine. Der LLVM wurde entwickelt, weil ältere bereits existierende C Compiler nicht mehr weiterentwickelt wurden. Die größte Stärke des LLVM liegt darin dass er aus mehreren Kompiler-Modulen besteht die sich gegenseitg ergänzen. Daraus wurden wiederum Kompiler gebaut die für verschieden Aufgaben geeignet sind z.B. als erweiterter C-Compiler oder als spezialisierte Runtime-Maschine. Ein weiterer Vorteil ist das der llvm-gcc 4.2 mit den gcc command line Optionen und Sprachen, sowie dem makefiles kompatibel ist \parencite{llvmpulbic}.
+Ein Fehler wäre zu denken, LLVM wäre ein Acronym, tatsächlich ist es der vollständige Name des Compilers. Das LLVM begann als Wissenschaftsprojekt auf der Universiät von Illinoi und hat das Ziel, eine moderne SSA-basierte Kompilierungsstrategie zur Verfügung zu stellen. Dabei soll es möglich sein, statische wie auch dynamische Kompilierung von verschiedenen Programmiersprachen durchzuführen. LLVM ist derzeit zu einer großen Sammlung von modularen und wiederverwendbaren Compilern und Toolchains geworden, die unter der BSD Lizenz verfügbar sind \parencite{llvm}. Tatsächlich arbeitet der LLVM Compiler mit einer Vielzahl von compiler Techniken. Darüber hinaus verfügt er über eine Codeoptimierung und Generierung, den llvm-gcc als Backend und den Clang Front-end und unterstützt die Microsoft Intermediate Language und die .Net Vitual Machine. Der LLVM wurde entwickelt, weil ältere bereits existierende C Compiler nicht mehr weiterentwickelt wurden. Die größte Stärke des LLVM liegt darin, dass er aus mehreren Compiler-Modulen besteht, die sich gegenseitg ergänzen. Daraus wurden wiederum Compiler gebaut, die für verschiedene Aufgaben geeignet sind z.B. als erweiterter C-Compiler oder als spezialisierte Runtime-Maschine. Ein weiterer Vorteil ist das der llvm-gcc 4.2 mit den gcc command line Optionen und Sprachen, sowie dem makefiles kompatibel ist \parencite{llvmpulbic}.
 
 \paragraph{libicu-dev und libcurllpp}
-Diese Pakete sind Bibliotheken die benötigt werden, um die Ausführung aller Swift-Bibliotheksfunktionen auszuführen. Nähere Informationen zu diese Paketen sind für das Projekt nicht notwendig.
+Diese Pakete sind Bibliotheken, die benötigt werden, um die Ausführung aller Swift-Bibliotheksfunktionen auszuführen. Nähere Informationen zu diese Paketen sind für das Projekt nicht notwendig.
 
-\paragraph{git}
-Für die Versionierung und der gemeinsamen Bearbeitung wurde Git verwendet das jedoch nicht direkt für den Server notwendig und soll daher nur erwähnt bleiben.
+\paragraph{Git}
+Für die Versionierung und der gemeinsamen Bearbeitung wurde Git verwendet, das jedoch nicht direkt für den Server notwendig ist und soll daher nur erwähnt bleiben.
 
 \paragraph{Installation}
-Zur Installation wird der aktuelle Release heruntergeladen. Diese liegt als .tar.gz vor und kann in ein beliebges Verzeichnis entpackt werden. Als Erleichterung wurde der Pfad in die Umgebungsvariable von Ubuntu hinzugefügt um ein leichteres kompilieren bzw das Ausführen der REPL zu erleichtern. Der Server wurde mit dem Release 3.1.1 für Ubuntu 16.10 entwickelt.
+Zur Installation wird der aktuelle Release heruntergeladen. Diese liegt als .tar.gz vor und kann in ein beliebiges Verzeichnis entpackt werden. Als Erleichterung wurde der Pfad in die Umgebungsvariable von Ubuntu hinzugefügt, um ein leichteres compilieren möglich zu machen bzw das Ausführen der REPL zu erleichtern. Der Server wurde mit dem Release 3.1.1 für Ubuntu 16.10 entwickelt.
 
 \subsection{Das Swift Package}
 \label{sec: dasswiftpackage}
@@ -126,50 +130,50 @@ Die Swift Sprache ist als Sammlung verschiedener Projekte gegliedert:
 \end{itemize}
 
 \paragraph{Swift Compiler}
-Der Swift Compiler übersetz den Source Code in effiziente und ausführbare Maschinensprache. Zuerst erfolgt das Parsen des Codes und das erstellen des Abstract Syntax Trees der für die darauffolgende semantische Analyse benötigt wird. Aus dem AST wird somit ein "well-formed, fully-type-checked" AST. Die semantische Analyse stellt sicher, dass es möglich ist zu kompilieren.  Danach wird der Clang Importer benötigt der verschiedenen Clang Module import die benötigt werden um den AST auf C oder Objective-C APIs umzusetzen. Als nächster Schritt wird der AST mithilfe der Swift Intermediate Language optimiert und in eine sogenannte "raw" SIL umgeformt. Aus der SIL wird wiederum die "canonical" SIL erstellt. Dies wird erreicht, indem eine weiter sogenannte garantierte Transformation durchgeführt wird, in der zusätzliche Datenflussdiagnostik durchgeführt wird zum Beispiel die Verwendung von uninitalisierten Variablen. Danach wird nochmals ein Optimierung über die SIL druchgeführt wie das automatische Referenzieren, zähl Optimierung, Devirtualisierung und allgemeine Spezialisierung. Ab diese Punkt wird der Code weitergegeben an die LLVM IR Code Generierung sodass aus der SIL eine LLVM IR wird und diese durch die LLVM zu Maschinen Code übersetzt werden kann \parencite{swiftcompiler}. 
+Der Swift Compiler übersetzt den Source Code in effiziente und ausführbare Maschinensprache. Zuerst erfolgt das Parsen des Codes und das Erstellen des Abstract Syntax Trees, der für die darauffolgende semantische Analyse benötigt wird. Aus dem AST wird somit ein "well-formed, fully-type-checked" AST. Die semantische Analyse stellt sicher, dass es möglich ist zu compilieren.  Danach wird der Clang Importer benötigt, der verschiedene Clang Module importiert, die benötigt werden, um den AST auf C oder Objective-C APIs umzusetzen. Als nächster Schritt wird der AST mithilfe der Swift Intermediate Language optimiert und in eine sogenannte "raw" SIL umgeformt. Aus der SIL wird wiederum die "canonical" SIL erstellt. Dies wird erreicht, indem eine weitere sogenannte garantierte Transformation durchgeführt wird, in der zusätzliche Datenflussdiagnostik durchgeführt wird, zum Beispiel die Verwendung von nicht initialisierten Variablen. Danach wird nochmals eine Optimierung über die SIL durchgeführt wie das automatische Referenzieren, zähl-Optimierung, Devirtualisierung und allgemeine Spezialisierung. Ab diese Punkt wird der Code weitergegeben an die LLVM IR Code Generierung, sodass aus der SIL eine LLVM IR wird und diese durch die LLVM zu Maschinen Code übersetzt werden kann \parencite{swiftcompiler}. 
 
 \paragraph{Standard Bibliothek}
 \label{para:standardbibliothek}
-Die Standard Bibliothek von Swift hält verschiedene Beschreibung von Daten Typen, Protokollen und Funktionen bereit. Auch primitive Typen werden hier beschrieben. Die Standard Bibliothek wird in drei Teile gegliedert:
+Die Standard Bibliothek von Swift hält verschiedene Beschreibung von Daten-Typen, Protokollen und Funktionen bereit. Auch primitive Typen werden hier beschrieben. Die Standard Bibliothek wird in drei Teile gegliedert:
 \begin{itemize}
-\item core: Darin befinden sich alle Definition für Daten Typen, Protokolle und Funktionen
+\item core: Darin befinden sich alle Definition für Daten-Typen, Protokolle und Funktionen
 \item runtime: Dies wird als Zwischenschicht zwischen Compiler und der Core Standard Bibliothek geführt. Diese ist für dynamische Operationen zuständig wie z.B. das Casten oder Memory Management
-\item SDK Overlays: Hält verschiedene Pakete und Modifikationen bereit um existierene Objective-C Frameworks in Swift einzubinden
+\item SDK Overlays: Hält verschiedene Pakete und Modifikationen bereit, um existierende Objective-C Frameworks in Swift einzubinden
 \end{itemize}
 
-Die Standard Bibliothek ist zwar in Swift geschrieben, jedoch weicht sie vom üblichen Swift Code ab. Diese Unterschiede sind auf den Nutzen der Biblothek zurückzuführen, da diese z.B. benötigt wird um die SIL zu erstellen oder gesamt als "public" zur Verfügung stehen soll. Zusätliche Tools wie gyb sind notwendig um sized Integer Typen zu deklarieren oder das Testen ist eng mit dem Compiler verbunden beziehungsweise ohne diesen nicht möglich \parencite{swiftbibliothek}.
+Die Standard Bibliothek ist zwar in Swift geschrieben, jedoch weicht sie vom üblichen Swift Code ab. Diese Unterschiede sind auf den Nutzen der Bibliothek zurückzuführen, da diese z.B. benötigt wird, um die SIL zu erstellen oder gesamt als "public" zur Verfügung stehen soll. Zusätzliche Tools wie "gyb" sind notwendig, um sized Integer Typen zu deklarieren oder das Testen ist eng mit dem Compiler verbunden beziehungsweise ohne diesen nicht möglich \parencite{swiftbibliothek}.
 
 \paragraph{Core Bibliothek}
-Diese hält verschiedene higher-level Funktionalität bereit als die Standard Bibliothek. Der Hauptteil der Bibliothek wird mit \textit{import Foundation} im Code importiert und damit in einer spezifischen .swift-Datei zur Verfügung gestellt. Erst mit diesem Import steht sie beim Kompolieren zur Verfügung. Die Bibliothek sol verschiede stabile und nützliche Features in folgenden Bereichen bereithalten:
+Diese hält verschiedene higher-level Funktionalität bereit als die Standard Bibliothek. Der Hauptteil der Bibliothek wird mit \textit{import Foundation} im Code importiert und damit in einer spezifischen .swift-Datei zur Verfügung gestellt. Erst mit diesem Import steht sie beim compilieren zur Verfügung. Die Bibliothek soll verschiedene stabile und nützliche Features in folgenden Bereichen bereithalten:
 \begin{itemize}
 \item generell verwendete Typen z.B. URLs, Character Sets, Collections usw. 
 \item durchführen von Unit Tests
 \item Networking Grundlagen
 \item Persistence, Listen, Archive, JSON parsing, XML parsing
-\item Datum-, Zeit- und Kalenderfunktionlität
+\item Datum-, Zeit- und Kalenderfunktionalität
 \item OS-Spezifisches Verhalten
 \item Interaktionen mit dem File System
 \end{itemize}
 
-Diese Bibliothek ist laut Swift.org noch nicht vollkommen und ausreichend entwickelt sondern ist derzeit im Anfangsstadium. Diese wurde Veröffentlicht, um es der Community zu ermöglichen von Anfang an bei der Entwicklung mit zu gestallten und mit zu wirken.  Derzeit sind drei Teile der Bibliothek vorhanden. Diese sind \textit{Foundation} welche die Basis für alle Swift Projekte darstellt, \textit{libdispatch} die das Multithreading und Multitasking ermöglicht, sowie \textit{XCTest} welches ein Framework für das erstellen von Unit Test bildet \parencite{swiftcore}.
+Diese Bibliothek ist laut Swift.org noch nicht vollkommen und ausreichend entwickelt, sondern ist derzeit im Anfangsstadium. Diese wurde veröffentlicht, um es der Community zu ermöglichen von Anfang an bei der Entwicklung mit zu gestalten und mit zu wirken.  Derzeit sind drei Teile der Bibliothek vorhanden. Diese sind \textit{Foundation}, welche die Basis für alle Swift Projekte darstellt, \textit{libdispatch}, die das Multithreading und Multitasking ermöglicht, sowie \textit{XCTest}, welches ein Framework für das Erstellen von Unit Test bildet \parencite{swiftcore}.
 
 \paragraph{LLDB Debugger}
-Der LLDB Debugger ist ein Teil des in \label{para:clang} Projektes. Besonderheit hier ist, das der Debugger als Grundlage für den Swift REPL dient. Laut Swift.org hat dies folgende Vorteile.
+Der LLDB Debugger ist ein Teil des Clang-Projektes. Besonderheit hier ist, das der Debugger als Grundlage für den Swift REPL dient. Laut Swift.org hat dies folgende Vorteile.
 \begin{compactenum}[a)]
-\item Der Hauptvorteil ist, dass die REPL einen vollwertigen Debbuger zur Verfügung hat, der sogar Breakpoint zulässt.
-\item Weiter kann sich die REPL von einem kritischen Error erholen sodass eine Fehlermeldung angezeigt wird und die REPL nicht neu gestartet werden muss
+\item Der Hauptvorteil ist, dass die REPL einen vollwertigen Debugger zur Verfügung hat, der sogar Breakpoint zulässt.
+\item Weiter kann sich die REPL von einem kritischen Error erholen, sodass eine Fehlermeldung angezeigt wird und die REPL nicht neu gestartet werden muss
 \item Die REPL erhält Zugang zu jeglichen Sprachfeatures
 \item konsistentes Format des Ergebnisses
 \end{compactenum}
 
-Diese Vorteile wurden nicht im Zuge der Umsetzung geprüft und daher nur ein Übertrag der von Swift.org genannten Vorteile \parencite{swiftdebugger}.
+Diese Vorteile wurden nicht im Zuge der Umsetzung geprüft und sind daher nur ein Übertrag der von Swift.org genannten Vorteile \parencite{swiftdebugger}.
 
 \paragraph{Swift Package Manager}
-Swift gliedert sich wie Node.js und Express.js in Modulen. Diese werden wei bei Node.js in einer Package Datei verwalte. Diese Package.swift Datei enthält alle Abhänigkeiten die für ein Projekt notwendig sind. Der Eintrag der Abhängigkeit wird manuell durchgeführt indem diese in die Package.swift eingetragen wird. Diese wird als Array beschreiben und enthält die Source URL und die Version die heruntergeladen werden soll. Diese Package könnten danach mit dem \textit{import ...} im Projekt zur Verfügung gestellt werden.
-Der Manager erstellt vorab eine Struktur für das Projekt die aus der \textit{Package.swift} Datei besteht, dem Verzeichnis \textit{Sources} inklusive der Datei \textit{Hello.swift} und einem Testverzeichnis indem bereits die Datei \textit{HelloTests.swift} unt \textit{LinuxMain.swift} enhalten sind. Die LinuxMain.swift Datei import die notwendige Bibliothek XCTest welche bereits im Absatz \ref{para:standardbibliothek} beschrieben wurde \parencite{swiftpm}.
+Swift gliedert sich wie Node.js und Express.js in Modulen. Diese werden wie bei Node.js in einer Package Datei verwaltet. Diese Package.swift Datei enthält alle Abhängigkeiten, die für ein Projekt notwendig sind. Der Eintrag der Abhängigkeit wird manuell durchgeführt, indem diese in die Package.swift eingetragen wird. Diese wird als Array beschrieben und enthält die Source URL und die Version, die heruntergeladen werden soll. Diese Packages könnten danach mit dem \textit{import ...} im Projekt zur Verfügung gestellt werden.
+Der Manager erstellt vorab eine Struktur für das Projekt, die aus der \textit{Package.swift} Datei besteht, dem Verzeichnis \textit{Sources} inklusive der Datei \textit{Hello.swift} und einem Testverzeichnis indem bereits die Datei \textit{HelloTests.swift} und \textit{LinuxMain.swift} enhalten sind. Die LinuxMain.swift Datei importiert die notwendige Bibliothek XCTest, welche bereits im Absatz \ref{para:standardbibliothek} beschrieben wurde \parencite{swiftpm}.
 
 \paragraph{Xcode Playground support}
-Xcode ist nur in geringen Teilen für Linux von Interesse die Hauptfunktion dafür bei der IDE Xcode verwendet wird und diese jedoch nur für Mac konzipiert ist. Daher wird hierauf nicht näher eingegangen.
+Xcode ist nur in geringen Teilen für Linux von Interesse, da die Hauptfunktionen nur mit der IDE Xcode verwendet werden können. Xcode ist wiederum nur für Mac konzipiert, sodass hierauf nicht näher eingegangen wird.
 
 
 \section{Vergleich der Implementierungen}
@@ -184,18 +188,19 @@ In diesem Kapitel geht es um die Umsetzung des in ref{sec:derreverenzserver} bes
 	\item Socketverbindung
 	\item Model View Controller Pattern
 	\item Logging
+	\item Kompression.
 \end{inparaenum}
 
 \subsection{Framework}
-Als Framework für den Swift Server standen zwei verschieden Frameworks zur Auswahl: 
+Als Framework für den Swift Server standen zwei verschiedene Frameworks zur Auswahl: 
 \begin{itemize}
-	\item Perfect: als Toolkit für Anwendugen und REST-Services
+	\item Perfect: als Toolkit für Anwendungen und REST-Services
 	\item Kitura: ein neues WebFramework von IBM
 \end{itemize}
-An dieser Stelle ist zu erwähnen, dass es ein weiteres Framework namens \textit{Vapor} gibt, welches erst nach der Entwicklung des Servers mit Perfect zu spät enteckt wurde.
+An dieser Stelle ist zu erwähnen, dass es ein weiteres Framework namens \textit{Vapor} gibt, welches erst nach der Entwicklung des Servers mit Perfect zu spät entdeckt wurde.
 
 \paragraph{Perfect}
-Perfect wird auf deren Homepage als WebServer und Toolkit für Swift-Entwickler beschrieben, um Applikationnen und andere REST-Services zu entwickeln. Es kann verwendet werden um clientseitig wie auch serverseitig zu programieren und wird als ideales Backbone für Cloud und Mobile Technologien bezeichnet. Entwickler können damit produktiver arbeiten und benötigen dazu nur eine Sprache. Bereits auf der Homepage wird Perfect mit Node.js selbst verglichen und bietet eine Vielzahl an Bibliotheken an. Diese sollten mit den Node.js und Express.js Modulen, sofern diese benötigt wurden, im Zweck vergleichbar sein, welches in der folgenden Tabelle veranschaulicht wird.
+Perfect wird auf deren Homepage als WebServer und Toolkit für Swift-Entwickler beschrieben, um Applikationen und andere REST-Services zu entwickeln. Es kann verwendet werden um clientseitig wie auch serverseitig zu programmieren und wird als ideales Backbone für Cloud und mobile Technologien bezeichnet. Entwickler können damit produktiver arbeiten und benötigen dazu nur eine Sprache. Bereits auf der Homepage wird Perfect mit Node.js selbst verglichen und bietet eine Vielzahl an Bibliotheken an. Diese sollten mit den Node.js und Express.js Modulen, sofern diese benötigt wurden, im Zweck vergleichbar sein, welches in der folgenden Tabelle veranschaulicht wird.
 
 \begin{table}[]
 \begin{center}
@@ -204,20 +209,21 @@ Perfect wird auf deren Homepage als WebServer und Toolkit für Swift-Entwickler 
 \rowcolor{gray5}		Dynamische Website Erstellung							& handlebars					& Workaround								\\ 
 \rowcolor{gray20}	Registrierung											& -							& -											\\ 
 \rowcolor{gray5}		Filehandling (speichern)								& fs							& Foundation									\\ 
-\rowcolor{gray20}	Verschlüsselung										& bcrypt					& SwiftyBeaver								\\ 
+\rowcolor{gray20}	Verschlüsselung										& bcrypt						& SwiftyBeaver								\\ 
 \rowcolor{gray5}		Login												& -							& -											\\
 \rowcolor{gray20}	Sessionverwaltung									& express-session				& PerfectSession								\\ 
 \rowcolor{gray5}		Caching												& - 							& - 											\\ 
 \rowcolor{gray20}	Socketverbindung										& socket.io					& PerfectWebSockets							\\ 
 \rowcolor{gray5}		Logging												& winston					& PerfectLogger und PerfectRequestLogger		\\ 
-\rowcolor{gray20}	Routing (parsen von Requests und Responses)			& express					& PerfectHTTP								\\
+\rowcolor{gray20}	Kompression											& compression				& GzipSwift								\\ 
+\rowcolor{gray5}		Routing (parsen von Requests und Responses)			& express					& PerfectHTTP								\\
 \end{tabular}
 \caption{Module der Server} \label{tab:modulederserver}
 \end{center}
 \end{table}
 
 \subsection{Dynamische Website Erstellung}
-Wie der Tabelle zu entnehmen ist, wurde für die dynamische Website-Gestaltung ein Workaround implementiert. Ausschlaggebend dafür war das Fehlen von Kontrollstrukturen beim von Perfect entwickelten Package \textbf{Mustache}. Dieses Package hält wie auch  Handlebars die Möglichkeit bereit, Bereiche eines HTML-Layout bzw. Templates die mit "{{}}" gekennzeichnet wurden mit Variablen zu füllen. Unterschied liegt, darin dass Mustache keine Kontrollfluss-Befehle unterstützt wie z.B. Handlebars mit einer If-Abfrage. 
+Wie der Tabelle zu entnehmen ist, wurde für die dynamische Website-Gestaltung ein Workaround implementiert. Ausschlaggebend dafür war das Fehlen von Kontrollstrukturen beim von Perfect entwickelten Package \textbf{Mustache}. Dieses Package hält wie auch  Handlebars die Möglichkeit bereit, Bereiche eines HTML-Layout bzw. Templates, die mit "\{\{\}\}" gekennzeichnet wurden, mit Variablen zu füllen. Unterschied liegt darin, dass Mustache keine Kontrollfluss-Befehle unterstützt wie z.B. Handlebars mit einer If-Abfrage. 
 
 \lstset{
 	caption=Handlebars,
@@ -252,7 +258,7 @@ module.exports = {
 };
 \end{lstlisting}
 
-Wie im Listing \ref{lst:handlebars} zu sehen ist wird Handlebars import und in Zeile 10 das zuvor registriert HTML Partial abgerufen und in der Variable viewModel gespeichert. Für das Partial interessant ist, dass es eine Kontrollstruktur hat, welche darauf prüft ober die Variabe "user" auch tatsächlich einen Wert hat. Sollte dies nicht der Fall sein, wird der Platzhalter im Partial nicht angezeigt. Das der "user" nicht \textit{null} ist, wird dadurch verhindert, das der User als Session-Variable verwendet wird, und es sich beim Chat um einen gesicherten Bereich handelt. Der bearbeitetet Partial wird danach dem Layout übergeben, sodass eine vollständige Seite erstellt ist. 
+Wie im Listing \ref{lst:handlebars} zu sehen ist, wird Handlebars import und in Zeile 10 das zuvor registriert HTML Partial abgerufen und in der Variable viewModel gespeichert. Für das Partial interessant ist, dass es eine Kontrollstruktur hat, welche darauf prüft ob die Variable "user" auch tatsächlich einen Wert hat. Sollte dies nicht der Fall sein, wird der Platzhalter im Partial nicht angezeigt. Dass der "user" nicht \textit{null} ist, wird dadurch verhindert, dass der User als Session-Variable verwendet wird und es sich beim Chat um einen gesicherten Bereich handelt. Der bearbeitete Partial wird danach dem Layout übergeben, sodass eine vollständige Seite erstellt ist. 
 
 
 \lstset{
@@ -305,14 +311,14 @@ func renderChatView(user: String) -> String? {
 }
 \end{lstlisting}
 
-Im Gegensatz ist für Swift, Lst.: \ref{lst:swiftworkaround}, ein Workaround für den Zusammenbau der HTML implementiert wurde. Verglichen mit einem Hausbau ist es auch in Swift notwendig bei der Basis zu beginnen und die Seite nach und nach, nach Oben zusammenzubauen. Die dafür beauftragte Methode \textbf{renderChatView} bekommt dafür den Usernamen übergeben und versucht die Webseite zusammen zu bauen. Dazu wird mit der Methode "setupLayout" in einer globalen Variable das Layout gespeichert, danach die Navigationleiste ebenfalls wie das Layout vorbereitet und global gespeichert. Danach wird die Funktion "buildView" aufgerufen. Diese Funktion ersetz zum Großteil die Funktionen von Handelbars. Die If-Abfrage wird hier jeweils mit den drei übergebenen Variablen durchgeführt. Ist eine der Variablen \textit{nil} so wird diese gegen einen leeren String ersetz sodass dieser in der fertigen Website nicht zu sehen ist. \\
-Dabei ist zu beachten dass diese Abfragen in Swift einzeilig sein können, sowie diese heir umgesetzt werden. So wird mit dem "?" erklärt, dass das Layout in Zeile 16 kein String sein muss sonder auch "nil" sein kann. Danach wird im Layout der Substring \textit{\{\{ main\}\}} gesucht und dieser durch das zuvor eingelese Partial ersetzt oder wenn nicht vorhanden mit "Partial not found". Da das Layout ein statisches File ist und das einlesen synchron erfolgt, sollte dieses zumindest nie "nil" sein. Danach wird die Navigationsleiste eingefühgt, der User in der Navigationsleiste gesetzt und ebenfalls im HTML enthaltenen Script für die Socketverbindung der Host und der Port gesetzt. Danach wird noch die Message die vom User eingegeben worden ist eingetragen und der gesamte HTML-Code vom Controller an den User gesendet. 
+Im Gegensatz ist für Swift, Lst.: \ref{lst:swiftworkaround} ein Workaround für den Zusammenbau der HTML implementiert. Verglichen mit einem Hausbau ist es auch in Swift notwendig, bei der Basis zu beginnen und die Seite nach und nach, nach oben zusammenzubauen. Die dafür beauftragte Methode \textbf{renderChatView} bekommt dafür den Usernamen übergeben und versucht die Webseite zusammenzubauen. Dazu wird mit der Methode "setupLayout" in einer globalen Variable das Layout gespeichert, danach die Navigationleiste ebenfalls wie das Layout vorbereitet und global gespeichert. Danach wird die Funktion "buildView" aufgerufen. Diese Funktion ersetzt zum Großteil die Funktionen von Handlbars. Die If-Abfrage wird hier jeweils mit den drei übergebenen Variablen durchgeführt. Ist eine der Variablen \textit{\textbf{nil}}, so wird diese gegen einen leeren String ersetzt, sodass dieser in der fertigen Website nicht zu sehen ist. \\
+Dabei ist zu beachten, dass diese Abfragen in Swift einzeilig sein können, sowie diese hier umgesetzt werden. So wird mit dem "?" erklärt, dass das Layout in Zeile 16 kein String sein muss, sondern auch \textit{\textbf{nil}} sein kann. Danach wird im Layout der Substring \textit{\{\{ main\}\}} gesucht und dieser durch das zuvor eingelesene Partial oder wenn nicht vorhanden mit "Partial not found" ersetzt. Da das Layout ein statisches File ist und das einlesen synchron erfolgt, sollte diese zumindest nie \textit{\textbf{nil}} sein. Danach wird die Navigationsleiste eingefügt, der User in die Navigationsleiste gesetzt und ebenfalls im HTML enthaltenen Script für die Socketverbindung der Host und der Port gesetzt. Danach wird noch die Message, die vom User eingegeben worden ist, eingetragen und der gesamte HTML-Code vom Controller an den User gesendet. 
 \\\\
-Während es Node.js möglich ist, während dem Zusammenbau der Seite weiter Request zu behandlen muss der Swift-Server währenddessen blockieren und weitere Anfragen vorübergehend abweisen. Da das Zusammenbauen der Seite im Milliskunden Bereich liegt ist dies noch kein Problem.
+Während es Node.js möglich ist, während dem Zusammenbau der Seite weitere Requests zu behandeln, muss der Swift-Server währenddessen blockieren und weitere Anfragen vorübergehend abweisen. Da das Zusammenbauen der Seite im Millisekunden Bereich liegt, ist dies noch kein Problem.
 
 
 \subsection{Registrieren, Speichern, verschlüsseln}
-Node.js und Express. unterstützen von Haus aus das serialisieren von Objekt in JSON-Strings, währen für Swift ein gößerer Aufwand notwendig ist um ein Objekt in ein JSON-String umzuwandeln.
+Node.js und Express.js unterstützen von Haus aus das Serialisieren von Objekt in JSON-Strings, während für Swift ein größerer Aufwand notwendig ist, um ein Objekt in ein JSON-String zu konvertieren.
 
 \paragraph{Vorbereiten der Userdaten}
 \lstset{
@@ -366,7 +372,7 @@ public class Profile: JSONConvertibleObject {
 }
 \end{lstlisting}
 
-Die gezeigte Definition eines Objekt in diesem Fall das Profil eines muss von der Klasse \textit{JSONConvertibleObject} ableiten und die beiden Methoden \textit{setJSONValues} und \textit{getJSONValues} überschreiben. Zusätzlich muss das Objekt einen Registrierungsschlüssel erhalten wie in Zeile 8 in Lst:  \ref{lst:jsonstrigifyinswift}. Dieser Registrierungsschlüssel ist für die Identifizierung des JSON Objektes in der Registrierungstabelle für JSON Convertible Object notwendig. Dieser Schlüssel muss jedoch nicht persistiert werden sonder wird beim Start des Servers angelegt und bleibt erhalten sollange der Server läuft. Das Registrieren des Objektes muss manuell mindestens einmal erfolgen, da ansonsten die befehle für das serialzisieren fehlschlagen. Die Registrierung erfolgt mit:
+Die gezeigte Definition eines Objektes, in diesem Fall das Profil eines Users, muss von der Klasse \textit{JSONConvertibleObject} ableiten und die beiden Methoden \textit{setJSONValues} und \textit{getJSONValues} überschreiben. Zusätzlich muss das Objekt einen Registrierungsschlüssel erhalten wie in Zeile 8 in Lst:  \ref{lst:jsonstringifyinswift}. Dieser Registrierungsschlüssel ist für die Identifizierung des JSON Objektes in der Registrierungstabelle für JSON Convertible Object notwendig. Dieser Schlüssel muss jedoch nicht persistiert werden, sondern wird beim Start des Servers angelegt und bleibt erhalten, solange der Server läuft. Das Registrieren des Objektes muss manuell mindestens einmal erfolgen, da ansonsten die Befehle für das Serialzisieren fehlschlagen. Die Registrierung erfolgt mit:
 
 \lstset{
 	caption=JSON Object registration,
@@ -382,15 +388,15 @@ Die gezeigte Definition eines Objekt in diesem Fall das Profil eines muss von de
 	JSONDecoding.registerJSONDecodable(name: Profile.registerName, creator: {return Profile()})
 \end{lstlisting}
 
-Dieser Befehl \ref{lst:jsonobjectregistration} wird im Server direkt beim Start des Servers ausgeführt und das Profil-Objekt ist somit automatisch registriert, sodas die Befehle \textit{profile.jsonEncodedString()} zum Serializieren oder \textit{try profile?.jsonDecode()} zum Deserialisieren und initalizieren des Objektes ausgeführt werden können. 
+Dieser Befehl aus \ref{lst:jsonobjectregistration} wird im Server direkt beim Start des Servers ausgeführt und das Profil-Objekt ist somit automatisch registriert, sodass die Befehle \textit{profile.jsonEncodedString()} zum Serialisieren oder \textit{try profile?.jsonDecode()} zum Deserialisieren und gleichzeitigen initalisieren des Objektes ausgeführt werden können. 
 \\
-In Node.js reichen die Befehle: \textit{JSON.stringify(profile)} und/oder \textit{JSON.parse(profile)} wobei das JSON.parse() kein Fertiges initialisiertes Objekt zurückgeben, sondern nur eine Collection im key:value Format.
+In Node.js reichen die Befehle: \textit{JSON.stringify(profile)} und/oder \textit{JSON.parse(profile)}, wobei das JSON.parse() kein fertig initialisiertes Objekt zurückgibt, sondern nur eine Collection im key:value Format.
 
 \paragraph{Filehandling}
-Für den Login ist es notwendig, die Daten zu speichern. Dieses ist natürlich auch mit verschiedenen Datenbanken möglich. Perfect bietet dafür Packages für SQLite, MySQL, MariaDB, PostgreSQL, FileMaker, MongoDB und Apache CouchDB. Bei diesem Projekt ist aber die Speicherung in ein JSON File verwendet worden, um das FileHandling der Standard Bibliothek zu testen. Die Swift Bibliothek hält zwei Funktionen bereit welche für das FileHandling verwendet werden können. 
+Für den Login ist es notwendig, die Daten zu speichern. Dieses ist natürlich auch mit verschiedenen Datenbanken möglich. Perfect bietet dafür Packages für SQLite, MySQL, MariaDB, PostgreSQL, FileMaker, MongoDB und Apache CouchDB. Bei diesem Projekt ist aber die Speicherung in ein JSON File verwendet worden, um das FileHandling der Standard Bibliothek zu testen. Die Swift Bibliothek hält zwei Funktionen bereit, welche für das FileHandling verwendet werden können. 
 \begin{itemize}
-\item DIR: diese Library hält Funktionen bereit, die es ermöglichen das \textit{\textbf{Working Directory}} zu verändern. Damit wird der Prozess des Servers in das gewünschte Verzeichnis gelegt.
-\item FILE: diese Library ermöglicht es Files zu erstellen, befüllen, verändern und löschen. Dabei muss der Pfad und das File angegeben werden. 
+\item DIR: diese Library hält Funktionen bereit, die es ermöglichen, das \textit{\textbf{Working Directory}} zu verändern. Damit wird der Prozess des Servers in das gewünschte Verzeichnis gelegt.
+\item FILE: diese Library ermöglicht es Files zu erstellen, zu befüllen, zu verändern und zu löschen. Dabei muss der Pfad und das File angegeben werden. 
 \end{itemize}
 
 \lstset{
@@ -425,7 +431,7 @@ func setupDir(_: Void) -> Void {
 var issetup = false
 \end{lstlisting}
 
-Das Working Directory wird beim Server mit der Methode \textit{setupDir()} gesetzt, siehe Lst: \ref{lst:workingdirectory} Diese Methode wird in der Main File beim Start des Servers aufgerufen um diese in das Working Directory "exe" zu verlegen. Damit findet wird der Prozess in diesem Verzeichnis ausgeführt. Das Working Directory tiefer in die Baumstruktur des Servers hineinzulegen empfielt sich nicht, da es nicht mehr möglich ist aus diesem Verzeichnis heraus zu kommen. Jegliche File Operation mussen nun von diesem Verzeichnis aus angegeben werden, um Files zu erstellen oder zu lesen. 
+Das Working Directory wird beim Server mit der Methode \textit{setupDir()} gesetzt, siehe Lst: \ref{lst:workingdirectory}. Diese Methode wird in der Main File beim Start des Servers aufgerufen, um diese in das Working Directory "exe" zu verlegen. Damit wird der Prozess in diesem Verzeichnis ausgeführt. Das Working Directory tiefer in die Baumstruktur des Servers hineinzulegen, empfiehlt sich nicht, da es nicht mehr möglich ist, aus diesem Verzeichnis heraus zu kommen. Jegliche File Operation muss nun von diesem Verzeichnis aus angegeben werden, um Files zu erstellen oder zu lesen. 
 
 \lstset{
 	caption=Methode zum lesen einer Datei in Swift,
@@ -465,7 +471,7 @@ func getFile(file: String) -> String? {
 }
 \end{lstlisting}
 
-Das FileHandling wird in Node.js durch das Modul "fs" das standardmäßig bei der Initialisierung installiert wird ermöglicht:
+Das FileHandling wird in Node.js durch das Modul "fs", das standardmäßig bei der Initialisierung installiert wird, ermöglicht:
 
 \lstset{
 	caption=Methode zum lesen einer Datei in Node.js,
@@ -500,14 +506,14 @@ Das FileHandling wird in Node.js durch das Modul "fs" das standardmäßig bei de
     }
 \end{lstlisting}
 
-Auf beiden Seiten, Swift und Node.js wird das File synchron gelesen, da es für die die Anmeldung wichtig ist, dass der User auch tatsächlich berechtigt ist und vorhanden ist. Ansonsten würde es auch möglich sein per Callbacks das Filehandling durchzuführen. Bei Node.js ist dies leichter durchzuführen als bei Perfect, da Swift selbst zwar Callbacks unterstützt, Perfect jedoch noch nicht. 
+Auf beiden Seiten, Swift und Node.js, wird das File synchron gelesen, da es für die Anmeldung wichtig ist, dass der User auch tatsächlich berechtigt und vorhanden ist. Ansonsten würde es auch möglich sein, per Callbacks das Filehandling durchzuführen. Bei Node.js ist dies leichter durchzuführen als bei Perfect, da Swift selbst zwar Callbacks unterstützt, Perfect jedoch noch nicht. 
 
-\paragraph{verschlüsseln}
-Für die Sicherheit der User Daten ist auch das verschlüsseln der Passwörter wichtig. Dazu wird in beiden Fällen, Perfect und Express eine AES256 Verschlüsselung vorgenommen die "gesalzen" wurde. Unter gesalzen versteht man das verschlüsseln von Daten durch einen Hash der mit einem sogenannte "Salt" erstellt wird. Der Salt ist eine beliebig lange Folge an Zeichen, die im JSON File des Users mit abgespeichert werden muss, damit eine Authentifizierung in Folge des Nachberechnens des Hashes oder entschlüsseln des Hashes erfolgen kann. 
-In Espress wurde dazu das Modul "Bcrypt" verwendet auf Seiten Perfect das Package "SwiftyBeaver". Beide Package erfüllen den gleichen Zweck und sind sehr leicht in der Handhabung, außer dass bei SwiftyBeaver zur Authentifizierung des Users das gespeicherte Passwort mit dem Salt entschlüsselt werden muss, während bei Bcrypt der Hash mit dem Schlüssel (=Salt) nachgerechte wird. Bei bestandener Überprüfung wird eine Session gestartet und der User auf den internen Bereich geleitet.
+\paragraph{Verschlüsselung}
+Für die Sicherheit der User Daten ist auch das Verschlüsseln der Passwörter wichtig. Dazu wird in beiden Fällen, Perfect und Express, eine AES256 Verschlüsselung vorgenommen, die "gesalzen" wurde. Unter "gesalzen" versteht man das Verschlüsseln von Daten zu einen Hash, der mit einem sogenannten "Salt" erstellt wird. Der Salt ist eine beliebig lange Folge an Zeichen, die im JSON File des Users mit abgespeichert werden muss, damit eine Authentifizierung in Folge des Nachberechnens des Hashes oder entschlüsseln des Hashes erfolgen kann. 
+In Express wurde dazu das Modul "Bcrypt" verwendet, auf Seiten Perfect das Package "SwiftyBeaver". Beide Packages erfüllen den gleichen Zweck und sind sehr leicht in der Handhabung, außer dass bei SwiftyBeaver zur Authentifizierung des Users das gespeicherte Passwort mit dem Salt entschlüsselt werden muss, während bei Bcrypt der Hash mit dem Schlüssel (=Salt) nachgerechnet wird. Bei bestandener Überprüfung wird eine Session gestartet und der User auf den internen Bereich geleitet.
 
 \subsection{Session}
-Die Sessionverwaltung ist in beiden Fällen mit einem zusätzlichen Modul gelösten. Express bietet hierfür die "express-session" an während Perfect die "PerfectSession" bereit hält. Die Beiden benötigen das erstellen einer Session pro User und beim Logout die Löschung dieser. Das Initialisieren der beiden Session ist jeweils ein Einzeiler der leicht verständlich ist. Interessanter ist die Zerstörung der Session, da diese in express-session durch eine Methode "destroy" bereitsteht, währnd in PerfectSession diese selbst zu implementieren ist:
+Die Sessionverwaltung ist in beiden Fällen mit einem zusätzlichen Modul gelöst. Express bietet hierfür die "express-session" an, während Perfect die "PerfectSession" bereit hält. Die Beiden benötigen das Erstellen einer Session pro User und beim Logout die Löschung dieser. Das Initialisieren der beiden Session ist jeweils ein Einzeiler, der leicht verständlich ist. Interessanter ist die Zerstörung der Session, da diese in express-session durch eine Methode "destroy" bereitsteht, während in PerfectSession diese selbst zu implementieren ist:
 \lstset{
 	caption=Löschen der Session in Node.js,
 	label=lst:nodejsdestroysession,
@@ -551,13 +557,13 @@ func logoutHandler(request: HTTPRequest, _ response: HTTPResponse) {
 }
 \end{lstlisting}
 
-Bei der in \ref{swiftdestroysession} verwendeten Methode wird die Session die alte Session neu mit einer neu initialisierten Session überschrieben.
+Bei der in \ref{lst:swiftdestroysession} verwendeten Methode wird die alte Session mit einer neu initialisierten Session überschrieben.
 
 \subsection{Caching}
-Für das Caching wurde in Node.js und in Swift die Caching Header gesetzt. Beide Sprachen sind hier laut ihrer Dokumenttion zu setzen.
+Für das Caching wurde in Node.js und in Swift die Caching Header gesetzt. Beide Sprachen sind hier laut ihrer Dokumention zu setzen.
 
 \subsection{Socketverbindung}
-Die Socketverbindung verlang jeweils eine Anfrage des Clients um die Verbindung von einer statuslosen HTTP Verbindung zu einer WebSocketverindung aufzuwerten. Dies ist in Node.js mit dem Modul "socket.io" mit einer Anfrag und er entgegennahme der Anfrage in wenige Schritten erledigt:
+Die Socketverbindung verlangt jeweils eine Anfrage des Clients, um die Verbindung von einer statuslosen HTTP Verbindung zu einer WebSocketverbindung aufzuwerten. Dies ist in Node.js mit dem Modul "socket.io" mit einer Anfrage und der Entgegennahme der Anfrage in wenigen Schritten erledigt:
 \lstset{
 	caption=Clientseitiger Code für die Socketverbindung,
 	label=lst:nodejsclientsocket,
@@ -619,12 +625,119 @@ io.on('connection', function(socket){
 });
 \end{lstlisting}
 
-Dabei ist anzumerken, das die Initialisierung des Servers, wie in \ref{lst:nodejsserversocket} Zeile 1-4 von der Dokumentation von Socket.io \parencite{socketio} abzuändern ist, damit die Socketverbindung aufgebaut werden kann. 
+Dabei ist anzumerken, dass die Initialisierung des Servers, wie in \ref{lst:nodejsserversocket} Zeile 1-4 von der Dokumentation von Socket.io \parencite{socketio} abzuändern ist, damit die Socketverbindung aufgebaut werden kann.\\\\
+Beim Swift Server wird die Socketverbindung wie folgt erreicht:
+
+\lstset{
+	caption=Clientseitiger Code für die Socketverbindung,
+	label=lst:swiftclientsocket,
+	language=JavaScript,
+	basicstyle=\footnotesize\ttfamily,
+	tabsize=2,
+	showtabs=false,
+	keywordstyle=\color{orange}\bfseries,
+	commentstyle=\color{darkgray}\ttfamily,
+	stringstyle=\color{darkgreen}\ttfamily,
+	ndkeywordstyle=\color{blue}\bfseries,
+	identifierstyle=\color{black},
+}
+
+\begin{lstlisting}
+const socket = new WebSocket('ws://{{ host }}:{{ port }}/socket', 'chat');
+\end{lstlisting}
+
+\lstset{
+	caption=Serverseitige Socketverbindung,
+	label=lst:swiftserversocket,
+	language=swift,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{keyword}\bfseries,
+	stringstyle=\color{darkgreen},
+	commentstyle=\color{darkgray},
+}
+
+\begin{lstlisting}
+import PerfectWebSockets
+
+/**
+ * Handler for chat
+ */
+class ChatHandler: WebSocketSessionHandler {
+    // Protocol
+    let socketProtocol: String? = "chat"
+    var user: String? = nil
+    func handleSession(request: HTTPRequest, socket: WebSocket) {
+        socket.readStringMessage {
+            string, op, fin in
+            guard let string = string else {
+                if let u = self.user {
+                    left(by: u)
+                    for (_, conn) in chat {
+                        conn.sendStringMessage(string: "User \(u) logged out", final: true) {
+                            self.handleSession(request: request, socket: socket)
+                        }
+                    }
+                    LogFile.info("User \(u) left Session")
+                }
+                socket.close()
+                return
+            }
+            if let u = request.session?.token {
+                LogFile.info("User \(u) joined Session")
+                joined(by: u, on: socket)
+            }
+            LogFile.debug("Socket:: read:\(string) op:\(op) fin:\(fin)")
+            for (user, conn) in chat {
+                conn.sendStringMessage(string: string, final: true) {
+                    LogFile.debug("Sending to \(user)")
+                    self.handleSession(request: request, socket: socket)
+                }
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+Bei PefectWebSocket ist es notwendig \ref{lst:swiftserversocket}, dass das Erzeugen und auch das Beenden der Socketverbindung ausprogrammiert wird.
 
 \subsection{Logging}
-Um das Entwicklen leichter zu machen wurden die in Express der Winston Logger verwendet. Dieser Logger unterstützt die Ausgabe von Information auf der Konsole und das persistieren der Informtion in einem Log-File. Außerdem kann das Loggin-Level des Loggers eingestellt werden, sodas während der Implementierung wichtig Informationen ausgegeben werden, die für die Entwicklung wichtig sind. Danach kann der Logging-Level erhöht werden, sodass nur Informationen die z.B. für einen Kunden wichtig sind, ausgegeben werden. Was ausgegeben wird, wird vom Entwickler während der Implementierung festgelegt \parencite{winston}. 
+Um das Entwickeln leichter zu machen, wurden in Express der Winston Logger verwendet. Dieser Logger unterstützt die Ausgabe von Informationen auf der Konsole und das Persistieren der Informtion in einem Log-File. Außerdem kann das Logging-Level des Loggers eingestellt werden, sodass während der Implementierung wichtige Informationen für die Entwicklung ausgegeben werden. Danach kann der Logging-Level erhöht werden, sodass nur Informationen die z.B. für einen Kunden wichtig sind, ausgegeben werden. Was ausgegeben wird, wird vom Entwickler während der Implementierung festgelegt \parencite{winston}. 
+
+\subsection{Kompression}
+im Gegensatz zu Node.js, dass die Middleware \textit{compression} für das komprimieren der Daten bereit hält, muss in Swift und dem Modul \textit{GzipSwift} eine Funktion implementiert werden. Weiter muss auch der encoding header manuell gesetzt werden, damit der Browser die erhaltenen Daten verarbeiten kann.
+
+\lstset{
+	caption=Kompression und Header,
+	label=lst:swiftcompression,
+	language=swift,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{keyword}\bfseries,
+	stringstyle=\color{darkgreen},
+	commentstyle=\color{darkgray},
+}
+
+\begin{lstlisting}
+
+...
+func loginGetHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
+    LogFile.debug("loginGetHandler()")
+    if let view = renderLoginView("") { // renderLoginView gives either String or nil -> renderLoginView
+    response.appendBody(bytes: compress(view)) // String
+    response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
+....
+func compress(_ data: String) -> [UInt8] {
+	LogFile.debug("Trying to compress data")
+	let enc = data.data(using: .utf8)!
+	let zipped = try? enc.gzipped()
+	return [UInt8](zipped!)
+}
+
+\end{lstlisting}
+
+In Zeile 5 des Codes \ref{lst:swiftcompression} wird die Kompressionsfunktion aufgerufen und in Zeile 6 der Header gesetzt. Für die Kompression müssen die Daten in Unicode zerlegt werden, danach gezippt werden und zum Schluss noch in ein Bytearray zerlegt werden. Dieses Bytearray wird danach in der Response als Body gesendet. Wenn auch Swift einen Mehraufwand gegenüber Node.js in der Programmierung verursacht, ist die Komprimierung der Daten in Swift stärker als bei Node.js.
 
 \section{Leistungsvergleich}
+\label{sec:leistungsvergleich}
 Der Leistungsvergleich der Server wurde mit Apache Bench durchgeführt, nachdem mit YSlow die Server auf den gleichen Stand gebracht worden sind.  Für den Benchmark wurde folgende VM verwendet:
 
 \begin{compactitem}
@@ -634,10 +747,12 @@ Der Leistungsvergleich der Server wurde mit Apache Bench durchgeführt, nachdem 
 \item Netzwerk: Intel(R) Ethernet Connection (2) I218-V
 \end{compactitem}
 
-\subsection{Yslow}
-Mit Yslow wurden die beiden Server angeglichen, um die Tests mit Apache Bench aussagekräftig gestalten zu können.
+Da ein Rechner mit nur einer CPU sehr unwahrscheinlich ist, wurde der Swift und der Node.js auch auf einer Maschine mit 4 Kernen getestet. Leider wurde der Swift-Server aufgrund einem \textit{mallo(): corrupted memory action} abgebrochen. Der Grund dafür wird im Kapitel Probleme und Lösungen behandelt. Für das Testen jedoch müsste der Befehl Benchmark insofern geändert werden, dass der Swift-Server keine gleichzeitigen Requests bekommt. Wird jeder Request nacheinander abgesendet funktioniert auch das abarbeiten der Request auf mehreren CPUs.
 
-\begin{figure}[h]
+\subsection{Yslow}
+Mit Yslow wurden die beiden Server angeglichen, um die Tests mit Apache Bench aussagekräftig gestalten zu können. Trotz das bei der Kompression des Swift-Server die Note \textbf{F} steht ist im Header und auch in der Netzwerkanalyse des Chrome und Firefox Browsers angezeigt.
+
+\begin{figure}[H]
 	\centering
 	\subfigure[Yslow des Node-Servers]{\includegraphics[keepaspectratio,scale=0.6]{images/nodeslow}}
 	\subfigure[Yslow des Swift-Servers]{\includegraphics[keepaspectratio,scale=0.6]{images/swiftslow}}
@@ -645,64 +760,64 @@ Mit Yslow wurden die beiden Server angeglichen, um die Tests mit Apache Bench au
 
 \subsection{Apache Bench}
 
-Für die Benchmarks musst beim Node.js Server die Kompression ins gzip Format ausgeschalten werden. Grund dafür ist, dass in Swift bei der Kompression der String in Unicode-Data geändert werden muss. Dadurch müssten in der Response zwei unterschiedliche Dataentypen versendet werden, was in Swift nicht möglich ist. Node.js ist dynamisch und daher ist es möglich auch zwei Datentypen in einer Response zu senden. Im ersten Schritt wird der Server mit 500 synchronen Request beauftrag bis insgesamt 5000 Request abgehandelt wurden. Zur weiteren Überprüfung wird der Test mit 10.000, 20.000, 30.000, 40.000 und 50.000 zu je 500 synchronen Requests durchgeführt, mit dennen folgende Auswertung erstellt wurde:
+Im ersten Schritt wird der Server mit 500 gleichzeitig durchgeführten Requests beauftrag bis insgesamt 5000 Request abgehandelt wurden. Zur weiteren Überprüfung wird der Test mit 10.000, 20.000, 30.000, 40.000 und 50.000 zu je 500 parallelen Requests durchgeführt. Daraus wurde folgendes Ergebnis erstellt:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[keepaspectratio, scale = 0.5]{images/time.jpg}
+\includegraphics[keepaspectratio, scale = 0.4]{images/time.jpg}
 \caption{Request-Abarbeitung von Express.js und Perfect}
 \label{fig:time}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
-\begin{tabular}{p{5cm}p{3.5cm}p{4.5cm}}
+\begin{tabular}{p{8cm}p{2.5cm}p{2.5cm}}
 \rowcolor{gray20}														& \textbf{Express.js}	  		& \textbf{Perfect}		\\ 
 \rowcolor{gray5}		Document 											& LoginPage					& LoginPage			\\ 
-\rowcolor{gray20}	Document Length										& 1.988 bytes				& 2.282 bytes		\\ 
+\rowcolor{gray20}	Document Length										& 1.988 bytes				& 932 bytes			\\ 
 \rowcolor{gray5}		Concurrency Level									& 500						& 500				\\ 
-\rowcolor{gray20}	Time taken for tests [sec]								& 2,443						& 15.367			\\ 
+\rowcolor{gray20}	Time taken for tests [sec]								& 29,507					& 38,178			\\ 
 \rowcolor{gray5}		Complete Requests									& 5.000						& 5.000				\\
 \rowcolor{gray20}	Failed requests										& 0							& 0					\\ 
-\rowcolor{gray5}		Total transferred [bytes]								& 10.955.000				& 13.585.000 		\\ 
-\rowcolor{gray20}	HTML transferred	[bytes]								& 9.940.000					& 11.410.000		\\ 
-\rowcolor{gray5}		Requests per second [\#/sec]							& 2.046,44					& 325,37			\\ 
-\rowcolor{gray20}	Time per request [ms]	 (mean)							& 244,327					& 1.536,698			\\
-\rowcolor{gray5}		Time per request [ms]	 (across concurrent requ.)			& 0,489						& 3,073				\\ 
+\rowcolor{gray5}		Total transferred [bytes]								& 11.070.000				& 6.950.000 			\\ 
+\rowcolor{gray20}	HTML transferred	[bytes]								& 9.940.000					& 4.660.000			\\ 
+\rowcolor{gray5}		Requests per second [\#/sec]							& 169,45					& 130,97			\\ 
+\rowcolor{gray20}	Time per request [ms]	 (mean)							& 2.950,702					& 3.817,783			\\
+\rowcolor{gray5}		Time per request [ms]	 (across concurrent requ.)			& 5,901						& 7,636				\\ 
 \end{tabular}
 \caption{Test: 5.000 Request on "Login Page"} \label{tab:fivethousandrequests}
 \end{center}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
-\begin{tabular}{p{5cm}p{3.5cm}p{4.5cm}}
+\begin{tabular}{p{8cm}p{2.5cm}p{2.5cm}}
 \rowcolor{gray20}														& \textbf{Express.js}	  		& \textbf{Perfect}		\\ 
 \rowcolor{gray5}		Document 											& LoginPage					& LoginPage			\\ 
-\rowcolor{gray20}	Document Length										& 1.988 bytes				& 2.282 bytes		\\ 
+\rowcolor{gray20}	Document Length										& 1.988 bytes				& 932 bytes			\\ 
 \rowcolor{gray5}		Concurrency Level									& 500						& 500				\\ 
-\rowcolor{gray20}	Time taken for tests [sec]								& 23,827					& 214,645			\\ 
+\rowcolor{gray20}	Time taken for tests [sec]								& 172,275					& 273,546			\\ 
 \rowcolor{gray5}		Complete Requests									& 50.000					& 50.000			\\
 \rowcolor{gray20}	Failed requests										& 0							& 0					\\ 
-\rowcolor{gray5}		Total transferred [bytes]								& 109.550.000				& 135.850.000		\\ 
-\rowcolor{gray20}	HTML transferred	[bytes]								& 99.400.000				& 114.100.000		\\ 
-\rowcolor{gray5}		Requests per second [\#/sec]							& 2.098,44					& 232,94			\\ 
-\rowcolor{gray20}	Time per request [ms]	 (mean)							& 238,272					& 2.146,447			\\
-\rowcolor{gray5}		Time per request [ms]	 (across concurrent requ.)			& 0,477						& 4,293				\\ 
+\rowcolor{gray5}		Total transferred [bytes]								& 110.700.000				& 695.000.000		\\ 
+\rowcolor{gray20}	HTML transferred	[bytes]								& 99.400.000				& 466.000.000		\\ 
+\rowcolor{gray5}		Requests per second [\#/sec]							& 290,23					& 182,78			\\ 
+\rowcolor{gray20}	Time per request [ms]	 (mean)							& 1.722,747					& 2735,462			\\
+\rowcolor{gray5}		Time per request [ms]	 (across concurrent requ.)			& 3,445						& 5,471				\\ 
 \end{tabular}
 \caption{Test: 50.000 Request on "Login Page"} \label{tab:fiftythousandrequests}
 \end{center}
 \end{table}
 
-Die Differenz der Dokumentenlänge ergibt sich aus der Header Verwaltung von Perfect, welche den Cookie Header nicht nur bei den Cookies einträgt, sondern auch als eigenen Header mitsendet.
+Bei dem Test wurde die Login-Page angefordert. Dabei änderte sich nur die Menge der Requests die abgehandlet werden mussten. Dadurch ergab es sich, dass die Menge der übertragenen Bytes linear anstgestiegen sind, die Zeit pro Request bei mehrmaligen durchlaufen jedoch stark schwankte. Die Differenz der Dokumentenlänge ergibt sich aus der unterschiedlich starken Kompression der Server. Somit blieb für die Abb. \ref{fig:time} nur ein Wert der sich auf beiden Seiten ändert, die \textit{Dauer des Tests}.
 
 \section{Fazit}
 
-Aufgrund der Werte in der Abb.: \ref{fig:time} kann der Rückschluss gezogen werden, dass jeder zusätzliche Request einen linearen Anstieg der Latenzzeit zur Folge hat. Diese Aussage zeigt, dass der Swift Server sowie auch der Node.js Server die Requests synchron abarbeiten. Der Node.js Server jedoch verwendet blockierte Zeiten um nachfolgende Requests weiter zu bearbeiten und blockierte Requests mit Callbacks fertig zu stellen. Ein großes Defizit hat der Perfect Server aufgrund des Workarounds um die Funktion von Handlebars nachzustellen. Dieses Workaround blockiert bei jedem einlesen der Partials, welche als eigene Files gespeichert sind.\\
-Zusätzlich nimmt der Swift Server keinen folgenden Request engegen, bevor nicht der zurzeit bearbeitete Request abgeschlossen und gesendet wurde. Node.js nutzt die Zeit während eine Funktion blockiert, um einen nachfolgenden Request bis zur blockierten Funktionen vorzubereiten.
+Aufgrund der Werte in der Abb.: \ref{fig:time} kann der Rückschluss gezogen werden, dass jeder zusätzliche Request einen linearen Anstieg der Durchführungsdauer zur Folge hat. Diese Aussage zeigt, dass der Swift Server sowie auch der Node.js Server die Requests synchron abarbeiten, wobei Node.js die Zeit jedoch mit Callbacks effizienter nutzt. Der Node.js Server verwendet die Zeit für I/O-Operationen, auch wenn diese synchron implementiert wurden, um nachfolgende Requests weiter zu bearbeiten. Ein großes Defizit hat der Perfect Server aufgrund des Workarounds um die Funktion von Handlebars nachzustellen. Dieses Workaround blockiert bei jedem einlesen der Partials, welche als eigene Files gespeichert sind.\\
+Zusätzlich nimmt der Swift Server keinen folgenden Request engegen, bevor nicht der zurzeit bearbeitete Request abgeschlossen und gesendet wurde. Swift hat einen Vorteil durch die stärkere Komprimierung die zwar mehr Zeit beim bearbeiten von Requests benötigt, jedoch eine geringere Menge an Daten übermittelt werden müssen.
 
-\section{Verbesserungen}
-Der Swift Server wurde auf einer VM getestet mit nur einer CPU. Nachdem die VM um drei weitere Kerne auf 4 erweitert wurde, konnte der Server die Requests nicht mehr Ordnungsgemäß ausführen. Dass lag daran, dass der Server nicht für Multitasking ausgelegt wurde, und der Server beim Bearbeiten von Requests, und dem Zusammenbauen des HTML gleichzeitig auf die Partial-Dateien zugreifen versuchen, somit bricht der Server ab. Damit sind die Test auch nicht aussagekräftig, und der Server müsste in diese Richtung überarbeitet werden. Schlussfolgernd, würde der Server auch ein viertel der Zeit benötigen, verglichen mit der derzeitigen Status der Entwicklung.
+\section{Probleme und Lösungen}
+Der Swift Server wurde auf einer VM getestet, die nur einer CPU verfügt, wie bereits in \ref{sec:leistungsvergleich} erwähnt. Nachdem die VM um drei weitere Kerne auf 4 erweitert wurde, konnte der Server die Requests nicht mehr Ordnungsgemäß ausführen. Dass lag daran, dass der Server nicht für Multitasking ausgelegt wurde, und der Server beim Bearbeiten von Requests versucht, gleichzeitig das benötigte HTML für mehrere Requests zusammenzubauen. Auf einem Rechner mit mehreren Kernen muss der Apache Bench insofern abgeändert werden, das der \textit{Concurrency Level} auf 1 gestellt ist. Damit sind die Test jedoch wieder nicht aussagekräftig, und der Server müsste in diese Richtung überarbeitet werden. Schlussfolgernd, würde der Server auch ein viertel der Zeit benötigen, verglichen mit der derzeitigen Entwicklung.
 
 
 
