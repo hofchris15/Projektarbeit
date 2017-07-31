@@ -8,6 +8,7 @@ import PerfectLib
 import PerfectSession
 import PerfectWebSockets
 import Foundation
+import Gzip
 
 func makeRoutes() -> Routes {
     LogFile.debug("makeRoutes()")
@@ -66,7 +67,8 @@ func makeRoutes() -> Routes {
 func loginGetHandler(_ request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("loginGetHandler()")
     if let view = renderLoginView("") { // renderLoginView gives either String or nil -> renderLoginView
-        response.appendBody(string: view) // String
+        response.appendBody(bytes: compress(view)) // String
+	response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
         sevenDayCaching(response)
         response.completed()
     } else { // if nil
@@ -81,13 +83,15 @@ func loginPostHandler(request: HTTPRequest, _ response: HTTPResponse) {
     if msg == Message.nouser {
         let view = renderLoginView(msg)
         response.status = .forbidden
-        response.appendBody(string: view!)
+        response.appendBody(bytes: compress(view!))
+	response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
     } else {
         msg = validate(username: request.params(named: "username")[0], password: request.params(named: "password")[0])
         if msg == Message.fail {
             let view = renderLoginView(msg)
             response.status = .forbidden
-            response.appendBody(string: view!)
+            response.appendBody(bytes: compress(view!))
+            response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
         } else {
             request.session?.data["user"] = request.params(named: "username")[0]
             response.status = .seeOther
@@ -100,7 +104,8 @@ func loginPostHandler(request: HTTPRequest, _ response: HTTPResponse) {
 func newGetHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("newGetHandler()")
     if let view = renderRegistrationView() {
-        response.appendBody(string: view)
+        response.appendBody(bytes: compress(view))
+	response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
         sevenDayCaching(response)
         response.completed()
     } else {
@@ -131,7 +136,8 @@ func getHomeHandler(request: HTTPRequest, _ response: HTTPResponse) {
         loginGetHandler(request, response)
     } else {
         if let view = renderHomeView(user: user) {
-            response.appendBody(string: view)
+            response.appendBody(bytes: compress(view))
+	    response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
             sevenDayCaching(response)
             response.completed()
         } else {
@@ -149,7 +155,8 @@ func getSchedularHandler(request: HTTPRequest, _ response: HTTPResponse) {
     if user == "" {
         loginGetHandler(request, response)
     } else {
-        response.appendBody(string: renderSchedularView())
+        response.appendBody(bytes: compress(renderSchedularView()))
+	response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
         sevenDayCaching(response)
         response.completed()
     }
@@ -165,7 +172,8 @@ func getGradesHandler(request: HTTPRequest, _ response: HTTPResponse) {
         loginGetHandler(request, response)
     } else {
         if let view = renderGradesView(user: user) {
-            response.appendBody(string: view)
+            response.appendBody(bytes: compress(view))
+	    response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
             sevenDayCaching(response)
             response.completed()
         } else {
@@ -184,7 +192,8 @@ func getMapHandler(request: HTTPRequest, _ response: HTTPResponse) {
         loginGetHandler(request, response)
     } else {
         if let view = renderMapView(user: user) {
-            response.appendBody(string: view)
+            response.appendBody(bytes: compress(view))
+	    response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
             sevenDayCaching(response)
             response.completed()
         } else {
@@ -196,7 +205,8 @@ func getMapHandler(request: HTTPRequest, _ response: HTTPResponse) {
 func successHandler(request: HTTPRequest, _ response: HTTPResponse) {
     LogFile.debug("successHandler()")
     if let view = renderSuccessView() {
-        response.appendBody(string: view)
+        response.appendBody(bytes: compress(view))
+	response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
         sevenDayCaching(response)
         response.completed()
     } else {
@@ -208,7 +218,8 @@ func chatHandler(request: HTTPRequest, response: HTTPResponse) {
     LogFile.debug("chatHandler()")
     if let user = request.session?.data["user"] as? String {
         if let view = renderChatView(user: user) {
-            response.appendBody(string: view)
+            response.appendBody(bytes: compress(view))
+	    response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
             noCaching(response)
             response.completed()
         } else {
@@ -240,7 +251,8 @@ func sendHeaderPic(request: HTTPRequest, _ response: HTTPResponse) {
             let imageBytes = try headerPic.readSomeBytes(count: imageSize)
             response.setHeader(.contentType, value: MimeType.forExtension("jpg"))
             response.setHeader(.contentLength, value: "\(imageBytes.count)")
-            response.setBody(bytes: imageBytes)
+	    response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
+            response.setBody(bytes: [UInt8](try! (Data(imageBytes)).gzipped()) )
         }
     } catch {
         LogFile.debug("error in sendHeaderPic(): \(error)")
@@ -285,12 +297,28 @@ func sendSeeOther(_ response: HTTPResponse, value: String) -> Void {
  */
 func simpleSend(_ response: HTTPResponse, _ file: String) {
     if let view = getFileView(file: file) {
-        response.appendBody(string: view)
+        response.appendBody(bytes: compress(view))
+	response.addHeader(HTTPResponseHeader.Name.contentEncoding, value: "Gzip")
         sevenDayCaching(response)
         response.completed()
     } else {
         sendFileNotFound(response)
     }
+}
+
+/**
+ * Simple gzip compression
+ * Try to compress data else uncompressed
+ */
+func compress(_ data: String) -> [UInt8] {
+	LogFile.debug("Trying to compress \(data)")
+	let enc = data.data(using: .utf8)!
+	LogFile.debug("Trying to compress \(enc)")
+	let zipped = try? enc.gzipped()
+	LogFile.debug("After compression \(zipped!)")
+	//let result = zipped!.base64EncodedString()
+	//LogFile.debug("As String \(result)")
+	return [UInt8](zipped!)
 }
 
 /**
@@ -308,3 +336,4 @@ class PublicFile {
         simpleSend(response, "." + route)
     }
 }
+

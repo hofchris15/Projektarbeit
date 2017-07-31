@@ -20,6 +20,12 @@
       "version": "2.0.6"
     },
     {
+      "package": "Gzip",
+      "reason": null,
+      "repositoryURL": "https://github.com/1024jp/GzipSwift.git",
+      "version": "3.1.4"
+    },
+    {
       "package": "LinuxBridge",
       "reason": null,
       "repositoryURL": "https://github.com/PerfectlySoft/Perfect-LinuxBridge.git",
@@ -114,6 +120,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/iamjono/SwiftString.git",
       "version": "2.0.3"
+    },
+    {
+      "package": "zlib",
+      "reason": null,
+      "repositoryURL": "https://github.com/1024jp/zlib.git",
+      "version": "0.0.1"
     }
   ],
   "version": 1

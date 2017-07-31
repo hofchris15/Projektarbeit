@@ -12,6 +12,6 @@ import Foundation
  * Config File
  */
 struct Config {
-    static let host: String = "localhost"
+    static let host: String = "192.168.42.2"
     static let port: UInt16 = 3000
 }
