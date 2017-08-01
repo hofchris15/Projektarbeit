@@ -329,12 +329,12 @@
       \warn{\item Entry 'swiftcore' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
     \endentry
   \endsortlist
-  \missing{llvmpulbic}
-  \missing{Batina:2011:HER:2188496.2188508}
-  \missing{ieee:xplore}
-  \missing{acm:diglibrary}
   \missing{Fernandez-Mir:2011:SRA:2188496.2188506}
+  \missing{acm:diglibrary}
   \missing{Li:2008:TRP:2043628.2043631}
+  \missing{llvmpulbic}
+  \missing{ieee:xplore}
+  \missing{Batina:2011:HER:2188496.2188508}
 \endrefsection
 \endinput
 
