@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  1 AUG 2017 19:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  1 AUG 2017 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1405,7 +1405,7 @@ LaTeX Info: Redefining \nameref on input line 154.
 \openout2 = `titlepages.aux'.
 
  (./titlepages.tex
-<images/logo_FHJ_100mm_cmyk.pdf, id=64, pagebox=cropbox, 285.065pt x 58.2175pt>
+<images/logo_FHJ_100mm_cmyk.pdf, id=60, pagebox=cropbox, 285.065pt x 58.2175pt>
 
 File: images/logo_FHJ_100mm_cmyk.pdf Graphic file (type pdf)
 <use images/logo_FHJ_100mm_cmyk.pdf>
@@ -1432,23 +1432,21 @@ l.68 \begin{abstract}
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 68.
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 \end{abstract}
+l.81 \end{abstract}
                     [1]pdfTeX warning (ext4): destination with the same identif
 ier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.107 \end{titlepage}
-                      [1
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.121 \end{titlepage}
+l.109 \end{titlepage}
                       [1
 
 ]) (./Swift on Linux.toc
@@ -1524,40 +1522,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.18 \paragraph
-               {Basics of Swift} [1
+l.12 
+      [1
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 31.
-
-(d:/Programme/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 26.
+ (d:/Programme/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 32.
- [2] [3]
-[4] [5] [6] [7] [8] [9]
-Overfull \hbox (16.80408pt too wide) in paragraph at lines 430--431
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 27.
+
+[2] [3] [4] [5] [6] [7] [8] [9]
+Overfull \hbox (16.80408pt too wide) in paragraph at lines 436--437
 \T1/ptm/m/n/12 and Wright, [][]2016[][]), Ki-tura([]SWIFT@IBM, [][]2016[][]), Z
 ewo([]Faria, [][]2017[][]), Swifter([]Kolakowski,
  []
 
 [10]
-Overfull \hbox (2.49931pt too wide) in paragraph at lines 438--439
+Overfull \hbox (2.49931pt too wide) in paragraph at lines 444--445
 \T1/ptm/m/n/12 Swifter wurde be-gonnen, bevor Swift Open-Source wurde. Das min-
 i-mal-is-tis-che Frame-
  []
 
 
-Overfull \hbox (11.90677pt too wide) in paragraph at lines 438--439
+Overfull \hbox (11.90677pt too wide) in paragraph at lines 444--445
 \T1/ptm/m/n/12 die Beispiele auf der Pro-jek-t-seite auf GitHub alle An-wen-dun
 gsmoeglichkeiten abgedeckt. 
  []
 
 [11]
-Overfull \hbox (2.69069pt too wide) in paragraph at lines 450--451
+Overfull \hbox (2.69069pt too wide) in paragraph at lines 456--457
  []\T1/ptm/b/n/12 Perfect[] \T1/ptm/m/n/12 Per-fect ver-folgt die Philoso-phie,
  Swift als fun-da-men-tale Pro-gram-mier-sprache
  []
@@ -1669,14 +1666,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 628--630
  []
 
 [32] [33] [34]
-<images/nodeslow.png, id=977, 197.23688pt x 487.06969pt>
+<images/nodeslow.png, id=976, 197.23688pt x 487.06969pt>
 File: images/nodeslow.png Graphic file (type png)
 <use images/nodeslow.png>
 Package pdftex.def Info: images/nodeslow.png  used on input line 757. on input 
 line 757.
 Package pdftex.def Info: Requested size: 118.34302pt x 292.24405pt on input lin
 e 757.
-<images/swiftslow.png, id=978, 196.48407pt x 485.56406pt>
+<images/swiftslow.png, id=977, 196.48407pt x 485.56406pt>
 File: images/swiftslow.png Graphic file (type png)
 <use images/swiftslow.png>
 Package pdftex.def Info: images/swiftslow.png  used on input line 758. on input
@@ -1684,7 +1681,7 @@ Package pdftex.def Info: images/swiftslow.png  used on input line 758. on input
 Package pdftex.def Info: Requested size: 117.89134pt x 291.34068pt on input lin
 e 758.
  [35]
-<images/time.jpg, id=985, 760.2804pt x 370.0224pt>
+<images/time.jpg, id=983, 760.2804pt x 370.0224pt>
 File: images/time.jpg Graphic file (type jpg)
 <use images/time.jpg>
 Package pdftex.def Info: images/time.jpg  used on input line 767. on input line
@@ -1806,16 +1803,16 @@ ters/realisation.aux) (./chapters/conclusion.aux) (./acronyms.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
 Package rerunfilecheck Info: File `"Swift on Linux".out' has not changed.
-(rerunfilecheck)             Checksum: 43F467B017B12DEF77AB95FBED7A30D3;930.
+(rerunfilecheck)             Checksum: DB3798E26F548847A0E53C7A4BB0729C;868.
 Package logreq Info: Writing requests to '"Swift on Linux".run.xml'.
 \openout1 = `"Swift on Linux.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18526 strings out of 492990
- 291786 string characters out of 6131684
- 911741 words of memory out of 5000000
- 21017 multiletter control sequences out of 15000+600000
+ 18528 strings out of 492990
+ 291827 string characters out of 6131684
+ 911701 words of memory out of 5000000
+ 21013 multiletter control sequences out of 15000+600000
  62484 words of font info for 78 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  45i,11n,53p,1972b,1949s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1828,10 +1825,10 @@ t/fonts/type1/urw/times/utmbi8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on "Swift on Linux.pdf" (52 pages, 301136 bytes).
+Output written on "Swift on Linux.pdf" (51 pages, 300925 bytes).
 PDF statistics:
  1295 PDF objects out of 1440 (max. 8388607)
- 1216 compressed objects within 13 object streams
- 738 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1217 compressed objects within 13 object streams
+ 744 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
