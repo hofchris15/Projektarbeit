@@ -11,7 +11,7 @@ node_modules
 /profiles
 /Wichtig!!!.txt
 /logs
-
+*.aux
 
 Würde LICENSE löschen
 Würde Sources/exe/model/session.swift löschen
