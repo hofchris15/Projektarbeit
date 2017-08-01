@@ -5,8 +5,10 @@
 
 \section{Fazit}
 
-Aufgrund der Werte in der Abb.: \ref{fig:time} kann der Rückschluss gezogen werden, dass jeder zusätzliche Request einen linearen Anstieg der Durchführungsdauer zur Folge hat. Diese Aussage zeigt, dass der Swift Server sowie auch der Node.js Server die Requests synchron abarbeiten, wobei Node.js die Zeit jedoch mit Callbacks effizienter nutzt. Der Node.js Server verwendet die Zeit für I/O-Operationen, auch wenn diese synchron implementiert wurden, um nachfolgende Requests weiter zu bearbeiten. Ein großes Defizit hat der Perfect Server aufgrund des Workarounds um die Funktion von Handlebars nachzustellen. Dieses Workaround blockiert bei jedem einlesen der Partials, welche als eigene Files gespeichert sind.\\
+Aufgrund der Werte in der Abb.: \ref{fig:time} kann der Rückschluss gezogen werden, dass jeder zusätzliche Request einen linearen Anstieg der Durchführungsdauer zur Folge hat. Diese Aussage zeigt, dass der Swift Server sowie auch der Node.js Server die Requests synchron abarbeiten, wobei Node.js die Zeit jedoch mit Callbacks effizienter nutzt. Der Node.js Server verwendet die Zeit für I/O-Operationen, auch wenn diese synchron implementiert wurden, um nachfolgende Requests weiter zu bearbeiten. Ein großes Defizit hat der Perfect Server aufgrund des Workarounds um die Funktion von Handlebars nachzustellen. Dieses Workaround blockiert bei jedem einlesen der Partials, welche als eigene Files gespeichert sind. Eine bessere Implementierung diese Workarounds könnte zu einer starken Reduzierung der Bearbeitungszeit führen.\\
 Zusätzlich nimmt der Swift Server keinen folgenden Request engegen, bevor nicht der zurzeit bearbeitete Request abgeschlossen und gesendet wurde. Swift hat einen Vorteil durch die stärkere Komprimierung die zwar mehr Zeit beim bearbeiten von Requests benötigt, jedoch eine geringere Menge an Daten übermittelt werden müssen.
+
+
 
 \section{Perspektive}
 
