@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  1 AUG 2017 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  1 AUG 2017 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1113,36 +1113,8 @@ Package biblatex Info: ... file 'english.lbx' found.
 (d:/Programme/texlive/2017/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )
-(./Swift on Linux.aux (./titlepages.aux) (./chapters/introduction.aux
-
-LaTeX Warning: Label `lst:arraysetdictionary' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-) (./chapters/realisation.aux
-
-LaTeX Warning: Label `lst:swiftworkaround' multiply defined.
-
-) (./chapters/summary.aux) (./chapters/conclusion.aux) (./acronyms.aux))
+(./Swift on Linux.aux (./titlepages.aux) (./chapters/introduction.aux)
+(./chapters/realisation.aux) (./chapters/conclusion.aux) (./acronyms.aux))
 \openout1 = `"Swift on Linux.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
@@ -1433,7 +1405,7 @@ LaTeX Info: Redefining \nameref on input line 154.
 \openout2 = `titlepages.aux'.
 
  (./titlepages.tex
-<images/logo_FHJ_100mm_cmyk.pdf, id=68, pagebox=cropbox, 285.065pt x 58.2175pt>
+<images/logo_FHJ_100mm_cmyk.pdf, id=64, pagebox=cropbox, 285.065pt x 58.2175pt>
 
 File: images/logo_FHJ_100mm_cmyk.pdf Graphic file (type pdf)
 <use images/logo_FHJ_100mm_cmyk.pdf>
@@ -1567,25 +1539,25 @@ LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 32.
  [2] [3]
 [4] [5] [6] [7] [8] [9]
-Overfull \hbox (16.80408pt too wide) in paragraph at lines 423--424
+Overfull \hbox (16.80408pt too wide) in paragraph at lines 430--431
 \T1/ptm/m/n/12 and Wright, [][]2016[][]), Ki-tura([]SWIFT@IBM, [][]2016[][]), Z
 ewo([]Faria, [][]2017[][]), Swifter([]Kolakowski,
  []
 
 [10]
-Overfull \hbox (2.49931pt too wide) in paragraph at lines 431--432
+Overfull \hbox (2.49931pt too wide) in paragraph at lines 438--439
 \T1/ptm/m/n/12 Swifter wurde be-gonnen, bevor Swift Open-Source wurde. Das min-
 i-mal-is-tis-che Frame-
  []
 
 
-Overfull \hbox (11.90677pt too wide) in paragraph at lines 431--432
+Overfull \hbox (11.90677pt too wide) in paragraph at lines 438--439
 \T1/ptm/m/n/12 die Beispiele auf der Pro-jek-t-seite auf GitHub alle An-wen-dun
 gsmoeglichkeiten abgedeckt. 
  []
 
 [11]
-Overfull \hbox (2.69069pt too wide) in paragraph at lines 443--444
+Overfull \hbox (2.69069pt too wide) in paragraph at lines 450--451
  []\T1/ptm/b/n/12 Perfect[] \T1/ptm/m/n/12 Per-fect ver-folgt die Philoso-phie,
  Swift als fun-da-men-tale Pro-gram-mier-sprache
  []
@@ -1697,14 +1669,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 628--630
  []
 
 [32] [33] [34]
-<images/nodeslow.png, id=984, 197.23688pt x 487.06969pt>
+<images/nodeslow.png, id=977, 197.23688pt x 487.06969pt>
 File: images/nodeslow.png Graphic file (type png)
 <use images/nodeslow.png>
 Package pdftex.def Info: images/nodeslow.png  used on input line 757. on input 
 line 757.
 Package pdftex.def Info: Requested size: 118.34302pt x 292.24405pt on input lin
 e 757.
-<images/swiftslow.png, id=985, 196.48407pt x 485.56406pt>
+<images/swiftslow.png, id=978, 196.48407pt x 485.56406pt>
 File: images/swiftslow.png Graphic file (type png)
 <use images/swiftslow.png>
 Package pdftex.def Info: images/swiftslow.png  used on input line 758. on input
@@ -1712,7 +1684,7 @@ Package pdftex.def Info: images/swiftslow.png  used on input line 758. on input
 Package pdftex.def Info: Requested size: 117.89134pt x 291.34068pt on input lin
 e 758.
  [35]
-<images/time.jpg, id=992, 760.2804pt x 370.0224pt>
+<images/time.jpg, id=985, 760.2804pt x 370.0224pt>
 File: images/time.jpg Graphic file (type jpg)
 <use images/time.jpg>
 Package pdftex.def Info: images/time.jpg  used on input line 767. on input line
@@ -1721,26 +1693,14 @@ Package pdftex.def Info: Requested size: 304.10677pt x 148.00633pt on input lin
 e 767.
  [36 <./images/nodeslow.png> <./images/swiftslow.png> <./images/time.jpg>] [37]
  [38])
-\openout2 = `chapters/summary.aux'.
+\openout2 = `chapters/conclusion.aux'.
 
- (./chapters/summary.tex
+ (./chapters/conclusion.tex
 Chapter 3.
 
-Overfull \hbox (1.07187pt too wide) in paragraph at lines 6--10
-\T1/ptm/m/n/12 wer-den, auf der Swift kom-pat-i-bel war. Auf-grund mehrerer Fak
--toren und schlussendlich
- []
-
-
-Overfull \hbox (12.6514pt too wide) in paragraph at lines 6--10
-\T1/ptm/m/n/12 die Server mit YS-low ver-glichen und auf den gle-ichen Stand ge
--bracht, um sicherzustellen,
- []
-
-
-Overfull \hbox (19.6108pt too wide) in paragraph at lines 6--10
-\T1/ptm/m/n/12 Tem-plate-funk-tion-al-ität, die mit Han-dle-bars er-re-icht wur
-de, notwendig. Dieses Workaround
+Overfull \hbox (16.44995pt too wide) in paragraph at lines 17--18
+\T1/ptm/m/n/12 Un-ter-schiede in der Ve-r-ar-beitung von Re-quest zwichen Node.
+js und Swift festzustellen. 
  []
 
 [39
@@ -1748,121 +1708,114 @@ de, notwendig. Dieses Workaround
 
 
 
-] [40])
-\openout2 = `chapters/conclusion.aux'.
-
- (./chapters/conclusion.tex
-Chapter 4.
-[41
-
+]
+Overfull \hbox (1.73889pt too wide) in paragraph at lines 20--21
+[]\T1/ptm/m/n/12 Die Hand-habung der Call-back-funk-tion verbessern, da diese g
+enauso wie bei Node.js
+ []
 
 
+Overfull \hbox (19.95311pt too wide) in paragraph at lines 21--22
+[]\T1/ptm/m/n/12 Perfect un-ter-stützt das gle-ichzeit-ige Abar-beiten von Re-q
+uests nicht ideal, was verbessert
+ []
 
-])
+[40])
 \openout2 = `acronyms.aux'.
 
  (./acronyms.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 8.
-) [42
+) [41
 
 
 
 
 ]
-Overfull \hbox (8.47581pt too wide) in paragraph at lines 225--225
+Overfull \hbox (8.47581pt too wide) in paragraph at lines 212--212
 [][]\T1/ptm/m/n/12 Collaboration (2016). \T1/ptm/m/it/12 S4 - HTTP (HTTP stan-d
 ards for Swift )\T1/ptm/m/n/12 . Avail-able from: <[][]$\T1/pcr/m/n/12 https :
  []
 
 
-Overfull \hbox (16.69673pt too wide) in paragraph at lines 225--225
+Overfull \hbox (16.69673pt too wide) in paragraph at lines 212--212
 [][][]\T1/ptm/m/n/12 (2017). \T1/ptm/m/it/12 Swift 4\T1/ptm/m/n/12 . Avail-able
  from: <[][]$\T1/pcr/m/n/12 https : / / developer . apple . com / library /
  []
 
 
-Overfull \hbox (9.58199pt too wide) in paragraph at lines 225--225
+Overfull \hbox (9.58199pt too wide) in paragraph at lines 212--212
 \T1/pcr/m/n/12 content / documentation / Swift / Conceptual / Swift _ Programmi
 ng _
  []
 
-[43
+[42
 
 
 ]
-Overfull \hbox (25.99648pt too wide) in paragraph at lines 225--225
+Overfull \hbox (25.99648pt too wide) in paragraph at lines 212--212
 [][]\T1/ptm/m/n/12 stackoverflow (2016). \T1/ptm/m/it/12 De-vel-oper Sur-vey Re
 -sults\T1/ptm/m/n/12 . Avail-able from: <[][]$\T1/pcr/m/n/12 https : / / insigh
 ts .
  []
 
 
-Overfull \hbox (69.72392pt too wide) in paragraph at lines 225--225
+Overfull \hbox (69.72392pt too wide) in paragraph at lines 212--212
 [][][]\T1/ptm/m/n/12 (2017). \T1/ptm/m/it/12 De-vel-oper Sur-vey Re-sults\T1/pt
 m/m/n/12 . Avail-able from: <[][]$\T1/pcr/m/n/12 https : / / insights . stackov
 erflow .
  []
 
 
-Overfull \hbox (24.86613pt too wide) in paragraph at lines 225--225
+Overfull \hbox (24.86613pt too wide) in paragraph at lines 212--212
 [][]\T1/ptm/m/n/12 StrongLoop, Inc./IBM (o.J.a). \T1/ptm/m/it/12 Ex-press - Sch
 nelles, of-fenes, un-kom-pliziertes Web-Framework
  []
 
 
-Overfull \hbox (5.07683pt too wide) in paragraph at lines 225--225
+Overfull \hbox (5.07683pt too wide) in paragraph at lines 212--212
 [][]\T1/ptm/m/it/12 Swift An-nouce-ment \T1/ptm/m/n/12 (n.d.). Avail-able from:
  <[][]$\T1/pcr/m/n/12 https : / / thenextweb . com / apple /
  []
 
 
-Overfull \hbox (19.78198pt too wide) in paragraph at lines 225--225
+Overfull \hbox (19.78198pt too wide) in paragraph at lines 212--212
 \T1/pcr/m/n/12 2014 / 06 / 02 / apple -[] announces -[] swift -[] new -[] progr
 amming -[] language -[]
  []
 
 
-Overfull \hbox (3.37694pt too wide) in paragraph at lines 225--225
+Overfull \hbox (3.37694pt too wide) in paragraph at lines 212--212
 [][]\T1/ptm/m/n/12 Swift.org (2017a). \T1/ptm/m/it/12 About Swift\T1/ptm/m/n/12
  . Avail-able from: <[][]$\T1/pcr/m/n/12 https : / / swift . org / about/$[][]\
 T1/ptm/m/n/12 >. 
  []
 
 
-Overfull \hbox (4.14088pt too wide) in paragraph at lines 225--225
+Overfull \hbox (4.14088pt too wide) in paragraph at lines 212--212
 [][][]\T1/ptm/m/n/12 (2017c). \T1/ptm/m/it/12 Pack-age Man-ager\T1/ptm/m/n/12 .
  Avail-able from: <[][]$\T1/pcr/m/n/12 https : / / swift . org / package -[]
  []
 
-[44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 227.
- [45]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 227.
+[43]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
+ [44]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
  (./Swift on Linux.aux (./titlepages.aux) (./chapters/introduction.aux) (./chap
-ters/realisation.aux) (./chapters/summary.aux)
-(./chapters/conclusion.aux) (./acronyms.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 227.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 227.
+ters/realisation.aux) (./chapters/conclusion.aux) (./acronyms.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
 Package rerunfilecheck Info: File `"Swift on Linux".out' has not changed.
-(rerunfilecheck)             Checksum: EF8FB145F0C3487CB9413D65F2A4440A;983.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
+(rerunfilecheck)             Checksum: 43F467B017B12DEF77AB95FBED7A30D3;930.
 Package logreq Info: Writing requests to '"Swift on Linux".run.xml'.
 \openout1 = `"Swift on Linux.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18475 strings out of 492990
- 291159 string characters out of 6131684
- 913276 words of memory out of 5000000
- 20962 multiletter control sequences out of 15000+600000
+ 18526 strings out of 492990
+ 291786 string characters out of 6131684
+ 911741 words of memory out of 5000000
+ 21017 multiletter control sequences out of 15000+600000
  62484 words of font info for 78 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  45i,11n,53p,1972b,1949s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1875,10 +1828,10 @@ t/fonts/type1/urw/times/utmbi8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on "Swift on Linux.pdf" (53 pages, 302910 bytes).
+Output written on "Swift on Linux.pdf" (52 pages, 301136 bytes).
 PDF statistics:
- 1299 PDF objects out of 1440 (max. 8388607)
- 1219 compressed objects within 13 object streams
- 735 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1295 PDF objects out of 1440 (max. 8388607)
+ 1216 compressed objects within 13 object streams
+ 738 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

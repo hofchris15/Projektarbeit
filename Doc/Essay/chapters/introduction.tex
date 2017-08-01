@@ -52,9 +52,18 @@ var intset = Set<Int>()	// Ein Set, der Typ muss hashbar sein
 var dictionary = [Int: String]()  // Ein Dictionary mit einem Key (Int) Value(String) Paar
 \end{lstlisting}
 Der Kontrollfluss wird in Swift aehnlich zu anderen Sprachen geregelt. Swift kennt \lstinline{for}, \lstinline{while}, \lstinline{if} und \lstinline{switch}.
-\swiftcode
+
+\lstset{
+	caption=Kontrollfluss,
+	label=lst:kontrollfluss,
+	language=swift,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{keyword}\bfseries,
+	stringstyle=\color{darkgreen},
+	commentstyle=\color{darkgray},
+}
 \begin{lstlisting}
-let demo = \["Eins", "Zwei", "Drei", "Vier"\]
+let demo = ["Eins", "Zwei", "Drei", "Vier"]
 // Ein for-Loop
 for number in demo {
 	print("Nummer = \(number)!") // print() schreibt in die Konsole
@@ -123,7 +132,7 @@ outer: while true { // while-Loop mit Label
 Funktionen in Swift bestehen aus Funktionsname, Parameter (eventuell mit Label) und Rueckgabewert. Funktionen haben nur einen Rueckgabewert, dieser kann aber ein Optional sein, bzw. koennen Funktionen auch Fehler werfen.
 \lstset{
 	caption=Funktionen,
-	label=lst:swiftworkaround,
+	label=lst:funktionen,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -153,7 +162,7 @@ func keinlabel( _ name: String) -> Void {
 // Aufruf
 keinlabel("Hugo") 	// Name = Hugo
 einefunktion(sag: "Hugo") // Name = Hugo
-\\
+
 // In-Out Parameters erlaubt Parameter in der
 // Funktion zu aendern, sofern 
 //diese keine Konstanten sind
@@ -170,7 +179,7 @@ print(name) // Bob
 Der naechste Punkt ist Closures, diese entsprechen in etwa Lambda-Ausdruecken. Diese erlauben Callback-Funktionen direkt inline zu definieren.
 \lstset{
 	caption=Closures,
-	label=lst:swiftworkaround,
+	label=lst:closures,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -192,7 +201,7 @@ function(callback: (String) -> Void ) {
 Vor den Klassen und  Strukturen noch eine schnelle Einfuehrung in  Enumerations.
 \lstset{
 	caption=Enumerations,
-	label=lst:swiftworkaround,
+	label=lst:enumerations,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -219,7 +228,7 @@ switch std {
 Und nun zu Strukturen und Klassen in Swift. Klassen koennen mehr als Strukturen und zwar Vererbung, Type-Casting, Deinitialisierung und ARC. Werden Klassen einer neuen Variable zu geordnet, wird nur die Referenz uebertragen, bei Strukturen wird eine Kopie erstellt.
 \lstset{
 	caption=Klassen und Strukturen,
-	label=lst:swiftworkaround,
+	label=lst:klassenundstrukturen,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -257,7 +266,7 @@ print("Die alte Struktur ist \(b.name) " +
 Die Funktionen einer Klasse sind vom Syntax her leicht anders als in anderen Programmiersprachen, aber dafuer sehr intuitiv. 
 \lstset{
 	caption=Wie funktionieren Klassen,
-	label=lst:swiftworkaround,
+	label=lst:wiefunktionierenklassen,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -277,7 +286,7 @@ class SomeClass {
 			self.value = newValue
 		}	
 	} 
-\\
+
 	// "Mutating" sorgt dafuer, dass die Funktion 
 	// die Membervariablen direkt setzten darf.
 	mutating func newSomeclass(data: Data, name: String) {
@@ -294,7 +303,7 @@ class SomeClass {
 		// Die Instanz wird zerstoert
 	}
 }
-\\
+
 // Vererbung wir mit ":" ermoeglicht
 class SomeSubClass: SomeClass {
 	// Sub class of SomeClass
@@ -305,7 +314,7 @@ class SomeSubClass: SomeClass {
 Nun zum ARC, der Speicherverwaltung von Swift. Bei ARC werden die Referenzen gezaehlt die auf ein Objekt zeigen und erst wenn es keine Referenzen mehr gibt wird die Instanz geloescht. Memoryleaks koennen in Swift dann entstehen wenn zwei Instanzen gegenseitig Referenzen auf einenander haben. Um dieses Problem zu loesen wird das Schluesselwort \lstinline{weak} verwendet.
 \lstset{
 	caption=Speicherverwaltung mit 'weak',
-	label=lst:swiftworkaround,
+	label=lst:speicherverwaltungmitweak,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -330,7 +339,7 @@ class Auto {
 class Motor {
     var auto: Auto? 
     // Jeder Motor gehoert zu einem Auto
-    \\
+
     init() {}
     deinit { print("Der Motor wurde zerlegt")}
 }
@@ -338,9 +347,7 @@ class Motor {
 // neue Instanzen initialisieren
 var v6: Motor? = Motor()
 var porsche: Auto? = Auto(motor: v6!)
-\\
 porsche = nil // Noch haelt Motor eine starke Referenz
-\\
 v6 = nil // Nun haelt nur noch Auto eine schwache Referenz
 // v6 wird deinitialisiert
 // damit gibt es keine Referenz auf porsche
@@ -353,7 +360,7 @@ v6 = nil // Nun haelt nur noch Auto eine schwache Referenz
 Das zweite Feature von Swift mit dem Einsteiger Probleme haben, sind Optionale und die Verkettung von Optionalen. Dabei handelt es lediglich um Variablen oder Konstanten die auch \lstinline{nil} sein koennen, dass heisst sie koennen auch ein Rueckgabewert sein. Um an den wahren Wert der Variable zu kommen, muss diese ausgewickelt (unwrapped) werden. Dies geschieht durch "?" oder "!". 
 \lstset{
 	caption=Optionale und Verkettung,
-	label=lst:swiftworkaround,
+	label=lst:optionale,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -382,7 +389,7 @@ var d = c! // Dank dem Defaultwert von oben, ist c nie nil
 Zum Schluss zum basis Wissen ueber Swift noch Fehlerbehandlung (error handling). Fehler in Swift sind einfach Enumerationen. Funktionen, welche Fehler werfen koennen werden mit \lstinline{throws} deklariert. Um die Funktion auszufuehren kann ein do-try-catch-Block, try? oder try! verwendet werden.
 \lstset{
 	caption=Fehlerbehandlung,
-	label=lst:swiftworkaround,
+	label=lst:fehlerbehandlung,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -409,7 +416,7 @@ do {
 // Mit try? wird Code ausgefuehrt, tritt
 // jedoch ein Fehler auf wird nil zurueckgegeben
 var text: String? = try? schlecht() // Durch den Fehler wird text = nil
-\\
+
 // try! laesst sich Code wie try? Ohne do-try-catch-Block ausfuehren
 // bei einem Fehler kommt es, aber zum Absturz 
 \end{lstlisting}

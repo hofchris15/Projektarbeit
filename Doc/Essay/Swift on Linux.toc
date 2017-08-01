@@ -122,12 +122,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.6}Probleme und L\IeC {\"o}sungen}{38}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Zusammenfassung}{39}{chapter.3}
+\contentsline {chapter}{\numberline {3}Fazit und Perspektive}{39}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Fazit und Perspektive}{41}{chapter.4}
+\contentsline {section}{\numberline {3.1}Fazit}{39}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Fazit}{41}{section.4.1}
+\contentsline {section}{\numberline {3.2}Perspektive}{39}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Perspektive}{41}{section.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{45}{appendix*.43}
+\contentsline {chapter}{References}{44}{appendix*.43}
