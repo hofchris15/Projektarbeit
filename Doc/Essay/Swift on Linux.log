@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  1 AUG 2017 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.24)  1 AUG 2017 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1804,14 +1804,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
 Package rerunfilecheck Info: File `"Swift on Linux".out' has not changed.
 (rerunfilecheck)             Checksum: DB3798E26F548847A0E53C7A4BB0729C;868.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to '"Swift on Linux".run.xml'.
 \openout1 = `"Swift on Linux.run.xml"'.
 
@@ -1833,7 +1825,7 @@ t/fonts/type1/urw/times/utmbi8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb><d:/Programme/texlive/2017/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on "Swift on Linux.pdf" (51 pages, 300916 bytes).
+Output written on "Swift on Linux.pdf" (51 pages, 300925 bytes).
 PDF statistics:
  1295 PDF objects out of 1440 (max. 8388607)
  1217 compressed objects within 13 object streams
