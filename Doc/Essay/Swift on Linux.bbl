@@ -19,6 +19,85 @@
 
 \refsection{0}
   \sortlist[entry]{nyt/global/}
+    \entry{openswifthttp}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=337e8f4aa741ef97ec3ed8fd7b1accb7}{%
+           family={Collaboration},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{337e8f4aa741ef97ec3ed8fd7b1accb7}
+      \strng{fullhash}{337e8f4aa741ef97ec3ed8fd7b1accb7}
+      \strng{authornamehash}{337e8f4aa741ef97ec3ed8fd7b1accb7}
+      \strng{authorfullhash}{337e8f4aa741ef97ec3ed8fd7b1accb7}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{via github.com}
+      \field{title}{S4 - HTTP (HTTP standards for Swift )}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://github.com/open-swift/S4
+      \endverb
+      \warn{\item Entry 'openswifthttp' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{zewo}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=146a098fa138aae93614fc91227cf4d5}{%
+           family={Faria},
+           familyi={F\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{146a098fa138aae93614fc91227cf4d5}
+      \strng{fullhash}{146a098fa138aae93614fc91227cf4d5}
+      \strng{authornamehash}{146a098fa138aae93614fc91227cf4d5}
+      \strng{authorfullhash}{146a098fa138aae93614fc91227cf4d5}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{zewo.io}
+      \field{title}{Zewo (web framework)}
+      \field{year}{2017}
+      \verb{url}
+      \verb http://zewo.io
+      \endverb
+      \keyw{swift server web}
+      \warn{\item Entry 'zewo' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swifton}{online}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=c9f8904bc120a45a150c343b3a2d577e}{%
+           family={Grigaitis},
+           familyi={G\bibinitperiod},
+           given={Saulius},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=d9cc2fb07641517858bd04fde8a96ed3}{%
+           family={Stundys},
+           familyi={S\bibinitperiod},
+           given={Donatas},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{0802333250bb7701c1279ef9ee5641f0}
+      \strng{fullhash}{0802333250bb7701c1279ef9ee5641f0}
+      \strng{authornamehash}{0802333250bb7701c1279ef9ee5641f0}
+      \strng{authorfullhash}{0802333250bb7701c1279ef9ee5641f0}
+      \field{sortinit}{G}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{via github.com}
+      \field{title}{Swifton (web framework)}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://github.com/necolt/swifton
+      \endverb
+      \warn{\item Entry 'swifton' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
     \entry{expressinaction}{book}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=0fc72e3db6292806fffee1bc7f69f990}{%
@@ -44,6 +123,89 @@
       \field{title}{Express in Action, Writing, building, and testing Node.js applications}
       \field{year}{2016}
     \endentry
+    \entry{ibmdemo}{online}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{IBM Swift Videos}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://developer.ibm.com/swift/demos/
+      \endverb
+      \warn{\item Entry 'ibmdemo' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{appleswift}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=f508f8ff22f456b2c8cef697136c83a9}{%
+           family={Inc},
+           familyi={I\bibinitperiod},
+           given={Apple},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f508f8ff22f456b2c8cef697136c83a9}
+      \strng{fullhash}{f508f8ff22f456b2c8cef697136c83a9}
+      \strng{authornamehash}{f508f8ff22f456b2c8cef697136c83a9}
+      \strng{authorfullhash}{f508f8ff22f456b2c8cef697136c83a9}
+      \field{sortinit}{I}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Swift (programming language)}
+      \field{year}{2014}
+      \verb{url}
+      \verb https://developer.apple.com/swift/
+      \endverb
+      \warn{\item Entry 'appleswift' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swift4}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=f508f8ff22f456b2c8cef697136c83a9}{%
+           family={Inc},
+           familyi={I\bibinitperiod},
+           given={Apple},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f508f8ff22f456b2c8cef697136c83a9}
+      \strng{fullhash}{f508f8ff22f456b2c8cef697136c83a9}
+      \strng{authornamehash}{f508f8ff22f456b2c8cef697136c83a9}
+      \strng{authorfullhash}{f508f8ff22f456b2c8cef697136c83a9}
+      \field{sortinit}{I}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Swift 4}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/
+      \endverb
+      \warn{\item Entry 'swift4' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftbook}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=bf6560f00cbeba2f0a8edc79c6a9690d}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Apple},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Apple Inc.}%
+      }
+      \strng{namehash}{bf6560f00cbeba2f0a8edc79c6a9690d}
+      \strng{fullhash}{bf6560f00cbeba2f0a8edc79c6a9690d}
+      \strng{authornamehash}{bf6560f00cbeba2f0a8edc79c6a9690d}
+      \strng{authorfullhash}{bf6560f00cbeba2f0a8edc79c6a9690d}
+      \field{sortinit}{I}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Swift Programming Language}
+      \field{year}{2017}
+    \endentry
     \entry{jetbrain}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=96b320d91fc42079e76eea76a458b2bf}{%
@@ -68,6 +230,55 @@
       \verb{url}
       \verb https://www.jetbrains.com/clion/
       \endverb
+    \endentry
+    \entry{stormswiftserver}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=64bff54176cd716a2289444a7f7b8779}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{64bff54176cd716a2289444a7f7b8779}
+      \strng{fullhash}{64bff54176cd716a2289444a7f7b8779}
+      \strng{authornamehash}{64bff54176cd716a2289444a7f7b8779}
+      \strng{authorfullhash}{64bff54176cd716a2289444a7f7b8779}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Swift on the Server – Where Are We Today?}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://stormpath.com/blog/swift-on-the-server-today
+      \endverb
+      \warn{\item Entry 'stormswiftserver' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swifter}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=3a1ea054c75dbba44206ecd3f0d99192}{%
+           family={Kolakowski},
+           familyi={K\bibinitperiod},
+           given={Damian},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a1ea054c75dbba44206ecd3f0d99192}
+      \strng{fullhash}{3a1ea054c75dbba44206ecd3f0d99192}
+      \strng{authornamehash}{3a1ea054c75dbba44206ecd3f0d99192}
+      \strng{authorfullhash}{3a1ea054c75dbba44206ecd3f0d99192}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{via github.com}
+      \field{title}{Swifter (web framework)}
+      \field{year}{2014}
+      \verb{url}
+      \verb https://github.com/httpswift/swifter
+      \endverb
+      \warn{\item Entry 'swifter' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
     \endentry
     \entry{clang}{online}{}
       \name{author}{1}{}{%
@@ -119,6 +330,116 @@
       \verb https://llvm.org/
       \endverb
     \endentry
+    \entry{rayenterprise}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=ae0f1f301ce8d50a847cc2076205b18c}{%
+           family={Mitra},
+           familyi={M\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ae0f1f301ce8d50a847cc2076205b18c}
+      \strng{fullhash}{ae0f1f301ce8d50a847cc2076205b18c}
+      \strng{authornamehash}{ae0f1f301ce8d50a847cc2076205b18c}
+      \strng{authorfullhash}{ae0f1f301ce8d50a847cc2076205b18c}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{via raywenderlich.com}
+      \field{title}{Is Swift Ready For The Enterprise?}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://www.raywenderlich.com/156892/swift-ready-enterprise
+      \endverb
+      \warn{\item Entry 'rayenterprise' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{vapor}{online}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=2f4d8bca728565590cfc4d3e8f2d7adf}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Tanner},
+           giveni={T\bibinitperiod}}}%
+        {{uniquename=0,hash=047ab9b7f0fc7283112bdd7ff132b8ee}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Logan},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{b798249b03c4573504d15cb94f9e3e2d}
+      \strng{fullhash}{b798249b03c4573504d15cb94f9e3e2d}
+      \strng{authornamehash}{b798249b03c4573504d15cb94f9e3e2d}
+      \strng{authorfullhash}{b798249b03c4573504d15cb94f9e3e2d}
+      \field{sortinit}{N}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{vapor.codes}
+      \field{title}{Vapor (web framework)}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://vapor.codes
+      \endverb
+      \keyw{web service swift}
+      \warn{\item Entry 'vapor' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{studyonswift}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{uniquename=0,hash=5028b59aecd16916792bc068d16b1d52}{%
+           family={Rebouças},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{uniquename=0,hash=2126f0ee608b3adeee2c42153035c568}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{uniquename=0,hash=f5cbed3643742cc2fc38a88358057101}{%
+           family={Ebert},
+           familyi={E\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{uniquename=0,hash=3b12ed310aecad67fb95085540ef38ad}{%
+           family={Torres},
+           familyi={T\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{uniquename=0,hash=3bb372668a44378fc655f176101fa399}{%
+           family={Serebrenik},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=63d4839632d05eb4b9d452d25e064664}{%
+           family={Castor},
+           familyi={C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{4961e463fab7a6a08405d6b6729a5fff}
+      \strng{fullhash}{40bb421972ad32e18dedfaf5e3e8bda7}
+      \strng{authornamehash}{4961e463fab7a6a08405d6b6729a5fff}
+      \strng{authorfullhash}{40bb421972ad32e18dedfaf5e3e8bda7}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER)}
+      \field{month}{3}
+      \field{title}{An Empirical Study on the Usage of the Swift Programming Language}
+      \field{volume}{1}
+      \field{year}{2016}
+      \field{pages}{634\bibrangedash 638}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/SANER.2016.66
+      \endverb
+      \keyw{computational linguistics;programming languages;StackOverflow;Swift developers;Swift programming languages;Xcode;compiler;libraries;Computer languages;Interviews;Libraries;Programming;Software;Standards;Testing}
+    \endentry
     \entry{winston}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=5e7cff39ededb401ea5e7cba4dc83e3f}{%
@@ -162,6 +483,91 @@
       \verb https://socket.io/docs/#
       \endverb
       \warn{\item Entry 'socketio' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{survey2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=73868cb1848a216984dca1b6b0ee37bc}{%
+           family={stackoverflow},
+           familyi={s\bibinitperiod}}}%
+      }
+      \strng{namehash}{73868cb1848a216984dca1b6b0ee37bc}
+      \strng{fullhash}{73868cb1848a216984dca1b6b0ee37bc}
+      \strng{authornamehash}{73868cb1848a216984dca1b6b0ee37bc}
+      \strng{authorfullhash}{73868cb1848a216984dca1b6b0ee37bc}
+      \field{sortinit}{s}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Developer Survey Results}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://insights.stackoverflow.com/survey/2016
+      \endverb
+      \warn{\item Entry 'survey2016' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{survey2017}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=73868cb1848a216984dca1b6b0ee37bc}{%
+           family={stackoverflow},
+           familyi={s\bibinitperiod}}}%
+      }
+      \strng{namehash}{73868cb1848a216984dca1b6b0ee37bc}
+      \strng{fullhash}{73868cb1848a216984dca1b6b0ee37bc}
+      \strng{authornamehash}{73868cb1848a216984dca1b6b0ee37bc}
+      \strng{authorfullhash}{73868cb1848a216984dca1b6b0ee37bc}
+      \field{sortinit}{s}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Developer Survey Results}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://insights.stackoverflow.com/survey/2017
+      \endverb
+      \warn{\item Entry 'survey2017' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{perfect}{online}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,hash=d768f0b806bc2acd5203340096717cc9}{%
+           family={Stefphens},
+           familyi={S\bibinitperiod},
+           given={Sean},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=21cb9d395d4c8614c04cfaf7b296ee90}{%
+           family={Jessup},
+           familyi={J\bibinitperiod},
+           given={Kyle},
+           giveni={K\bibinitperiod}}}%
+        {{uniquename=0,hash=4edc3c0569c0eba8fc03dd7dfac5bacf}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod}}}%
+        {{uniquename=0,hash=9760a95efe56413c06f7aaefdcd6dc96}{%
+           family={Guthrie},
+           familyi={G\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{61b649dfb2406fc3dfa3e62b68b6a7ad}
+      \strng{fullhash}{27336879134a7a2bb2e83852ede310b6}
+      \strng{authornamehash}{61b649dfb2406fc3dfa3e62b68b6a7ad}
+      \strng{authorfullhash}{27336879134a7a2bb2e83852ede310b6}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{perfect.org}
+      \field{title}{Perfect (web framework)}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://perfect.org
+      \endverb
+      \keyw{web service swift}
+      \warn{\item Entry 'perfect' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
     \endentry
     \entry{expressjs}{online}{}
       \name{author}{1}{}{%
@@ -213,7 +619,42 @@
       \verb http://loopback.io/
       \endverb
     \endentry
-    \entry{swiftcompiler}{online}{}
+    \entry{swiftannounced}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{title}{Swift Annoucement}
+      \verb{url}
+      \verb https://thenextweb.com/apple/2014/06/02/apple-announces-swift-new-programming-language-ios/#.tnw_TlhgK2no
+      \endverb
+      \warn{\item Entry 'swiftannounced' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{kitura}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=18f21bd6da6fc0b52244f16ecaeaa8fa}{%
+           family={SWIFT@IBM},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{18f21bd6da6fc0b52244f16ecaeaa8fa}
+      \strng{fullhash}{18f21bd6da6fc0b52244f16ecaeaa8fa}
+      \strng{authornamehash}{18f21bd6da6fc0b52244f16ecaeaa8fa}
+      \strng{authorfullhash}{18f21bd6da6fc0b52244f16ecaeaa8fa}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{www.kitura.io}
+      \field{title}{Kitura (web framework)}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://www.kitura.io
+      \endverb
+      \keyw{web framework swift}
+      \warn{\item Entry 'kitura' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftorg}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
            family={{Swift.org}},
@@ -226,6 +667,29 @@
       \field{sortinit}{S}
       \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
       \field{extrayear}{1}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{About Swift}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://swift.org/about/
+      \endverb
+      \warn{\item Entry 'swiftorg' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{swiftcompiler}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=605df664bf2fcb28767e1fa932492b66}{%
+           family={{Swift.org}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{fullhash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authornamehash}{605df664bf2fcb28767e1fa932492b66}
+      \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{extrayear}{2}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
@@ -248,7 +712,7 @@
       \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
       \field{sortinit}{S}
       \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
-      \field{extrayear}{2}
+      \field{extrayear}{3}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
@@ -271,7 +735,7 @@
       \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
       \field{sortinit}{S}
       \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
-      \field{extrayear}{3}
+      \field{extrayear}{4}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
@@ -294,7 +758,7 @@
       \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
       \field{sortinit}{S}
       \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
-      \field{extrayear}{4}
+      \field{extrayear}{5}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
@@ -317,7 +781,7 @@
       \strng{authorfullhash}{605df664bf2fcb28767e1fa932492b66}
       \field{sortinit}{S}
       \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
-      \field{extrayear}{5}
+      \field{extrayear}{6}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
@@ -328,13 +792,44 @@
       \endverb
       \warn{\item Entry 'swiftcore' (references.bib): Invalid format '29-07-2017' of date field 'urldate' - ignoring}
     \endentry
+    \entry{tiobe}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{TIOBE Index (ranking of programming languages)}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://www.tiobe.com/tiobe-index//
+      \endverb
+      \warn{\item Entry 'tiobe' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{udemyswift}{online}{}
+      \field{sortinit}{U}
+      \field{sortinithash}{1554584e7f69d2b4fe0a645e73d50194}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{Udemy Kurs für Server-Side Swift}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://www.udemy.com/mastering-server-side-swift-using-kitura/
+      \endverb
+      \warn{\item Entry 'udemyswift' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{WWDC}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{WWDC Homepage}
+      \field{year}{2017}
+      \verb{url}
+      \verb https://developer.apple.com/wwdc/
+      \endverb
+      \warn{\item Entry 'WWDC' (references.bib): Invalid format '30-07-2017' of date field 'urldate' - ignoring}
+    \endentry
   \endsortlist
-  \missing{Fernandez-Mir:2011:SRA:2188496.2188506}
-  \missing{acm:diglibrary}
-  \missing{Li:2008:TRP:2043628.2043631}
   \missing{llvmpulbic}
-  \missing{ieee:xplore}
-  \missing{Batina:2011:HER:2188496.2188508}
 \endrefsection
 \endinput
 

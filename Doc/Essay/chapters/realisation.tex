@@ -813,6 +813,7 @@ Bei dem Test wurde die Login-Page angefordert. Dabei änderte sich nur die Menge
 
 \section{Probleme und Lösungen}
 Der Swift Server wurde auf einer VM getestet, die nur einer CPU verfügt, wie bereits in \ref{sec:leistungsvergleich} erwähnt. Nachdem die VM um drei weitere Kerne auf 4 erweitert wurde, konnte der Server die Requests nicht mehr Ordnungsgemäß ausführen. Dass lag daran, dass der Server nicht für Multitasking ausgelegt wurde, und der Server beim Bearbeiten von Requests versucht, gleichzeitig das benötigte HTML für mehrere Requests zusammenzubauen. Auf einem Rechner mit mehreren Kernen muss der Apache Bench insofern abgeändert werden, das der \textit{Concurrency Level} auf 1 gestellt ist. Damit sind die Test jedoch wieder nicht aussagekräftig, und der Server müsste in diese Richtung überarbeitet werden. Schlussfolgernd, würde der Server auch ein viertel der Zeit benötigen, verglichen mit der derzeitigen Entwicklung.
+Für die Testreihe müsste auch eine dezidierte und definierte Testumgebung festgelegt werden damit am nativen OS keine unterschiedlichen Prozesse die Ausführung der VirtualBox und damit die Test behindern bzw. beinflussen.
 
 \chapterend
 

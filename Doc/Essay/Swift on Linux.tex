@@ -20,7 +20,6 @@
 \usepackage[pdftex]{graphicx}
 \DeclareGraphicsExtensions{.pdf,.jpg,.png}
 
-
 %**********************************************************************
 % Including non-standard packages
 %**********************************************************************
@@ -40,14 +39,14 @@
 	basicstyle=\footnotesize\ttfamily,	
 	showstringspaces=false,
 	captionpos=b, 					% captionpos=b: caption at bottom
-	breaklines=false, 
+	breaklines=true, 
 	numbersep=5pt,
 	breaklines=true,
 	showspaces=false,
 	breaklines=true,
 	columns=fixed,
-	keepspaces=true,}					
-
+	keepspaces=true,}
+	
 % Geometry as defined by FH guidelines:
 \usepackage[top=3cm, bottom=3cm, left=3.5cm, right=3cm]{geometry}
 
@@ -186,20 +185,6 @@
   morestring=[b]',
   morestring=[b]"
 }
-
-%end languages***********************************************************
-
-%Command to lstset Swift Code
-\newcommand{\swiftcode}{
-	\lstset{
-		language=swift,
-		basicstyle=\footnotesize\ttfamily,
-		keywordstyle=\color{keyword}\bfseries,
-		stringstyle=\color{darkgreen},
-		commentstyle=\color{darkgray},
-	}
-}
-% end language command**************************************************
 
   \include{titlepages}
 
