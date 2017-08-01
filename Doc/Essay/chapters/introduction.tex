@@ -5,8 +5,8 @@
 \section{Kurzfassung}
 \label{section:kurzfassung}
 \paragraph{Kurzfassung}
-In dieser Arbeit wurde mit Hilfe des Perfect Frameworks ein Webserver auf einem Ubuntu Server 16.04 LTS erstellt. Zur Erstellung wurde die Programmiersprache Swift in der Version 3.1.1 verwendet, welches open-source für die Verwendung mit Linux zur Verfügung steht. Der implementierte Server wurde mit einem Webserver auf Basis von Express.js Frameworks verglichen. Zur Dokumentation des Projektes wurde ein WikiBook erstellt, welches beschreibt wie man allgemein einen Webserver mit Swift auf Linux erstellt.
-\paragraph[{Abstract}
+In dieser Arbeit wurde mit Hilfe des Perfect Frameworks ein Webserver auf einem Ubuntu Server 16.04 LTS erstellt. Zur Erstellung wurde die Programmiersprache Swift in der Version 3.1.1 verwendet, welches open-source fuer die Verwendung mit Linux zur Verfuegung steht. Der implementierte Server wurde mit einem Webserver auf Basis von Express.js Frameworks verglichen. Zur Dokumentation des Projektes wurde ein WikiBook erstellt, welches beschreibt wie man allgemein einen Webserver mit Swift auf Linux erstellt.
+\paragraph{Abstract}
 In this work a webserver on the basis of the Perfect Framework was implemented. As programming language, open source Swift at version 3.1.1 was used for the implementation. The Webserver runs on a Ubuntu Server 16.04 LTS. Further, the implementation was compared to anthor implementation of the same server based on the Express.js Framework. As the documentation of the project a wikibook was produced, which details the step to creating a web server with swift on a Linux mashin. 
 % Einleitung
 \section{Einleitung}
@@ -14,14 +14,14 @@ In this work a webserver on the basis of the Perfect Framework was implemented. 
 Das Ziel dieser Arbeit ist es einen Webserver mit Hilfe der Programmiersprache Swift auf einem Linux-Server zu entwickeln. 
 \subsection{Swift}
 \label{subsection:swift}
-Swift ist die noch junge Programmiersprache von Apple, welche als Nachfolger von Objective-C gedacht ist. Die Sprache ist objektorientiert, stark typisiert, mit Typinfernce, mutliparadigmen-orientierte, kompilierende, all zwecks Programmiersprache. Die Frameworks Cocoa und Cocoa Touch funktionieren mit Swift und Brücken zu Objective-C sind in die Sprache integriert. Der Swift-Code selbst soll dabei präzise und doch gleichzeitig ausdrucksstark sein\parencite{appleswift}.  Die Programmiersprache wurde auf der WWDC (Apple's World Wide Developer Conference)\parencite{swiftannounced} enthüllt. Swift wurde über Jahre hinweg produziert und wird immer noch weiterentwickelt. Zur Zeit ist Swift auf Version 4\parencite{ swift4}. Im \textit{TIOBE Index}\parencite[][Stand Juli 2017]{tiobe} liegt Swift auf Platz 12 hinter Go (Platz 10) und Perl (Platz 11), aber vor Ruby (Platz 13). Auch ist dem Index zu entnehmen, dass sich Swift um zwei Plätze verbessert hat. In der \textit{Developer Survey} von stackoverflow schafft es Swift auf Platz 11 der meist benutzen Programmiersprachen und im Ranking der Beliebtesten sogar auf Platz 4 vor Go und Python\parencite{survey2017}. Im Jahr zuvor war Swift bei der Beliebtheit sogar auf Platz 2\parencite{survey2016}. Besonders die Verwendbarkeit von Swift für alle Arten von Projekten, von iOS Development, über systemnahe Programmierung, mobile Apps, bis hin zu Cloud Technologien, sorgen für eine hohe Beliebtheit. Genauso wie die Sicherheit von Swift, wie durch automatische Speicherverwaltung, Array Indexes werden auf out-of-bound Zugriffe geprüft, Optionals erzwingen die Behandlung von möglichen nil-Werten und Variablen sind immer initialisiert. Andererseits scheinen bestimmte Teile der Programmiersprache wie Closures, Error-Handling und Optional gerade Einsteigern das Erlernen von Swift zu erschweren\parencite{studyonswift}.
+Swift ist die noch junge Programmiersprache von Apple, welche als Nachfolger von Objective-C gedacht ist. Die Sprache ist objektorientiert, stark typisiert, mit Typinfernce, mutliparadigmen-orientierte, kompilierende, all zwecks Programmiersprache. Die Frameworks Cocoa und Cocoa Touch funktionieren mit Swift und Bruecken zu Objective-C sind in die Sprache integriert. Der Swift-Code selbst soll dabei praezise und doch gleichzeitig ausdrucksstark sein\parencite{appleswift}.  Die Programmiersprache wurde auf der WWDC (Apple's World Wide Developer Conference)\parencite{swiftannounced} enthuellt. Swift wurde ueber Jahre hinweg produziert und wird immer noch weiterentwickelt. Zur Zeit ist Swift auf Version 4\parencite{ swift4}. Im \textit{TIOBE Index}\parencite{tiobe} liegt Swift auf Platz 12 hinter Go (Platz 10) und Perl (Platz 11), aber vor Ruby (Platz 13). Auch ist dem Index zu entnehmen, dass sich Swift um zwei Plaetze verbessert hat. In der \textit{Developer Survey} von stackoverflow schafft es Swift auf Platz 11 der meist benutzen Programmiersprachen und im Ranking der Beliebtesten sogar auf Platz 4 vor Go und Python\parencite{survey2017}. Im Jahr zuvor war Swift bei der Beliebtheit sogar auf Platz 2\parencite{survey2016}. Besonders die Verwendbarkeit von Swift fuer alle Arten von Projekten, von iOS Development, ueber systemnahe Programmierung, mobile Apps, bis hin zu Cloud Technologien, sorgen fuer eine hohe Beliebtheit. Genauso wie die Sicherheit von Swift, wie durch automatische Speicherverwaltung, Array Indexes werden auf out-of-bound Zugriffe geprueft, Optionals erzwingen die Behandlung von moeglichen nil-Werten und Variablen sind immer initialisiert. Andererseits scheinen bestimmte Teile der Programmiersprache wie Closures, Error-Handling und Optional gerade Einsteigern das Erlernen von Swift zu erschweren\parencite{studyonswift}.
 \paragraph{Basics of Swift}
 \label{para:basicsofswift}
-Um die Sprache zu verstehen, beziehungsweiße um die Erlernbarkeit zu beurteilen folgt nun eine kleine Einführung basierend auf \textit{The Swift Programming Language}\parencite{swiftbook}.
-Swift kennt Konstanten und Variablen, wobei durch eine Doppelpunkt getrennt der Typ annotiert wird. Wenn möglich kann der Typ auch inferiert werden.
+Um die Sprache zu verstehen, beziehungsweisse um die Erlernbarkeit zu beurteilen folgt nun eine kleine Einfuehrung basierend auf \textit{The Swift Programming Language}\parencite{swiftbook}.
+Swift kennt Konstanten und Variablen, wobei durch eine Doppelpunkt getrennt der Typ annotiert wird. Wenn moeglich kann der Typ auch inferiert werden.
 \lstset{
 	caption=Variablen und Konstanten,
-	label=lst:swiftworkaround,
+	label=lst:variablenundkonstanten,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -29,12 +29,12 @@ Swift kennt Konstanten und Variablen, wobei durch eine Doppelpunkt getrennt der 
 	commentstyle=\color{darkgray},
 }
 \begin{lstlisting}
-	var : String = „Swift“  // Ein String
-	var = „FH-Joanneum“  // Auch ein String durch Typinferenz
- 	let = „Linux“  // Eine Konstante
+	var string: String = "Swift"  // Ein String
+	var string = "FH-Joanneum"  // Auch ein String durch Typinferenz
+ 	let konst = "Linux"  // Eine Konstante
 	var x = 0, y = 1, z = 3  // Mehrere Variablen in einer Zeile
 \end{lstlisting}
-Als nächstes Kollektionen. Swift kennt Array, Set, Dictionary. Diese sind standardmäßig „mutable“, das heißt änderbar, wird aber die Kollektion als \lstinline{let} sprich Konstante initialisiert, wird sie unveränderbar.
+Als naechstes Kollektionen. Swift kennt Array, Set, Dictionary. Diese sind standardmaessig "mutable", das heisst aenderbar, wird aber die Kollektion als \lstinline{let} sprich Konstante initialisiert, wird sie unveraenderbar.
 \lstset{
 	caption=Array, Set, Dictionary,
 	label=lst:swiftworkaround,
@@ -46,19 +46,27 @@ Als nächstes Kollektionen. Swift kennt Array, Set, Dictionary. Diese sind stand
 }
 \begin{lstlisting}
 var intarray = [Int]()   // Ein Array aus Integern
-var stringarray = [„Bier“, „Wein“, 
-	„Wasser“] // Array bereits mit Werten gefüllt
+var stringarray = ["Bier", "Wein", 
+	"Wasser"] // Array bereits mit Werten gefuellt
 let anotherone = [Int]()	// Immutable Array
 var intset = Set<Int>()	// Ein Set, der Typ muss hashbar sein
 var dictionary = [Int: String]()  // Ein Dictionary mit einem Key (Int) Value(String) Paar
 \end{lstlisting}
-Der Kontrollfluss wird in Swift ähnlich zu anderen Sprachen geregelt. Swift kennt \lstinline{for}, \lstinline{while}, \lstinline{if} und \lstinline{switch}.
-\swiftcode
+Der Kontrollfluss wird in Swift aehnlich zu anderen Sprachen geregelt. Swift kennt \lstinline{for}, \lstinline{while}, \lstinline{if} und \lstinline{switch}.
+\lstset{
+	caption=Kontrollfluss,
+	label=lst:kontrollfluss,
+	language=swift,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{keyword}\bfseries,
+	stringstyle=\color{darkgreen},
+	commentstyle=\color{darkgray},
+}
 \begin{lstlisting}
-let demo = [„Eins“, „Zwei“, „Drei“, „Vier“]
+let demo = ["Eins", "Zwei", "Drei", "Vier"]
 // Ein for-Loop
 for number in demo {
-	print(„Nummer = \(number)!“) // print() schreibt in die Konsole
+	print("Nummer = \(number)!") // print() schreibt in die Konsole
 } 
 // Ausgabe
 // Nummer = Eins!
@@ -69,44 +77,44 @@ var  counter = 0
 var max = 2
 // Ein while-Loop
 while counter < max {
-	print( „Der Zähler ist \(counter)“)
+	print( "Der Zaehler ist \(counter)")
 	counter = counter + 1
 } 
 // Ausgabe
-// Der Zähler ist 0
-// Der Zähler ist 1
+// Der Zaehler ist 0
+// Der Zaehler ist 1
 
 // repeat while
 repeat {
-	print( „Der Zähler ist \(counter)“)
+	print( "Der Zaehler ist \(counter)")
 } while counter > 0 
 // Ausgabe
-// Der Zähler ist 1
-// Der Zähler ist 0
+// Der Zaehler ist 1
+// Der Zaehler ist 0
 
 var age = 19
 // If Abfragen
 if age >= 18 { // Eine Altersabfrage
-   print(„Hier ist ein Bier“) 
-   // Über 18 bekommt man Bier
+   print("Hier ist ein Bier") 
+   // ueber 18 bekommt man Bier
 } else {
-  print („Hier ist ein Glass mit Wasser“) 
+  print ("Hier ist ein Glass mit Wasser") 
   // Unter 18 ein Glass Wasser
 }
 
-let char: Character = „F“
+let char: Character = "F"
 // Switch Case
 switch char {
-    case „A“:
-	// Hier ist der Code für A
-    case „B“, „C“:
-	// Hier ist der Code für B und C
-    case „F“:
-	print(„Der Code von F“)
+    case "A":
+	// Hier ist der Code fuer A
+    case "B", "C":
+	// Hier ist der Code fuer B und C
+    case "F":
+	print("Der Code von F")
 	fallthrough 
-	// Der nachfolgende Case wird auch ausgeführt
-    case „D“:
-	print(„Der Code von D“)
+	// Der nachfolgende Case wird auch ausgefuehrt
+    case "D":
+	print("Der Code von D")
     default:
 	// Wenn nichts passt
 } 
@@ -116,8 +124,8 @@ switch char {
 
 // Label und break
 outer: while true { // while-Loop mit Label
-	for i in 0..<100 { // Würde von 0 bis 99 zählen
-		print(„Index \(i)“)
+	for i in 0..<100 { // Wuerde von 0 bis 99 zaehlen
+		print("Index \(i)")
 		break outer 
 		// Bricht beide Loops und springt zum Label
 	}
@@ -125,10 +133,10 @@ outer: while true { // while-Loop mit Label
 // Ausgabe
 // Index 0
 \end{lstlisting} 
-Funktionen in Swift bestehen aus Funktionsname, Parameter (eventuell mit Label) und Rückgabewert. Funktionen haben nur einen Rückgabewert, dieser kann aber ein Optional sein, bzw. können Funktionen auch Fehler werfen.
+Funktionen in Swift bestehen aus Funktionsname, Parameter (eventuell mit Label) und Rueckgabewert. Funktionen haben nur einen Rueckgabewert, dieser kann aber ein Optional sein, bzw. koennen Funktionen auch Fehler werfen.
 \lstset{
 	caption=Funktionen,
-	label=lst:swiftworkaround,
+	label=lst:funktionen,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -137,45 +145,45 @@ Funktionen in Swift bestehen aus Funktionsname, Parameter (eventuell mit Label) 
 }
 \begin{lstlisting}
 // Eine Funktion die einen String als Parameter bekommt
-// und einen String zurück gibt
-// „sag“ ist das Label des Parameters
-// „name“ ist der Name der Variable
-func einefunktion(sag name: String) → String {
-	print(„Name = \(name)“)
-	return „Ein String als Rückgabewert“
+// und einen String zurueck gibt
+// "sag" ist das Label des Parameters
+// "name" ist der Name der Variable
+func einefunktion(sag name: String) -> String {
+	print("Name = \(name)")
+	return "Ein String als Rueckgabewert"
 }
 // Aufruf
-einefunktion(sag: „Bert“)
-// Ausgabe (der Rückgabewert wird hier ignoriert)
+einefunktion(sag: "Bert")
+// Ausgabe (der Rueckgabewert wird hier ignoriert)
 // Name = Bert
 
 
-// Mit _ kann das Label beim Aufruf unterdrückt werden
-// Void als Rückgabewert bedeutet kein Rückgabewert
-func keinlabel(_ name: String) → Void {
-	print(„Name = \(name)“)
+// Mit _ kann das Label beim Aufruf unterdrueckt werden
+// Void als Rueckgabewert bedeutet kein Rueckgabewert
+func keinlabel(_ name: String) -> Void {
+	print("Name = \(name)")
 }
 // Aufruf
-keinlabel(„Hugo“) 	// Name = Hugo
-einefunktion(sag: „Hugo“) // Name = Hugo
+keinlabel("Hugo") 	// Name = Hugo
+einefunktion(sag: "Hugo") // Name = Hugo
 
 // In-Out Parameters erlaubt Parameter in der
-// Funktion zu ändern, sofern 
+// Funktion zu aendern, sofern 
 //diese keine Konstanten sind
 func wechseldich(wechsel name: inout String) {
-	name = „Bob“
+	name = "Bob"
 }
 // Aufruf
-var name = „Billy“
+var name = "Billy"
 print(name) // Billy
 wechseldich(wechsel: name)
 print(name) // Bob
 \end{lstlisting}
 
-Der nächste Punkt ist Closures, diese entsprechen in etwa Lambda-Ausdrücken. Diese erlauben Callback-Funktionen direkt inline zu definieren.
+Der naechste Punkt ist Closures, diese entsprechen in etwa Lambda-Ausdruecken. Diese erlauben Callback-Funktionen direkt inline zu definieren.
 \lstset{
 	caption=Closures,
-	label=lst:swiftworkaround,
+	label=lst:closures,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -183,21 +191,21 @@ Der nächste Punkt ist Closures, diese entsprechen in etwa Lambda-Ausdrücken. D
 	commentstyle=\color{darkgray},
 }
 \begin{lstlisting}
-// Diese Funktion benötigt eine Callback Funktion
-func function(callback: (String)→Void) {
-	callback(„Gruß von der Funktion“)
+// Diese Funktion benoetigt eine Callback Funktion
+func function(callback: (String)->Void) {
+	callback("Gruss von der Funktion")
 }
 // Und hier der Aufruf mittels Closure
-function(callback: { s in print(s) }) // Gruß von der Funktion
+function(callback: { s in print(s) }) // Gruss von der Funktion
 // Oder in der Trailing-Variante
-function(callback: (String) → Void ) {
-	s in print(„Trailing \(s)“)
+function(callback: (String) -> Void ) {
+	s in print("Trailing \(s)")
 }
 \end{lstlisting}
-Vor den Klassen und  Strukturen noch eine schnelle Einführung in  Enumerations.
+Vor den Klassen und  Strukturen noch eine schnelle Einfuehrung in  Enumerations.
 \lstset{
 	caption=Enumerations,
-	label=lst:swiftworkaround,
+	label=lst:enumerations,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -221,10 +229,10 @@ switch std {
         print("\(name)") // Lehrender
 } // Ausgabe Geheim
 \end{lstlisting}
-Und nun zu Strukturen und Klassen in Swift. Klassen können mehr als Strukturen und zwar Vererbung, Type-Casting, Deinitialisierung und ARC. Werden Klassen einer neuen Variable zu geordnet, wird nur die Referenz übertragen, bei Strukturen wird eine Kopie erstellt.
+Und nun zu Strukturen und Klassen in Swift. Klassen koennen mehr als Strukturen und zwar Vererbung, Type-Casting, Deinitialisierung und ARC. Werden Klassen einer neuen Variable zu geordnet, wird nur die Referenz uebertragen, bei Strukturen wird eine Kopie erstellt.
 \lstset{
 	caption=Klassen und Strukturen,
-	label=lst:swiftworkaround,
+	label=lst:klassenundstrukturen,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -247,22 +255,22 @@ struct B {
     }
 }
 var a = A("Montag") // neue Instanz der Klasse A
-var b = B("Jänner") // neue Struktur B
+var b = B("Jaenner") // neue Struktur B
 var newera = a // nur Referenz
 var newerb = b // neue Struktur mit kopierten Werten
-newera.name = "Dienstag" // neuer Name für die Klasse
-newerb.name = "Februar" // neuer Name für die Struktur
+newera.name = "Dienstag" // neuer Name fuer die Klasse
+newerb.name = "Februar" // neuer Name fuer die Struktur
 print("Die alte Klasse ist \(a.name) " +
        "die neue ist \(newera.name)")
 print("Die alte Struktur ist \(b.name) " +
         "die neue ist \(newerb.name)")
 // Die alte Klasse war Dienstag die neue ist Dienstag
-// Die alte Struktur war Jänner die neue ist Februar
+// Die alte Struktur war Jaenner die neue ist Februar
 \end{lstlisting}
-Die Funktionen einer Klasse sind vom Syntax her leicht anders als in anderen Programmiersprachen, aber dafür sehr intuitiv. 
+Die Funktionen einer Klasse sind vom Syntax her leicht anders als in anderen Programmiersprachen, aber dafuer sehr intuitiv. 
 \lstset{
 	caption=Wie funktionieren Klassen,
-	label=lst:swiftworkaround,
+	label=lst:wiefunktionierenklassen,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -276,14 +284,14 @@ class SomeClass {
 	var name: String
 	var value: Int {
 		get { // Der Getter
-			return 42 * 12 // Kalkuliert diesen Wert bei der Rückgabe.
+			return 42 * 12 // Kalkuliert diesen Wert bei der Rueckgabe.
 		}
-		set(newValue) { // Der Setter, würde auch ohne newValue gehen
+		set(newValue) { // Der Setter, wuerde auch ohne newValue gehen
 			self.value = newValue
 		}	
 	} 
 
-	// „Mutating“ sorgt dafür, dass die Funktion 
+	// "Mutating" sorgt dafuer, dass die Funktion 
 	// die Membervariablen direkt setzten darf.
 	mutating func newSomeclass(data: Data, name: String) {
 		self.name = name
@@ -292,25 +300,25 @@ class SomeClass {
 	class func klassenfunktion() {
 		// Klassen Funktionen sind wie statische Funktionen in 
 		// anderen Programmiersprachen und kann vererbt werden, 
-		// bei Strukturen wird static als Schlüsselwort verwendet
+		// bei Strukturen wird static als Schluesselwort verwendet
 	}
 
 	deinit {
-		// Die Instanz wird zerstört
+		// Die Instanz wird zerstoert
 	}
 }
 
-// Vererbung wir mit „:“ ermöglicht
+// Vererbung wir mit ":" ermoeglicht
 class SomeSubClass: SomeClass {
 	// Sub class of SomeClass
-	// Mit dem Schlüsselwort override werden 
-	// Funktionen der Eltern überschrieben
+	// Mit dem Schluesselwort override werden 
+	// Funktionen der Eltern ueberschrieben
 }
 \end{lstlisting}
-Nun zum ARC, der Speicherverwaltung von Swift. Bei ARC werden die Referenzen gezählt die auf ein Objekt zeigen und erst wenn es keine Referenzen mehr gibt wird die Instanz gelöscht. Memoryleaks können in Swift dann entstehen wenn zwei Instanzen gegenseitig Referenzen auf einenander haben. Um dieses Problem zu lösen wird das Schlüsselwort \lstinline{weak} verwendet.
+Nun zum ARC, der Speicherverwaltung von Swift. Bei ARC werden die Referenzen gezaehlt die auf ein Objekt zeigen und erst wenn es keine Referenzen mehr gibt wird die Instanz geloescht. Memoryleaks koennen in Swift dann entstehen wenn zwei Instanzen gegenseitig Referenzen auf einenander haben. Um dieses Problem zu loesen wird das Schluesselwort \lstinline{weak} verwendet.
 \lstset{
 	caption=Speicherverwaltung mit 'weak',
-	label=lst:swiftworkaround,
+	label=lst:speicherverwaltungmitweak,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -319,7 +327,7 @@ Nun zum ARC, der Speicherverwaltung von Swift. Bei ARC werden die Referenzen gez
 }
 \begin{lstlisting}
 class Auto {
-    // Das Schlüsselwort weak, sorgt dafür,
+    // Das Schluesselwort weak, sorgt dafuer,
     // dass der Motor deinitialisiert, sobald
     // nur noch schwache (weak) Referenzen auf
     // ihn zeigen
@@ -334,7 +342,7 @@ class Auto {
 }
 class Motor {
     var auto: Auto? 
-    // Jeder Motor gehört zu einem Auto
+    // Jeder Motor gehoert zu einem Auto
     
     init() {}
     deinit { print("Der Motor wurde zerlegt")}
@@ -344,9 +352,9 @@ class Motor {
 var v6: Motor? = Motor()
 var porsche: Auto? = Auto(motor: v6!)
 
-porsche = nil // Noch hält Motor eine starke Referenz
+porsche = nil // Noch haelt Motor eine starke Referenz
 
-v6 = nil // Nun hält nur noch Auto eine schwache Referenz
+v6 = nil // Nun haelt nur noch Auto eine schwache Referenz
 // v6 wird deinitialisiert
 // damit gibt es keine Referenz auf porsche
 // und porsche wird deinitialisiert
@@ -355,10 +363,10 @@ v6 = nil // Nun hält nur noch Auto eine schwache Referenz
 // Der Motor wurde zerlegt
 // Das Auto wurde zerlegt
 \end{lstlisting}
-Das zweite Feature von Swift mit dem Einsteiger Probleme haben, sind Optionale und die Verkettung von Optionalen. Dabei handelt es lediglich um Variablen oder Konstanten die auch \lstinline{nil} sein können, dass heißt sie können auch ein Rückgabewert sein. Um an den wahren Wert der Variable zu kommen, muss diese ausgewickelt (unwrapped) werden. Dies geschieht durch „?“ oder „!“. 
+Das zweite Feature von Swift mit dem Einsteiger Probleme haben, sind Optionale und die Verkettung von Optionalen. Dabei handelt es lediglich um Variablen oder Konstanten die auch \lstinline{nil} sein koennen, dass heisst sie koennen auch ein Rueckgabewert sein. Um an den wahren Wert der Variable zu kommen, muss diese ausgewickelt (unwrapped) werden. Dies geschieht durch "?" oder "!". 
 \lstset{
 	caption=Optionale und Verkettung,
-	label=lst:swiftworkaround,
+	label=lst:optionale,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -384,10 +392,10 @@ c = a ?? 42 //  c hat den Wert von a oder wenn a nil ist 42
 // dass das Optional nicht nil ist
 var d = c! // Dank dem Defaultwert von oben, ist c nie nil
 \end{lstlisting}
-Zum Schluss zum basis Wissen über Swift noch Fehlerbehandlung (error handling). Fehler in Swift sind einfach Enumerationen. Funktionen, welche Fehler werfen können werden mit \lstinline{throws} deklariert. Um die Funktion auszuführen kann ein do-try-catch-Block, try? oder try! verwendet werden.
+Zum Schluss zum basis Wissen ueber Swift noch Fehlerbehandlung (error handling). Fehler in Swift sind einfach Enumerationen. Funktionen, welche Fehler werfen koennen werden mit \lstinline{throws} deklariert. Um die Funktion auszufuehren kann ein do-try-catch-Block, try? oder try! verwendet werden.
 \lstset{
 	caption=Fehlerbehandlung,
-	label=lst:swiftworkaround,
+	label=lst:fehlerbehandlung,
 	language=swift,
 	basicstyle=\footnotesize\ttfamily,
 	keywordstyle=\color{keyword}\bfseries,
@@ -403,47 +411,47 @@ func schlecht() throws -> String {
 }
 // do-try-catch-Block um Fehler zu fangen
 defer {
-    // Der Code im defer-Block wird am Ende ausgeführt
+    // Der Code im defer-Block wird am Ende ausgefuehrt
     // egal ob try funktioniert oder ein Fehler auftritt
 }
 do {
     try schlecht()
 } catch TutorialError.KnownError {
-    // Der Fehler wird gefangen und der Code hier ausgeführt.
+    // Der Fehler wird gefangen und der Code hier ausgefuehrt.
 }
-// Mit try? wird Code ausgeführt, tritt
-// jedoch ein Fehler auf wird nil zurückgegeben
+// Mit try? wird Code ausgefuehrt, tritt
+// jedoch ein Fehler auf wird nil zurueckgegeben
 var text: String? = try? schlecht() // Durch den Fehler wird text = nil
 
-// try! lässt sich Code wie try? Ohne do-try-catch-Block ausführen
+// try! laesst sich Code wie try? Ohne do-try-catch-Block ausfuehren
 // bei einem Fehler kommt es, aber zum Absturz 
 \end{lstlisting}
-Damit währen die Grundzüge der Programmiersprache erklärt. Jedoch gibt’s einen wichtigen Aspekt von Swift der die Sprache für diese Arbeit erst interessant  macht.
+Damit waehren die Grundzuege der Programmiersprache erklaert. Jedoch gibt’s einen wichtigen Aspekt von Swift der die Sprache fuer diese Arbeit erst interessant  macht.
 \paragraph{Swift ist Open-Source}
 \label{para:swiftistopensource}
-Swift ist seit Dezember 2015 unter der Apache-2.0-Lizenz verfügbar\parencite{swiftorg}. Damit ist Entwicklung von Programmen auf Linux Rechnern mit Swift möglich. In dieser Arbeit beschäftigen wir uns im Speziellen mit Implementierung eines Webservers.  Dabei stehen einige Frameworks zur Verfügen, auf die im Teil Stand der Technik genauer eingegangen wird.
+Swift ist seit Dezember 2015 unter der Apache-2.0-Lizenz verfuegbar\parencite{swiftorg}. Damit ist Entwicklung von Programmen auf Linux Rechnern mit Swift moeglich. In dieser Arbeit beschaeftigen wir uns im Speziellen mit Implementierung eines Webservers.  Dabei stehen einige Frameworks zur Verfuegen, auf die im Teil Stand der Technik genauer eingegangen wird.
 % State of the Art
 \section{State of the Art}
 \label{sec:stateoftheart}
-Das Ziel der Erstellung eines Webservers auf einer Linux-Maschine mittels der Programmiersprache Swift erfordert eine Erhebung des Stands der Technik. Als erstes wurde erhoben welche Frameworks für die Implementierung eines Swift Webserver zur Verfügung stehen. Durch Nachforschung konnten die folgenden Webframeworks für Swift auf Linux gefunden werden:  Perfect\parencite{perfect}, Vapor\parencite{vapor}, Kitura\parencite{kitura}, Zewo\parencite{zewo}, Swifter\parencite{swifter}. Die Frameworks Zewo und Vapor laufen dabei unter der MIT Lizenz, während Perfect unter der apache, beziehungsweise Kitura unter der apache2 Lizenz zur Verfügung stehen. Alle Frameworks haben eine aktive und angerschierte Gemeinschaft von Entwicklern, welche meist über die Kommunikationsdienste Slack und Gitter, beziehungsweise Email erreicht werden können. Es folgen einige Kurzfassungen der Frameworks. 
+Das Ziel der Erstellung eines Webservers auf einer Linux-Maschine mittels der Programmiersprache Swift erfordert eine Erhebung des Stands der Technik. Als erstes wurde erhoben welche Frameworks fuer die Implementierung eines Swift Webserver zur Verfuegung stehen. Durch Nachforschung konnten die folgenden Webframeworks fuer Swift auf Linux gefunden werden:  Perfect\parencite{perfect}, Vapor\parencite{vapor}, Kitura\parencite{kitura}, Zewo\parencite{zewo}, Swifter\parencite{swifter}. Die Frameworks Zewo und Vapor laufen dabei unter der MIT Lizenz, waehrend Perfect unter der apache, beziehungsweise Kitura unter der apache2 Lizenz zur Verfuegung stehen. Alle Frameworks haben eine aktive und angerschierte Gemeinschaft von Entwicklern, welche meist ueber die Kommunikationsdienste Slack und Gitter, beziehungsweise Email erreicht werden koennen. Es folgen einige Kurzfassungen der Frameworks. 
 \paragraph{Frameworks}
 \label{para:frameworks}
 \subparagraph{Zewo}
 \label{para:zewo}
-Zewo ist ein leichtgewichtiges Framework. Die Entwickler wurden durch die Programmiersprache Go inspiriert um ähnliche Nebenläufigkeit in mittels \lstinline{libmil}  zu erreichen. Durch die Einführung von Go-artigen \textit{"communicating sequential processes"} versuchen die Entwickler von Zewo die Menge der oft schwere lesbaren Ketten von Callback-Funktionen zu reduzieren. Interessant ist auch, dass das Projekt sehr Modular aufgebaut ist.  Auch haben die Entwickler von Zewo ihr Routing als Baumstruktur implementiert, die das Routing noch schneller machen soll. Als Nachteil muss gesagt werden, dass der Code oft nicht Kommentiert wurde und so sehr umständlich nach den richtigen Funktionen gesucht werden muss. Am Ende sollte zu Zewo noch gesagt werden, dass die Entwickler sich mit dem Vapor-Framework \ref{para:vapor} auf einen Http-Standard für Open-Source Swift geeinigt haben, der über https://github.com/open-swift/S4 abgerufen werden kann\parencite{openswifthttp}. Dies macht den Code zwischen Vapor und Zewo austauschbar. 
+Zewo ist ein leichtgewichtiges Framework. Die Entwickler wurden durch die Programmiersprache Go inspiriert um aehnliche Nebenlaeufigkeit in mittels \lstinline{libmil}  zu erreichen. Durch die Einfuehrung von Go-artigen \textit{"communicating sequential processes"} versuchen die Entwickler von Zewo die Menge der oft schwere lesbaren Ketten von Callback-Funktionen zu reduzieren. Interessant ist auch, dass das Projekt sehr Modular aufgebaut ist.  Auch haben die Entwickler von Zewo ihr Routing als Baumstruktur implementiert, die das Routing noch schneller machen soll. Als Nachteil muss gesagt werden, dass der Code oft nicht Kommentiert wurde und so sehr umstaendlich nach den richtigen Funktionen gesucht werden muss. Am Ende sollte zu Zewo noch gesagt werden, dass die Entwickler sich mit dem Vapor-Framework \ref{para:vapor} auf einen Http-Standard fuer Open-Source Swift geeinigt haben, der ueber https://github.com/open-swift/S4 abgerufen werden kann\parencite{openswifthttp}. Dies macht den Code zwischen Vapor und Zewo austauschbar. 
 \subparagraph{Swifter}
 \label{para:swifter}
-Swifter ist ein absolut minimaler Http-Server. Mit der Entwicklung von Swifter wurde begonnen, bevor Swift Open-Source wurde. Das minimalistische Framework kann Dateien aus Ordnern teilen, statische HTML-Seiten ausliefern und WebSockets erstellen. Einerseits fehlen Dokumentation und API, andererseits sind durch die Beispiele auf der Projektseite auf GitHub alle Anwendungsmöglichkeiten abgedeckt. 
+Swifter ist ein absolut minimaler Http-Server. Mit der Entwicklung von Swifter wurde begonnen, bevor Swift Open-Source wurde. Das minimalistische Framework kann Dateien aus Ordnern teilen, statische HTML-Seiten ausliefern und WebSockets erstellen. Einerseits fehlen Dokumentation und API, andererseits sind durch die Beispiele auf der Projektseite auf GitHub alle Anwendungsmoeglichkeiten abgedeckt. 
 \subparagraph{Swifton}
 \label{para:swifton}
-Als kleine Anmerkung hier ist Swifton (Kofferwort aus: Swift on Rails). Hierbei handelt es sich um ein auf Zewo (\ref{para:zewo}) basierendes Webframework welches stark von Ruby on Rails inspiriert wurde. Das Projekt wird aber zur Zeit nicht aktiv weiterentwickelt, da die Entwickler durch die stark statische Art von Swift das Projekt zu sehr eingeschränkt sehen\parencite{swifton}.
+Als kleine Anmerkung hier ist Swifton (Kofferwort aus: Swift on Rails). Hierbei handelt es sich um ein auf Zewo (\ref{para:zewo}) basierendes Webframework welches stark von Ruby on Rails inspiriert wurde. Das Projekt wird aber zur Zeit nicht aktiv weiterentwickelt, da die Entwickler durch die stark statische Art von Swift das Projekt zu sehr eingeschraenkt sehen\parencite{swifton}.
 \subparagraph{Kitura}
 \label{para:kitura}
-Kitura ist ein Webframework von IBM und ein damit verbundenes starkes Entwicklerteam. Kitura unterstützt unteranderm Middleware, SSL/TLS und FastCGI. Dieses Framework ist in der Verwendung ähnlich zu Express.js und verwendet wieder Callback-Funktonen. Kitura funktioniert mit Cloud-Plattformen wie Bluemix und ist dabei autoskalierbar. IBM investiert stark in Open-Source Swift mit Workshops auf WWDC\parencite{WWDC}, Präsentationen, Video-Einführungen\parencite{ibmdemo} und online Kursen auf Plattformen wie Udemy\parencite{udemyswift}. Populären Blogs wie \textit{raywenderlich.com} und \textit{stormpath.com}  zufolge ist das Ziel von IBM Java als Enterprise-Sprache durch Swift abzulösen und Kitura ist Teil dieser Unternehmung.\parencite{rayenterprise}\parencite{stormswiftserver} Zur API ist zusagen, dass die wichtigsten Referenzen vorhanden und dokumentiert sind.
+Kitura ist ein Webframework von IBM und ein damit verbundenes starkes Entwicklerteam. Kitura unterstuetzt unteranderm Middleware, SSL/TLS und FastCGI. Dieses Framework ist in der Verwendung aehnlich zu Express.js und verwendet wieder Callback-Funktonen. Kitura funktioniert mit Cloud-Plattformen wie Bluemix und ist dabei autoskalierbar. IBM investiert stark in Open-Source Swift mit Workshops auf WWDC\parencite{WWDC}, Praesentationen, Video-Einfuehrungen\parencite{ibmdemo} und online Kursen auf Plattformen wie Udemy\parencite{udemyswift}. Populaeren Blogs wie \textit{raywenderlich.com} und \textit{stormpath.com}  zufolge ist das Ziel von IBM Java als Enterprise-Sprache durch Swift abzuloesen und Kitura ist Teil dieser Unternehmung.\parencite{rayenterprise}\parencite{stormswiftserver} Zur API ist zusagen, dass die wichtigsten Referenzen vorhanden und dokumentiert sind.
 \subparagraph{Vapor}
 \label{para:vapor}
-Vapor ist mit Entstehungsdatum July 2016 eines der Ältesten der hier genannten Frameworks und wahrscheinlich das Älteste mit der Absicht Linux zu verwenden. Es unterstützt WebSockets. TLS, Trusted Encryption und BCrypt Hashes werden standardmäßig verwendet. Die API ist sehr ausführlich, wenn nicht sogar komplett, jedoch wie der Code selbst nicht vollständig dokumentiert, im Gegensatz zu Kitura\ref{para:kitura} wo die API nur das Nötigste enthält, aber dafür gut Dokumentiert ist. Wie bei Zewo \ref{para:zewo} erwähnt gibt es einen Http-Standard auf den sich die Autoren geeinigt haben (https://github.com/open-swift/S4). Dies macht den Code von Vapor mit Zewo austauschbar. Vapor scheint das Einsteiger freundlichste der hier genannten Frameworks zu sein.
+Vapor ist mit Entstehungsdatum July 2016 eines der aeltesten der hier genannten Frameworks und wahrscheinlich das aelteste mit der Absicht Linux zu verwenden. Es unterstuetzt WebSockets. TLS, Trusted Encryption und BCrypt Hashes werden standardmaessig verwendet. Die API ist sehr ausfuehrlich, wenn nicht sogar komplett, jedoch wie der Code selbst nicht vollstaendig dokumentiert, im Gegensatz zu Kitura\ref{para:kitura} wo die API nur das Noetigste enthaelt, aber dafuer gut Dokumentiert ist. Wie bei Zewo \ref{para:zewo} erwaehnt gibt es einen Http-Standard auf den sich die Autoren geeinigt haben (https://github.com/open-swift/S4). Dies macht den Code von Vapor mit Zewo austauschbar. Vapor scheint das Einsteiger freundlichste der hier genannten Frameworks zu sein.
 \subparagraph{Perfect}
 \label{para:perfect}
-Perfect verfolgt die Philosophie, Swift als fundamentale Programmiersprache zu verwenden, also Apps und Server in Swift programmieren. Dazu gibt Perfect volle Xcode Unterstützung für Entwicklung und Debugging. Perfect stellt Werkzeuge für mehr als nur für einen Webserver zur Verfügung, wie Datenbankenunterstützung, JSON-Bearbeitung, Streaming (Kafka Module), Message Queue (Mosquitto), Secure Sockets Encryption, SMTP, XML, Logging und viele mehr. Diese Menge an zusätzlichen Werkzeugen und das schnell robuste Framework spielen wahrscheinlich eine Rolle, weshalb Perfect auf GitHub das beliebteste Framework für Server-Side Swift ist (stand Juli 2017).
+Perfect verfolgt die Philosophie, Swift als fundamentale Programmiersprache zu verwenden, also Apps und Server in Swift programmieren. Dazu gibt Perfect volle Xcode Unterstuetzung fuer Entwicklung und Debugging. Perfect stellt Werkzeuge fuer mehr als nur fuer einen Webserver zur Verfuegung, wie Datenbankenunterstuetzung, JSON-Bearbeitung, Streaming (Kafka Module), Message Queue (Mosquitto), Secure Sockets Encryption, SMTP, XML, Logging und viele mehr. Diese Menge an zusaetzlichen Werkzeugen und das schnell robuste Framework spielen wahrscheinlich eine Rolle, weshalb Perfect auf GitHub das beliebteste Framework fuer Server-Side Swift ist (stand Juli 2017).
 \chapterend
