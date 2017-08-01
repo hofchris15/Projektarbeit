@@ -2,19 +2,14 @@
 \chapter{Introduction}\label{chap:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapterstart
-\section{Kurzfassung}
-\label{section:kurzfassung}
-\paragraph{Kurzfassung}
-In dieser Arbeit wurde mit Hilfe des Perfect Frameworks ein Webserver auf einem Ubuntu Server 16.04 LTS erstellt. Zur Implementierung wurde die open-source Programmiersprache Swift in der Version 3.1.1 verwendet. Der implementierte Server wurde mit einem Webserver auf Basis des Express.js Frameworks verglichen. Zur Dokumentation des Projektes wurde ein WikiBook erstellt, welches beschreibt, wie man allgemein einen Webserver mit Swift auf Linux erstellt.
-\paragraph{Abstract}
-In this work a webserver on the basis of the Perfect Framework was implemented. As programming language, open source Swift at version 3.1.1 was used for the implementation. The Webserver runs on a Ubuntu Server 16.04 LTS. Further, the implementation was compared to anthor implementation of the same server based on the Express.js Framework. As the documentation of the project a wikibook was produced, which details the step to creating a web server with swift on a Linux mashin. 
-% Einleitung
 \section{Einleitung}
 \label{sec:einleitung}
 Das Ziel dieser Arbeit ist es einen Webserver mit Hilfe der Programmiersprache Swift auf einem Linux-Server zu entwickeln. 
+
 \subsection{Swift}
 \label{subsection:swift}
 Swift ist die noch junge Programmiersprache von Apple, welche als Nachfolger von Objective-C gedacht ist. Die Sprache ist objektorientiert, stark typisiert, mit Typinfernce, mutliparadigmen-orientierte, kompilierende, all zwecks Programmiersprache. Die Frameworks Cocoa und Cocoa Touch funktionieren mit Swift und Bruecken zu Objective-C sind in die Sprache integriert. Der Swift-Code selbst soll dabei praezise und doch gleichzeitig ausdrucksstark sein\parencite{appleswift}.  Die Programmiersprache wurde auf der WWDC (Apple's World Wide Developer Conference)\parencite{swiftannounced} enthuellt. Swift wurde ueber Jahre hinweg produziert und wird immer noch weiterentwickelt. Zur Zeit ist Swift auf Version 4\parencite{ swift4}. Im \textit{TIOBE Index}\parencite{tiobe} liegt Swift auf Platz 12 hinter Go (Platz 10) und Perl (Platz 11), aber vor Ruby (Platz 13). Auch ist dem Index zu entnehmen, dass sich Swift um zwei Plaetze verbessert hat. In der \textit{Developer Survey} von stackoverflow schafft es Swift auf Platz 11 der meist benutzen Programmiersprachen und im Ranking der Beliebtesten sogar auf Platz 4 vor Go und Python\parencite{survey2017}. Im Jahr zuvor war Swift bei der Beliebtheit sogar auf Platz 2\parencite{survey2016}. Besonders die Verwendbarkeit von Swift fuer alle Arten von Projekten, von iOS Development, ueber systemnahe Programmierung, mobile Apps, bis hin zu Cloud Technologien, sorgen fuer eine hohe Beliebtheit. Genauso wie die Sicherheit von Swift, wie durch automatische Speicherverwaltung, Array Indexes werden auf out-of-bound Zugriffe geprueft, Optionals erzwingen die Behandlung von moeglichen nil-Werten und Variablen sind immer initialisiert. Andererseits scheinen bestimmte Teile der Programmiersprache wie Closures, Error-Handling und Optional gerade Einsteigern das Erlernen von Swift zu erschweren\parencite{studyonswift}.
+
 \paragraph{Basics of Swift}
 \label{para:basicsofswift}
 Um die Sprache zu verstehen, beziehungsweisse um die Erlernbarkeit zu beurteilen folgt nun eine kleine Einfuehrung basierend auf \textit{The Swift Programming Language}\parencite{swiftbook}.
@@ -51,6 +46,7 @@ let anotherone = [Int]()	// Immutable Array
 var intset = Set<Int>()	// Ein Set, der Typ muss hashbar sein
 var dictionary = [Int: String]()  // Ein Dictionary mit einem Key (Int) Value(String) Paar
 \end{lstlisting}
+
 Der Kontrollfluss wird in Swift aehnlich zu anderen Sprachen geregelt. Swift kennt \lstinline{for}, \lstinline{while}, \lstinline{if} und \lstinline{switch}.
 
 \lstset{
@@ -64,41 +60,49 @@ Der Kontrollfluss wird in Swift aehnlich zu anderen Sprachen geregelt. Swift ken
 }
 \begin{lstlisting}
 let demo = ["Eins", "Zwei", "Drei", "Vier"]
+
 // Ein for-Loop
 for number in demo {
 	print("Nummer = \(number)!") // print() schreibt in die Konsole
 } 
+
 // Ausgabe
 // Nummer = Eins!
 // Nummer = Zwei!
 // Nummer = Drei!
 // Nummer = Vier!
+
 var  counter = 0
 var max = 2
+
 // Ein while-Loop
 while counter < max {
 	print( "Der Zaehler ist \(counter)")
 	counter = counter + 1
 } 
+
 // Ausgabe
 // Der Zaehler ist 0
-// Der Zaehler ist 1\\
+// Der Zaehler ist 1
 // repeat while
+
 repeat {
 	print( "Der Zaehler ist \(counter)")
 } while counter > 0 
+
 // Ausgabe
 // Der Zaehler ist 1
-// Der Zaehler ist 0\\
+// Der Zaehler ist 0
+
 var age = 19
+
 // If Abfragen
 if age >= 18 { // Eine Altersabfrage
-   print("Hier ist ein Bier") 
-   // ueber 18 bekommt man Bier
+   print("Hier ist ein Bier")    // ueber 18 bekommt man Bier
 } else {
-  print ("Hier ist ein Glass mit Wasser") 
-  // Unter 18 ein Glass Wasser
-}\\
+  print ("Hier ist ein Glass mit Wasser")   // Unter 18 ein Glass Wasser
+}
+
 let char: Character = "F"
 // Switch Case
 switch char {
@@ -115,21 +119,23 @@ switch char {
     default:
 	// Wenn nichts passt
 } 
+
 // Ausgabe
 // Der Code von F
-// Der Code von D\\
+// Der Code von D
+
 // Label und break
 outer: while true { // while-Loop mit Label
 	for i in 0..<100 { // Wuerde von 0 bis 99 zaehlen
 		print("Index \(i)")
-		break outer 
-		// Bricht beide Loops und springt zum Label
+		break outer 	// Bricht beide Loops und springt zum Label
 	}
 } 
 // Ausgabe
 // Index 0
 \end{lstlisting} 
 Funktionen in Swift bestehen aus Funktionsname, Parameter (eventuell mit Label) und Rueckgabewert. Funktionen haben nur einen Rueckgabewert, dieser kann aber ein Optional sein, bzw. koennen Funktionen auch Fehler werfen.
+
 \lstset{
 	caption=Funktionen,
 	label=lst:funktionen,
@@ -140,20 +146,19 @@ Funktionen in Swift bestehen aus Funktionsname, Parameter (eventuell mit Label) 
 	commentstyle=\color{darkgray},
 }
 \begin{lstlisting}
-// Eine Funktion die einen String als Parameter bekommt
-// und einen String zurueck gibt
+// Eine Funktion die einen String als Parameter bekommt und einen String zurueck gibt
 // "sag" ist das Label des Parameters
 // "name" ist der Name der Variable
 func einefunktion(sag name: String) -> String {
 	print("Name = \(name)")
 	return "Ein String als Rueckgabewert"
 }
+
 // Aufruf
 einefunktion(sag: "Bert")
 // Ausgabe (der Rueckgabewert wird hier ignoriert)
 // Name = Bert
-\\
-\\
+
 // Mit _ kann das Label beim Aufruf unterdrueckt werden
 // Void als Rueckgabewert bedeutet kein Rueckgabewert
 func keinlabel( _ name: String) -> Void {
@@ -163,8 +168,7 @@ func keinlabel( _ name: String) -> Void {
 keinlabel("Hugo") 	// Name = Hugo
 einefunktion(sag: "Hugo") // Name = Hugo
 
-// In-Out Parameters erlaubt Parameter in der
-// Funktion zu aendern, sofern 
+// In-Out Parameters erlaubt Parameter in der Funktion zu aendern, sofern 
 //diese keine Konstanten sind
 func wechseldich(wechsel name: inout String) {
 	name = "Bob"
@@ -172,6 +176,7 @@ func wechseldich(wechsel name: inout String) {
 // Aufruf
 var name = "Billy"
 print(name) // Billy
+
 wechseldich(wechsel: name)
 print(name) // Bob
 \end{lstlisting}
@@ -193,6 +198,7 @@ func function(callback: (String)->Void) {
 }
 // Und hier der Aufruf mittels Closure
 function(callback: { s in print(s) }) // Gruss von der Funktion
+
 // Oder in der Trailing-Variante
 function(callback: (String) -> Void ) {
 	s in print("Trailing \(s)")
@@ -214,10 +220,10 @@ enum FHEntity {
     case student(nr: Int, name: String) 
     case lehrender(name: String)
 }
-\\
+
 var std = FHEntity.student(nr: 13, name: "Geheim") 
 // Lege einen neuen Studenten an
-\\
+
 switch std {
     case .student(let nr, let name):
         print("\(name)") // Student
@@ -298,7 +304,7 @@ class SomeClass {
 		// anderen Programmiersprachen und kann vererbt werden, 
 		// bei Strukturen wird static als Schluesselwort verwendet
 	}
-\\
+
 	deinit {
 		// Die Instanz wird zerstoert
 	}
@@ -329,7 +335,7 @@ class Auto {
     // ihn zeigen
     weak var motor: Motor? 
     // Jedes Auto hat einen Motor
-    \\
+    
     init(motor: Motor) {
         self.motor = motor
         self.motor!.auto = self
@@ -343,7 +349,7 @@ class Motor {
     init() {}
     deinit { print("Der Motor wurde zerlegt")}
 }
-\\
+
 // neue Instanzen initialisieren
 var v6: Motor? = Motor()
 var porsche: Auto? = Auto(motor: v6!)
@@ -352,7 +358,7 @@ v6 = nil // Nun haelt nur noch Auto eine schwache Referenz
 // v6 wird deinitialisiert
 // damit gibt es keine Referenz auf porsche
 // und porsche wird deinitialisiert
-\\
+
 // Ausgabe
 // Der Motor wurde zerlegt
 // Das Auto wurde zerlegt
@@ -370,18 +376,18 @@ Das zweite Feature von Swift mit dem Einsteiger Probleme haben, sind Optionale u
 \begin{lstlisting}
 var a: Int? 	// Optional welches Int oder nil sein kann
 var b: Int! 	// Auch ein Optional, jedoch wickelt sich dieses automatisch aus
-\\
+
 // Aufruf mit Optional Verkettung
 if let var = a?.max { // a muss mit ? ausgewickelt werden, b nicht
 	// Kann .max aufgerufen werden
 } else {
 	// a ist nil
 }
-\\
+
 // Optionale erlauben einen Defaultwert anzugeben
 var c: Int?
 c = a ?? 42 //  c hat den Wert von a oder wenn a nil ist 42
-\\
+
 // Wird mit ! ausgewickelt, macht der Entwickler ein Versprechen,
 // dass das Optional nicht nil ist
 var d = c! // Dank dem Defaultwert von oben, ist c nie nil
