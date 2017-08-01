@@ -98,10 +98,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.2}Apache Bench}{27}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Fazit}{29}{section.2.6}
+\contentsline {section}{\numberline {2.6}Probleme und L\IeC {\"o}sungen}{29}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Probleme und L\IeC {\"o}sungen}{29}{section.2.7}
+\contentsline {chapter}{\numberline {3}Zusammenfassung}{30}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Conclusion and Outlook}{30}{chapter.3}
+\contentsline {chapter}{\numberline {4}Fazit und Perspektive}{32}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{33}{appendix*.37}
+\contentsline {section}{\numberline {4.1}Fazit}{32}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Perspektive}{32}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{35}{appendix*.37}
