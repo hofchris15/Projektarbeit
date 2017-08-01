@@ -14,5 +14,10 @@ node_modules
 
 *.aux
 *.log
+*.bcf
+*.lot
+*.pdf
+*.out
+*.gz
 Würde LICENSE löschen
 Würde Sources/exe/model/session.swift löschen
